@@ -46,3 +46,4 @@ Route::resource('p_horario','p_horarioController');
 Route::resource('reservas', 'ReservaController@mostrar');
 Route::resource('reservas/horario', 'ReservaController@horario');
 Route::resource('reservas/citas', 'ReservaController@citas');
+//Comentario
