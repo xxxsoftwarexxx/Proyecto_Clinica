@@ -20,6 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('apellidos');
+            $table->string('tipo');
+            $table->string('dni_medico')->nullable();
+            $table->string('dni_paciente')->nullable();
+
         });
     }
 

@@ -47,3 +47,7 @@ Route::resource('reservas', 'ReservaController@mostrar');
 Route::resource('reservas/horario', 'ReservaController@horario');
 Route::resource('reservas/citas', 'ReservaController@citas');
 //Comentario
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

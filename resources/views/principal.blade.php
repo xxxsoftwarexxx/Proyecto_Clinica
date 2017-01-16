@@ -193,22 +193,34 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
+
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil de Usuario</a>
-                        </li>
-                        <li><a href="configuracion"><i class="fa fa-gear fa-fw"></i> Configuraciones</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
-                        </li>
-                    </ul>
-                </li>
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="fa fa-user fa-fw"></i>  {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+
             </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -223,7 +235,7 @@
                                 </span>
                             </div>
                         </li>
-                        <li>
+                            @if(Auth::user()->tipo=='Admi')
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Mantenimientos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -258,10 +270,22 @@
                                     <a href="/horarios"> Mantenimiento Horarios </a>
                                 </li>
                             </ul>
+
+                        </li>
+                            @endif
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Procesos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/reservas"> Registrar Cita</a>
+                                </li>
+                            </ul>
+
                         </li>
                     </ul>
                 </div>
             </div>
+
         </nav>
 
         <div id="page-wrapper">
@@ -371,6 +395,9 @@
     <script src={{ URL::asset('bower_components/metisMenu/dist/metisMenu.min.js') }}></script>
     @yield('js')
     <script src={{ URL::asset('dist/js/sb-admin-2.js') }}></script>
+    <script>
+
+    </script>
     @yield('js_scripts')
 
 </body>
