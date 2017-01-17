@@ -73,7 +73,7 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Procesos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/reservas">Reservar Cita</a></li>
+                      <li><a href="/recervas">Recervar Cita</a></li>
                     </ul>
                   </li>
                   @if( Auth::user()->tipo=='Admi' )

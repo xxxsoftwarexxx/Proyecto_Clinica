@@ -58,3 +58,23 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('reservas_Almacenar','ReservaController@almacenar');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('home', function () {
+    return view('index');
+});
+Route::get('rtabout', function () {
+    return view('about');
+});
+Route::get('rtspec', function () {
+    return view('codes');
+});
+Route::get('rtgallery', function () {
+    return view('gallery');
+});
+Route::get('rtcontact', function () {
+    return view('contact');
+});
