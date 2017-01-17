@@ -23,19 +23,6 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="apellido" class="col-md-4 control-label">Apellidos</label>
-
-                            <div class="col-md-6">
-                                <input id="apellido" type="text" class="form-control" name="apellidos" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
@@ -64,6 +51,17 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="tipo" class="col-md-4 control-label">tipo</label>
+
+                            <div class="col-md-6">
+                              <select name="tipo" id="tipo">
+                                <option value="">Medico</option>
+                                <option value="">Paciente</option>
+                                <option value="">Admi</option>  
+                              </select>
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
@@ -75,37 +73,9 @@
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
-                                    @endif
-
-                            </div>
-                          </div>
-
-
-                        <div id="tipo_usuario" class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="tipo" class="col-md-4 control-label">Tipo de Usuario</label>
-
-                            <div class="col-md-6">
-                                <select id="tipo" type="text"  class="form-control" name="tipo">
-                                  <option value="Paciente">Paciente</option>
-                                  <option value="Medico">Medico</option>
-                                  <option value="Admi">Admi</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="dni" class="col-md-4 control-label">Dni</label>
-
-                            <div class="col-md-6">
-                                <input id="dni" type="text" class="form-control" name="dni" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
                                 @endif
                             </div>
                         </div>
-
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 class ReservaController extends Controller
 {
@@ -58,8 +58,99 @@ class ReservaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
-    }
+
+     public function almacenar(Request $request)
+     {
+       return("dd");
+        $id = $request->input('Id');
+        $Nro_Dia = $request->input('Nro_Dia');
+        $Id_Paciente = $request->input('Id_Paciente');
+
+       $fecha =date('Y-m-d');
+       $nuevafecha = strtotime ( '+'.$Nro_Dia.' day' , strtotime ( $fecha ) ) ;
+
+
+        DB::table('bloques')->where('idbloques',$id)
+         ->update([
+         'estado'=>0
+        ]);
+
+        setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish');
+        date_default_timezone_set("America/Lima");
+        $Cita_Id = date("Y-m-d");
+
+
+
+        DB::table('citas')->insert([
+        'id'=> $Cita_Id,
+        'fecha_cita'=>$nuevafecha,
+        'fecha_reserva'=>$fecha,
+        'estado'=>1,
+        'pacientes_dni'=> $Id_Paciente,
+        'bloques_idbloques'=>$id
+        ]);
+
+
+
+     }
+     public function store(Request $request)
+     {
+
+        return("dd");
+         $id = $request->input('Id');
+         $Nro_Dia = $request->input('Nro_Dia');
+         $Id_Paciente = $request->input('Id_Paciente');
+
+        $fecha =date('Y-m-d');
+        $nuevafecha = strtotime ( '+'.$Nro_Dia.' day' , strtotime ( $fecha ) ) ;
+
+
+         DB::table('bloques')->where('idbloques',$id)
+          ->update([
+          'estado'=>0
+         ]);
+
+         setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish');
+         date_default_timezone_set("America/Lima");
+         $Cita_Id = date("Y-m-d");
+
+
+
+         DB::table('citas')->insert([
+         'id'=> $Cita_Id,
+         'fecha_cita'=>$nuevafecha,
+         'fecha_reserva'=>$fecha,
+         'estado'=>1,
+         'pacientes_dni'=> $Id_Paciente,
+         'bloques_idbloques'=>$id
+         ]);
+
+
+
+     }
+ 		public function Recuperar_Bloque()
+ 		{
+ 			$id = Input::get("Id");
+
+
+ 			$Bloque = DB::table('bloques')->where('idbloques',$id)->first();
+
+ 			$Medico = DB::table('medicos')->where('dni',$Bloque->medicos_dni)->first();
+
+ 			$Especialidad = DB::table('especialidades')->where('codigo',$Medico->especialidades_codigo)->first();
+
+ 			$Consultorio = DB::table('consultorios')->where('id',$Especialidad->consultorios_id)->first();
+
+ 			$Datos_Bloque = array(
+ 				$Bloque->hora_inicio,
+ 				$Bloque->dia,
+ 				$Medico->nombres.' '.$Medico->apellidos,
+ 				$Especialidad->nombre,
+ 				$Consultorio->id
+ 				);
+
+ 			return $Datos_Bloque;
+ 		}
 
     public function horario(Request $request)
     {

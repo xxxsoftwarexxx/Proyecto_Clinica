@@ -46,8 +46,15 @@ Route::resource('p_horario','p_horarioController');
 Route::resource('reservas', 'ReservaController@mostrar');
 Route::resource('reservas/horario', 'ReservaController@horario');
 Route::resource('reservas/citas', 'ReservaController@citas');
+Route::get('researches','InicioController@rese');
+Route::get('event','InicioController@event');
+Route::get('service','InicioController@service');
+Route::get('contactos','InicioController@contactos');
+Route::get('inicio','InicioController@inicio');
 //Comentario
-
+Route::get('Recuperar_Datos_Cita','ReservaController@Recuperar_Bloque');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('reservas_Almacenar','ReservaController@almacenar');
