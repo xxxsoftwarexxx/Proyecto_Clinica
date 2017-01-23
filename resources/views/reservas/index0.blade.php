@@ -1,6 +1,4 @@
-@extends('medicos.mantenimiento_medicos')
 
-@section('estilos')
 
     <style type="text/css">
       td{
@@ -11,44 +9,26 @@
          cursor: pointer;
       }
     </style>
-@endsection
 
-@section('Titulo')
+
+
 <i class="fa fa-gear fa-fw"></i>
 <a1>Eligir Fecha y Hora<a1>
-@endsection
 
-@section('Contenido')
+
+
         <form role="form" method="post" action="/reservas" autocomplete="off">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
           <fieldset>
-            <input id="id" type="hidden" name="id" value="">
+
 
             <div class="text-center"><h2 align="center">Escoger Horario</h2>
             </div></br>
 
 
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                  <label for="dia">Hora</label>
-                  <div class="col-md-6 col-xs-10">
-                      <input id="dia" name="dia" class="form-control" required>
-                  </div>
+
             </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                  <label for="dia">Fecha</label>
-                  <div class="col-md-6 col-xs-10">
-                      <input id="fecha" name="fecha" class="form-control" required>
-                  </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                  <label for="dia">Fecha</label>
-                  <div class="col-md-6 col-xs-10">
-                      <input id="fecha" name="fecha" type="submit" class="btn btn-success" required>
-                  </div>
-            </div></br></br>
+          
 
           </form>
         <div class="dataTable_wrapper table-responsive">
@@ -146,15 +126,6 @@
     </div>
   </div>
 
-@endsection
-
-@section('js')
-<!-- DataTables JavaScript -->
-
-
-@endsection
-
-@section('js_scripts')
 <script>
 
     function cambiacolor_texto(cell,otro,id){
@@ -197,4 +168,3 @@
         });
     });
 </script>
-@endsection

@@ -17,7 +17,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/numscroller-1.0.js"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
+<script>
+		window.Laravel = <?php echo json_encode([
+				'csrfToken' => csrf_token(),
+		]); ?>
+</script>
 <!-- //js -->
 
 
@@ -68,42 +74,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="header_right">
 			<div class="login">
 				<ul>
-					<li><a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Iniciar sesión</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Regístrate</a></li>
-					<li>
-						<div class="search-bar">
-							<div class="search">
-								<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
-							</div>
-							<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-								<div id="small-dialog" class="mfp-hide">
-									<div class="search-top">
-										<div class="login_pop">
-											<form action="#" method="post">
-												<input type="submit" value="">
-												<input type="text" name="Type something..." value="Type something..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-											</form>
-										</div>
-									</div>
-									<script>
-												$(document).ready(function() {
-												$('.popup-with-zoom-anim').magnificPopup({
-													type: 'inline',
-													fixedContentPos: false,
-													fixedBgPos: true,
-													overflowY: 'auto',
-													closeBtnInside: true,
-													preloader: false,
-													midClick: true,
-													removalDelay: 300,
-													mainClass: 'my-mfp-zoom-in'
-												});
 
-												});
-									</script>
-								</div>
-						</div>
-					</li>
+
+					@if (Auth::guest())
+							<li><a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-user" 		aria-hidden="true"></span>Iniciar sesión</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Regístrate</a></li>
+					@else
+
+							<li class="dropdown">
+
+									<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+											{{$user_name}} <span class="caret"></span>
+									</a>
+
+									<ul class="dropdown-menu" role="menu">
+											<li>
+													<a href="{{ url('/logout') }}"
+															onclick="event.preventDefault();
+																			 document.getElementById('logout-form').submit();">
+															Logout
+													</a>
+
+													<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+															{{ csrf_field() }}
+													</form>
+											</li>
+
+									</ul>
+							</li>
+							<li>
+									<a href="{{ url('/logout') }}"
+											onclick="event.preventDefault();
+															 document.getElementById('logout-form').submit();">
+											Logout
+									</a>
+
+									<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+											{{ csrf_field() }}
+									</form>
+							</li>
+					@endif
+
 				</ul>
 			</div>
 			<div class="clearfix"></div>
@@ -111,6 +122,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 </div>
+<!-- //header2 -->
+@if(!Auth::guest())
+	@if(Auth::user()->tipo=='Medico')
+		@include('medicos.sub_menu')
+	@endif
+	@if(Auth::user()->tipo=='Paciente')
+		@include('pacientes.sub_menu')
+	@endif
+	@if(Auth::user()->tipo=='Admi')
+		@include('Admi.sub_menu')
+	@endif
+@endif
+
 <!-- //header -->
 <div class="header-bottom ">
 		<div class="container">
@@ -255,22 +279,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 		</div>
-		<div id="book" class="col-md-4 content_middle wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.3s">
+		@if(!Auth::guest())
+		@if(Auth::user()->tipo=='Paciente')
+		<div name="book" id="book" class="col-md-4 content_middle wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.3s">
 			<h3>Reservar una cita</h3>
-			<form action="#" method="post">
-				<input type="text" name="Name" value="Nombre" onfocus="this.value='';" onblur="if(this.value=='') {this.value='Name';}" required="">
-				<input type="text" name="Email" value="Email" onfocus="this.value='';" onblur="if(this.value=='') {this.value='Email';}" required="">
-				<input class="date" name="19/10/2016" id="datepicker" type="text" value="19/01/2017" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '19/10/2016';}" required="">
-				<select id="country" onchange="change_country(this.value)" class="frm-field required sect">
-					<option value="null">Seleccionar Especialedad</option>
-					<option value="null">psicología</option>
-					<option value="null">Medicina general</option>
-					<option value="null">odontología</option>
-					<option value="null">Surgery</option>
+			<form method="post" action="/reservas/horario">
+				  <input type="hidden" name="_token" value="{{csrf_token()}}">
+				<select id="Especialidad" name="Especialidad" placeholder="Especialidad"  class="frm-field required sect">
+									<option value="null">Seleccionar Especialedad</option>
+					@foreach($especialidades as $especialidad)
+									<option value="{{$especialidad->codigo}} " name ="Especialidad">{{$especialidad->nombre}}</option>
+					@endforeach
 				</select>
+
 				<input type="submit" value="Reserver">
+				
 			</form>
 		</div>
+		@endif
+		@endif
 		<div class="clearfix"></div>
 	</div>
 </div>
@@ -501,20 +528,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 									<div class="login-right">
 										<h3>Sign in with your account</h3>
-										<form action="#" method="post">
-											<div class="sign-in">
-												<h4>Email :</h4>
-												<input type="text" name="Type here" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
+										<form method="POST" action="/login">
+											<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
+											<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+													<label for="text" class="col-md-4 control-label" >Dni</label>
+
+													<div class="col-md-6">
+															<input id="email" type="text" class="form-control" maxlength="8" name="dni" value="{{ old('dni') }}" required autofocus>
+
+															@if ($errors->has('email'))
+																	<span class="help-block">
+																			<strong>{{ $errors->first('email') }}</strong>
+																	</span>
+															@endif
+													</div>
 											</div>
-											<div class="sign-in">
-												<h4>Password :</h4>
-												<input type="password" name="Password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-												<a href="#">Forgot password?</a>
+
+											<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+													<label for="password" class="col-md-4 control-label">Password</label>
+
+													<div class="col-md-6">
+															<input id="password" type="password" class="form-control" name="password" required>
+
+															@if ($errors->has('password'))
+																	<span class="help-block">
+																			<strong>{{ $errors->first('password') }}</strong>
+																	</span>
+															@endif
+													</div>
 											</div>
-											<div class="single-bottom">
-												<input type="checkbox"  id="brand" value="">
-												<label for="brand"><span></span>Remember Me.</label>
+
+											<div class="form-group">
+													<label for="tipo" class="col-md-4 control-label">Tipo de Usuario</label>
+													<div class="col-md-6">
+															<select id="tipo"  class="form-control" name="tipo" required>
+																<option value="Paciente">Paciente</option>
+																<option value="Medico">Medico</option>
+																<option value="Admi">Admi</option>
+															</select>
+													</div>
 											</div>
+
 											<div class="sign-in">
 												<input type="submit" value="SIGNIN" >
 											</div>
@@ -539,26 +594,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="login-grids">
 									<div class="login-bottom">
 										<h3>Sign up for free</h3>
-										<form action="#" method="post">
-											<div class="sign-up">
-												<h4>Email :</h4>
-												<input type="text" name="Type here" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
-											</div>
-											<div class="sign-up">
-												<h4>Password :</h4>
-												<input type="password" name="Password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+										<form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+											<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
-											</div>
-											<div class="sign-up">
-												<h4>Re-type Password :</h4>
-												<input type="password" name="Password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Dni</label>
 
-											</div>
-											<div class="sign-up">
-												<input type="submit" value="REGISTER NOW" >
-											</div>
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="dni" value="{{ old('dni') }}" required autofocus>
 
-										</form>
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('dni') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo" class="col-md-4 control-label">tipo</label>
+
+                            <div class="col-md-6">
+                              <select name="tipos" id="tipo">
+                                <option value="Medico">Medico</option>
+                                <option value="Paciente">Paciente</option>
+                                <option value="Admi">Admi</option>
+                              </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+
 									</div>
 								<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
 							</div>

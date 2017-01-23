@@ -61,13 +61,13 @@ class ReservaController extends Controller
 
      public function almacenar(Request $request)
      {
-       return("dd");
         $id = $request->input('Id');
         $Nro_Dia = $request->input('Nro_Dia');
         $Id_Paciente = $request->input('Id_Paciente');
 
        $fecha =date('Y-m-d');
        $nuevafecha = strtotime ( '+'.$Nro_Dia.' day' , strtotime ( $fecha ) ) ;
+       $nuevafecha = date ( 'Y-m-j' , $nuevafecha );
 
 
         DB::table('bloques')->where('idbloques',$id)
@@ -75,28 +75,20 @@ class ReservaController extends Controller
          'estado'=>0
         ]);
 
-        setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish');
-        date_default_timezone_set("America/Lima");
-        $Cita_Id = date("Y-m-d");
-
-
+        $Cita_Id = date("Y-m-d-g:i");
 
         DB::table('citas')->insert([
-        'id'=> $Cita_Id,
+    
         'fecha_cita'=>$nuevafecha,
         'fecha_reserva'=>$fecha,
         'estado'=>1,
         'pacientes_dni'=> $Id_Paciente,
         'bloques_idbloques'=>$id
         ]);
-
-
-
+        return redirect('inicio');
      }
      public function store(Request $request)
      {
-
-        return("dd");
          $id = $request->input('Id');
          $Nro_Dia = $request->input('Nro_Dia');
          $Id_Paciente = $request->input('Id_Paciente');
@@ -124,10 +116,8 @@ class ReservaController extends Controller
          'pacientes_dni'=> $Id_Paciente,
          'bloques_idbloques'=>$id
          ]);
-
-
-
      }
+
  		public function Recuperar_Bloque()
  		{
  			$id = Input::get("Id");

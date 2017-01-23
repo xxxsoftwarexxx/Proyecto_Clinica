@@ -12,60 +12,48 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'MDadmi'], function () {
+  Route::resource('personas', 'PersonasController');
+
+  Route::resource('medicos', 'MedicosController');
+  Route::resource('consultorios', 'ConsultoriosController');
+  Route::resource('especialidades','especialidadesController');
+  Route::resource('historial_medico', 'HistorialMedicoController');
+  Route::resource('historiales_medicos_detalles', 'HistorialesMedicosDetallesController');
+  Route::resource('estudiantes','EstudiantesController');
+  Route::resource('escuelas_profesionales','EscuelasProfesionalesController');
+
+  Route::resource('citas', 'CitasController');
+  Route::resource('sanciones', 'SancionesController');
+
+  Route::resource('horarios','HorariosController');
+  Route::resource('pacientes','PacientesController');
+  Route::resource('p_horario','p_horarioController');
+
+  });
+
+Route::group(['middleware' => 'MDpaciente'], function () {
+
+  Route::resource('reservas', 'ReservaController@mostrar');
+  Route::resource('reservas/horario', 'ReservaController@horario');
+  Route::resource('reservas/citas', 'ReservaController@citas');
+  Route::get('reservas_Almacenar','ReservaController@almacenar');
+  Route::get('Recuperar_Datos_Cita','ReservaController@Recuperar_Bloque');
+  });
+  
+Route::group(['middleware' => 'MDmedico'], function () {
 });
 
-Route::resource('home', 'PrincipalController');
+Route::get('/', 'InicioController@index');
 
-Route::get('login', function () {
-    return view('login');
-});
+Route::resource('inicio', 'InicioController');
 
 Route::get('configuracion', function () {
     return view('configuracion');
 });
 
-
-Route::resource('personas', 'PersonasController');
-
-Route::resource('medicos', 'MedicosController');
-Route::resource('consultorios', 'ConsultoriosController');
-Route::resource('especialidades','especialidadesController');
-Route::resource('historial_medico', 'HistorialMedicoController');
-Route::resource('historiales_medicos_detalles', 'HistorialesMedicosDetallesController');
-Route::resource('estudiantes','EstudiantesController');
-Route::resource('escuelas_profesionales','EscuelasProfesionalesController');
-
-Route::resource('citas', 'CitasController');
-Route::resource('sanciones', 'SancionesController');
-
-Route::resource('horarios','HorariosController');
-Route::resource('pacientes','PacientesController');
-Route::resource('p_horario','p_horarioController');
-Route::resource('reservas', 'ReservaController@mostrar');
-Route::resource('reservas/horario', 'ReservaController@horario');
-Route::resource('reservas/citas', 'ReservaController@citas');
-Route::get('researches','InicioController@rese');
-Route::get('event','InicioController@event');
-Route::get('service','InicioController@service');
-Route::get('contactos','InicioController@contactos');
-Route::get('inicio','InicioController@inicio');
-//Comentario
-Route::get('Recuperar_Datos_Cita','ReservaController@Recuperar_Bloque');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
-Route::get('reservas_Almacenar','ReservaController@almacenar');
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('home', function () {
-    return view('index');
-});
 Route::get('rtabout', function () {
     return view('about');
 });
