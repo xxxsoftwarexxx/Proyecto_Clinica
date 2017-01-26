@@ -55,8 +55,6 @@ Route::get('configuracion', function () {
     return view('configuracion');
 });
 
-Auth::routes();
-
 Route::get('rtabout', function () {
     return view('about');
 });
