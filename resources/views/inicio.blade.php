@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="header_left" data-wow-duration="2s" data-wow-delay="0.5s">
 			<ul>
 				<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+123 456 7890</li>
-				<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe</a></li>
+				<li><a href="correo@unsaac.edu.pe"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe</a></li>
 			</ul>
 		</div>
 		<div class="header_right">
@@ -195,31 +195,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div  id="top" class="callbacks_container">
 			<ul class="rslides" id="slider3">
 				<li>
-					<div class="banner1">
-						<div class="container">
-							<div class="banner-info">
-								<h3>Providing<span> Appropriate Health Care </span> For Adult, Seniors and children</h3>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-								sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-								adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-								dolore magnam aliquam quaerat voluptatem.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">Book an appointment</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
 					<div class="banner2">
 						<div class="container">
-							<div class="banner-info2 text-center">
-								<h3>Providing Eye Care <span>Treatments & Surgeries For All Problems</span></h3>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-								sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-								adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-								dolore magnam aliquam quaerat voluptatem.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">Book an appointment</a>
+							<div class="banner-info">
+								<h3>Para Adultos,Jovenes y Adolecentes<span> Planificación Familiar </span>Visítanos </h3>
+								<p>Contamos con psicologos expertos, que te guiaran en el tema,
+								responderan tus dudas y aconsejaran.</p>
+								<a href="#book" class="hvr-outline-out button2 scroll">Ver Mas</a>
 							</div>
 						</div>
 					</div>
@@ -227,14 +209,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li>
 					<div class="banner1">
 						<div class="container">
-							<div class="banner-info">
-								<h3>Providing<span> Appropriate Health Care </span> For Adult, Seniors and children</h3>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-								sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-								adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-								dolore magnam aliquam quaerat voluptatem.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">Book an appointment</a>
+							<div class="banner-info2 text-center">
+								<h3>Nuestro Local <span>Visítanos</span></h3>
+								<p>Non encontramos en el campus de la universidad,
+								nacional de San Antonio Abad del Cuso.
+								Av de la Cultura</p>
+								<a href="#book" class="hvr-outline-out button2 scroll">Ver</a>
 							</div>
 						</div>
 					</div>
@@ -242,14 +222,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li>
 					<div class="banner2">
 						<div class="container">
+							<div class="banner-info">
+							<h3>Para Adultos,Jovenes y Adolecentes<span> Planificación Familiar </span>Visítanos </h3>
+							<p>Contamos con psicologos expertos, que te guiaran en el tema,
+							responderan tus dudas y aconsejaran.</p>
+							<a href="#book" class="hvr-outline-out button2 scroll">Ver Mas</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="banner1">
+						<div class="container">
 							<div class="banner-info2 text-center">
-								<h3>Providing Eye Care <span>Treatments & Surgeries For All Problems</span></h3>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-								sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-								adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-								dolore magnam aliquam quaerat voluptatem.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">Book an appointment</a>
+							<h3>Nuestro Local <span>Visítanos</span></h3>
+							<p>Non encontramos en el campus de la universidad,
+							nacional de San Antonio Abad del Cuso.
+							 Av de la Cultura</p>
+							<a href="#book" class="hvr-outline-out button2 scroll">Ver</a>
 							</div>
 						</div>
 					</div>
@@ -269,13 +259,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="welcome">
 				<h3>Bienevnido a la clinica UNSAAC</h3>
 				<ul>
-					<li><a href="#">Accusantium Doloremque Accus</a></li>
-					<li><a href="#">Molestiae Consequatur Molestiae</a></li>
-					<li><a href="#">Nostrum Exercitationem Nostrum</a></li>
-					<li><a href="#">Consequuntur Magnidolor Nostrum</a></li>
-					<li><a href="#">Molestiae Consequatur Molestiae</a></li>
-					<li><a href="#">Nostrum Exercitationem Nostrum</a></li>
-					<li><a href="#">Consequuntur Magnidolor Nostrum</a></li>
+				<h5>Ofresemos atencion de alta calidad a
+				estudiantes universitarios como a personas
+				externas; contamos personal altamente
+				calificado</h5>
 				</ul>
 			</div>
 		</div>

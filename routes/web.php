@@ -15,6 +15,9 @@
 Route::group(['middleware' => 'MDadmi'], function () {
   Route::resource('personas', 'PersonasController');
 
+  Route::resource('medhorarios', 'HorariosMedicosController');
+  Route::resource('cambiar/{idbloque}/{medDNI}/', 'HorariosMedicosController@resaltar');
+
   Route::resource('medicos', 'MedicosController');
   Route::resource('consultorios', 'ConsultoriosController');
   Route::resource('especialidades','especialidadesController');
@@ -56,8 +59,6 @@ Route::resource('inicio', 'InicioController');
 Route::get('configuracion', function () {
     return view('configuracion');
 });
-
-Auth::routes();
 
 Route::get('rtabout', function () {
     return view('about');
