@@ -51,6 +51,10 @@ Route::group(['middleware' => 'MDmedico'], function () {
 });
 
 
+Route::resource('medcitas','CitasMedicosController');
+Route::get('/medcitas/{dniMed}/sancionar', ['uses' => 'CitasMedicosController@sancionar']);
+Route::get('/medcitas/{dniMed}/enlistar', ['uses' => 'CitasMedicosController@enlistar']);
+
 
 Route::get('/', 'InicioController@index');
 
@@ -72,3 +76,7 @@ Route::get('rtgallery', function () {
 Route::get('rtcontact', function () {
     return view('contact');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
