@@ -78,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					@if (Auth::guest())
 							<li><a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-user" 		aria-hidden="true"></span>Iniciar sesión</a></li>
-							<li><a href="#" data-toggle="modal" data-target="#myModal5"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Regístrate</a></li>
+
 					@else
 
 							<li class="dropdown">
@@ -280,7 +280,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		@if(!Auth::guest())
-		@if(Auth::user()->tipo=='Paciente')
+		@if(Auth::user()->tipo=='Paciente'||Auth::user()->tipo=='Admi')
 		<div name="book" id="book" class="col-md-4 content_middle wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.3s">
 			<h3>Reservar una cita</h3>
 			<form method="post" action="/reservas/horario">
@@ -293,7 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</select>
 
 				<input type="submit" value="Reserver">
-				
+
 			</form>
 		</div>
 		@endif
