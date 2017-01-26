@@ -15,6 +15,9 @@
 Route::group(['middleware' => 'MDadmi'], function () {
   Route::resource('personas', 'PersonasController');
 
+  Route::resource('medhorarios', 'HorariosMedicosController');
+  Route::resource('cambiar/{idbloque}/{medDNI}/', 'HorariosMedicosController@resaltar');
+
   Route::resource('medicos', 'MedicosController');
   Route::resource('consultorios', 'ConsultoriosController');
   Route::resource('especialidades','especialidadesController');
@@ -40,7 +43,7 @@ Route::group(['middleware' => 'MDpaciente'], function () {
   Route::get('reservas_Almacenar','ReservaController@almacenar');
   Route::get('Recuperar_Datos_Cita','ReservaController@Recuperar_Bloque');
   });
-  
+
 Route::group(['middleware' => 'MDmedico'], function () {
 });
 

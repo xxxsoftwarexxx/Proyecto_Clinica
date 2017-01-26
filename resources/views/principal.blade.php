@@ -77,6 +77,11 @@
                     </ul>
                   </li>
                   @if( Auth::user()->tipo=='Admi' )
+                  <li><a><i class="fa fa-desktop"></i> Procesos Administrador<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/medhorarios">Horario Medico</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-table"></i> Mantenimientos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                        <li>
