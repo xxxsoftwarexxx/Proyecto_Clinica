@@ -53,8 +53,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
+    protected function validator(array $data)  {
         return Validator::make($data, [
             'dni' => 'required|max:255',
             'password' => 'required|min:6|confirmed',
@@ -69,11 +68,9 @@ class RegisterController extends Controller
      */
      public function register(Request $request)
      {
-      $this->validator($request->all())->validate();
-//      $this->create($request->all());
-
-           event(new Registered($dni = $this->create($request->all())));
-          $this->guard()->login($dni);
+        $this->validator($request->all())->validate();
+        event(new Registered($dni = $this->create($request->all())));
+        $this->guard()->login($dni);
          return redirect($this->redirectPath());
      }
     protected function create(array $data)

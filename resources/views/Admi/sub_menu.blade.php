@@ -5,7 +5,8 @@
 			<div class="login">
 			<ul >
 
-					<li><a href="pacientes"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>mantenimientos</a></li>
+				<li><a href="pacientes"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>mantenimientos</a></li>
+				<li><a href="medhorarios"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>HORARIOS DE MEDICOS</a></li>
 					<li><a href="#book"><span class="	glyphicon glyphicon-pushpin" aria-hidden="true"></span>citas</a></li>
 					<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>reportes</a></li>
 					<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>otros</a></li>

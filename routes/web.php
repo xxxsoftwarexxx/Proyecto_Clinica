@@ -33,6 +33,8 @@ Route::group(['middleware' => 'MDadmi'], function () {
   Route::resource('pacientes','PacientesController');
   Route::resource('p_horario','p_horarioController');
   Route::resource('telefono','TelefonoController');
+  Route::resource('medhorarios', 'HorariosMedicosController');
+  Route::resource('cambiar/{idbloque}/{medDNI}/', 'HorariosMedicosController@resaltar');
 
   });
 
@@ -48,8 +50,11 @@ Route::group(['middleware' => 'MDpaciente'], function () {
 Route::group(['middleware' => 'MDmedico'], function () {
 });
 
-Route::resource('medhorarios', 'HorariosMedicosController');
-Route::resource('cambiar/{idbloque}/{medDNI}/', 'HorariosMedicosController@resaltar');
+
+Route::resource('medcitas','CitasMedicosController');
+Route::get('/medcitas/{dniMed}/sancionar', ['uses' => 'CitasMedicosController@sancionar']);
+Route::get('/medcitas/{dniMed}/enlistar', ['uses' => 'CitasMedicosController@enlistar']);
+
 
 Route::get('/', 'InicioController@index');
 

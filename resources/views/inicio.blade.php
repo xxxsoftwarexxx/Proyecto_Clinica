@@ -297,6 +297,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 </div>
+
 <!-- //content -->
 <!-- services -->
 <div class="services">
@@ -552,17 +553,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																			<strong>{{ $errors->first('password') }}</strong>
 																	</span>
 															@endif
-													</div>
-											</div>
-
-											<div class="form-group">
-													<label for="tipo" class="col-md-4 control-label">Tipo de Usuario</label>
-													<div class="col-md-6">
-															<select id="tipo"  class="form-control" name="tipo" required>
-																<option value="Paciente">Paciente</option>
-																<option value="Medico">Medico</option>
-																<option value="Admi">Admi</option>
-															</select>
 													</div>
 											</div>
 

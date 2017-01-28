@@ -5,8 +5,9 @@
 			<div class="login">
 				<ul>
 					<li><a href="">Profile</a></li>
-					<li><a href="">Consultas del Dia</a></li>
+					<li><a href="medcitas">Consultas del Dia</a></li>
 					<li><a href="">Reportes</a></li>
+
 				</ul>
 			</div>
 			<div class="clearfix"></div>
