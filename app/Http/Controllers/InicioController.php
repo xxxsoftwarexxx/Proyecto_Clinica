@@ -30,7 +30,7 @@ class InicioController extends Controller
         if($var->tipo=='Paciente'){
           $var=DB::table('pacientes')->where('dni', Auth::user()->dni)->first();
           $var2='Paciente: '.$var->nombres." ".$var->apellidos;
-          return view('inicio',['user_name'=>$var2,'especialidades'=>$especialidades]);
+          return view('inicio',['user_name'=>$var2,'Datos_Paciente'=>$var,'especialidades'=>$especialidades]);
         }else        {
           $var2=$var->dni;
           return view('inicio',['user_name'=>$var2,'especialidades'=>$especialidades]);

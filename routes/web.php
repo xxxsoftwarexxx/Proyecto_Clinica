@@ -71,3 +71,7 @@ Route::get('rtgallery', function () {
 Route::get('rtcontact', function () {
     return view('contact');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
