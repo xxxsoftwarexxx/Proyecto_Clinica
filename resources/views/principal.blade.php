@@ -322,29 +322,17 @@
 
           </div>
           <!-- /top tiles -->
-
             <div class="row">
                 @yield('Mantenimiento')
             </div>
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Edited and configured by <a href="https://colorlib.com">Greg</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
       </div>
     </div>
-
 
     <!-- jQuery -->
     <script src={{ URL::asset("js/jquery.min.js") }}></script>
     <!-- Bootstrap -->
     <script src={{ URL::asset("js/bootstrap.min.js") }}></script>
     <!-- FastClick -->
-
     <!-- Custom Theme Scripts -->
     <script src={{ URL::asset("js/custom.min.js") }}></script>
      @yield('js')

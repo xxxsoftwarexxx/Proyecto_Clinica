@@ -14,10 +14,7 @@ class InicioController extends Controller
 {
 
   public function index(){
-
     $especialidades = DB::table('especialidades')->get();
-  
-
     if(Auth::guest()){
       return view('inicio',['user_name'=>'','especialidades'=>$especialidades]);
     }else{
@@ -26,16 +23,16 @@ class InicioController extends Controller
           $var=DB::table('medicos')->where('dni', Auth::user()->dni)->first();
           $var2='Medico: '.$var->nombres." ".$var->apellidos;
           return view('inicio',['user_name'=>$var2,'especialidades'=>$especialidades]);
-        }else
+        }else{
         if($var->tipo=='Paciente'){
           $var=DB::table('pacientes')->where('dni', Auth::user()->dni)->first();
           $var2='Paciente: '.$var->nombres." ".$var->apellidos;
           return view('inicio',['user_name'=>$var2,'Datos_Paciente'=>$var,'especialidades'=>$especialidades]);
-        }else        {
+        }else{
           $var2=$var->dni;
           return view('inicio',['user_name'=>$var2,'especialidades'=>$especialidades]);
         }
-
-    }
+      }
+	  }
   }
 }

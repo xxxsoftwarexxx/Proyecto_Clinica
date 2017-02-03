@@ -59,24 +59,18 @@ Route::get('/medcitas/{dniMed}/enlistar', ['uses' => 'CitasMedicosController@enl
 Route::get('/', 'InicioController@index');
 
 Route::resource('inicio', 'InicioController');
-
+Route::get('about', function () {
+    return view('about');
+});
+Route::get('gallery', function () {
+    return view('gallery');
+});
+Route::get('contact', function () {
+    return view('contact');
+});
 Route::get('configuracion', function () {
     return view('configuracion');
 });
-
-Route::get('rtabout', function () {
-    return view('about');
-});
-Route::get('rtspec', function () {
-    return view('codes');
-});
-Route::get('rtgallery', function () {
-    return view('gallery');
-});
-Route::get('rtcontact', function () {
-    return view('contact');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
