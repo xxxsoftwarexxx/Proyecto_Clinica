@@ -12,20 +12,23 @@
             <div class="text-center"><h2 align="center">Agregar Escuela Profesional</h2>
             </div></br>
 
-
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="id" name="id" placeholder="ID" class="form-control" required>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-mortar-board bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="id" name="id" placeholder="Código de Escuela Profesional" class="form-control" required>
+                    <label>Código de Escuela Profesional</label>
                   </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
-                  <div class="col-md-6 col-xs-10">
-                      <input id="nombre"  name="nombre" placeholder="nombre" class="form-control" required>
+            </div></br>
+
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-university bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="id" name="id" placeholder="Nombre de Escuela Profesional" class="form-control" required>
+                    <label>Nombre de Escuela Profesional</label>
                   </div>
-            </div></br></br>
+            </div></br>
 
 
             <div class="form-group">

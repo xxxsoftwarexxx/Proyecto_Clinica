@@ -10,10 +10,7 @@
     <script src={{ URL::asset('bower_components/datatables-responsive/css/dataTables.responsive.css') }}></script>
 @endsection
 
-@section('Titulo')
-<i class="fa fa-gear fa-fw"></i>
-<a1>Mantenimiento de Pacientes<a1>
-@endsection
+
 
 @section('Contenido')
         <div class="dataTable_wrapper table-responsive">
@@ -51,8 +48,7 @@
 
                         <td align="center">
                             <button type="button" class="btn btn-success btn-xs"
-                            onClick="location.href='/pacientes/{{ $paciente->dni }}/edit'">
-                            Editar</button>
+                            onClick="location.href='/pacientes/{{ $paciente->dni }}/edit'">   Editar   </button>
 
 
                               <form action="/pacientes/{{ $paciente->dni }}" method="post">

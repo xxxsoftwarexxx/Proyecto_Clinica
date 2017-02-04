@@ -14,89 +14,90 @@
             <div class="text-center"><h2 align="center">Modificar Médico</h2>
             </div></br>
 
-
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$medicos->dni}}" required>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="dni" name="id" placeholder="DNI" class="form-control" value="{{$medicos->dni}}"  required>
+                    <label>DNI</label>
                   </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
-                  <div class="col-md-6 col-xs-10">
-                      <input id="Password" type="Password" name="contraseña" placeholder="Password" class="form-control" value="{{$medicos->contraseña}}" required>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Password" name="contraseña" placeholder="Contraseña" class="form-control" value="{{$medicos->contraseña}}" required>
+                    <label>Contraseña</label>
                   </div>
-            </div></br></br>
-
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="Codigo" name="codigo" placeholder="código" class="form-control" value="{{$medicos->codigo}}" required>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Codigo" name="codigo" placeholder="Código Médico" class="form-control" value="{{$medicos->codigo}}" required>
+                    <label>Código Médico</label>
                   </div>
-            </div></br></br>
-
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="Nombres" name="nombres" placeholder="nombres" class="form-control" value="{{$medicos->nombres}}" required>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Nombres" name="nombres" placeholder="Nombres" class="form-control" value="{{$medicos->nombres}}" required>
+                    <label>Nombres</label>
                   </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="Apellidos" name="apellidos" placeholder="apellidos" class="form-control" value="{{$medicos->apellidos}}" required>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Apellidos" name="apellidos" placeholder="Apellidos" class="form-control" value="{{$medicos->apellidos}}" required>
+                    <label>Apellidos</label>
                   </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="Fecha_Nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" class="form-control" value="{{$medicos->fecha_nacimiento}}" required>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Fecha_Nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" class="form-control" value="{{$medicos->fecha_nacimiento}}" required>
+                    <label>Fecha de Nacimiento</label>
                   </div>
-            </div></br></br>
-
-           <div class="form-group">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-
-                <div class="col-md-6 col-xs-10">
-                    <input id="Sexo" name="sexo" placeholder="E-Mail" class="form-control" value="{{$medicos->sexo}}" required>
-                </div>
-          </div></br></br>
-
-
-          <div class="form-group">
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-female bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Sexo" name="sexo" placeholder="Sexo" class="form-control" value="{{$medicos->sexo}}" required>
+                    <label>Sexo</label>
+                  </div>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
-
-                <div class="col-md-6 col-xs-10">
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
                     <input id="Telefono" name="telefono" placeholder="Teléfono" class="form-control" value="{{$medicos->telefono}}" required>
-                </div>
-          </div></br></br>
-
-             <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="E_mail" name="correo" placeholder="E-Mail" class="form-control" value="{{$medicos->correo}}" required>
+                    <label>Teléfono</label>
                   </div>
-            </div></br></br>
-
-
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="Direccion" name="direccion" placeholder="Dirección" class="form-control" value="{{$medicos->direccion}}" required>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="E_mail" name="correo" placeholder="E-Mail" class="form-control" value="{{$medicos->correo}}" required>
+                    <label>E-Mail</label>
                   </div>
-            </div></br></br>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Dirección" name="direccion" placeholder="Dirección" class="form-control" value="{{$medicos->direccion}}" required>
+                    <label>Dirección</label>
+                  </div>
+            </div>
 
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-bitbucket bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <select id="Estado" name="estado" placeholder="Estado" class="form-control">
                         @if($medicos->estado=="1")
                           <option selected >Habilitado</option>
@@ -106,14 +107,15 @@
                           <option selected >Deshabilitado</option>
                         @endif
                       </select>
+                      <label>Estado<label>
+
 
                   </div>
-            </div></br></br>
+            </div>
 
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-heartbeat bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <select id="Especialidad" name="especialidades_codigo" placeholder="Especialidad" class="form-control">
                         @foreach($especialidades as $especialidad)
                             @if($especialidad->codigo==$medicos->especialidades_codigo)
@@ -124,6 +126,7 @@
                             @endif
                         @endforeach
                       </select>
+                      <label>Especialidad<label>
 
                   </div>
             </div></br></br>

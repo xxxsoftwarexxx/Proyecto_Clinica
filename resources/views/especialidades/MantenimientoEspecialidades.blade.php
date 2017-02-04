@@ -3,11 +3,11 @@
 @section('Mantenimiento')
 <div class="col-lg-12">
     <div class="panel panel-default">
-        <div class="panel-heading">
+        <div class="panel-heading" style="height:60px;">
               @yield('Titulo')
             <div class="pull-right">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                    <button type="button" class="menu_button dropdown-toggle" data-toggle="dropdown">
                         Acciones
                         <span class="caret"></span>
                     </button>

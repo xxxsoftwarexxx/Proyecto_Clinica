@@ -17,36 +17,41 @@
             <div class="text-center"><h2 align="center">Agregar Especialidade</h2>
             </div></br>
 
-
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="codigo" name="codigo" placeholder="CODIGO" class="form-control" required>
-                  </div>
-            </div></br></br>
-
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="nombre" name="nombre" placeholder="NOMBRE" class="form-control" required>
-                  </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="nombre" name="habilitado" placeholder="Estado" class="form-control" required>
-                  </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="nombre" name="especialidades_codigo" placeholder="Codigo de Especialidad" class="form-control" required>
-                  </div>
-            </div></br></br>
+            <div class="input-group col-md-12 col-xs-12">
+                            <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-h-square bigicon"></i></span>
+                            <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                              <div align="center" class="group-control">
+                                <input id="nombre" name="especialidades_codigo" placeholder="Código de la Especialidad" class="form-control" required>
+                                <label>Código de la Especialidad</label>
+                              </div>
+                        </div>
+            <div class="input-group col-md-12 col-xs-12">
+                            <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
+                            <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                              <div align="center" class="group-control">
+                                <input id="nombre" name="nombre" placeholder="Nombre de la Especialidad" class="form-control" required>
+                                <label>Nombre de la Especialidad</label>
+                              </div>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+               <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-bitbucket bigicon"></i></span>
+               <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                 <div align="center" class="group-control">
+                   <select id="Estado" name="estado" placeholder="Estado" class="form-control" >
+                       <option>Habilitado</option>
+                       <option>Deshabilitado</option>
+                   </select>
+                <label>Estado de la Especialidad</label>
+                 </div>
+           </div>
+           <div class="input-group col-md-12 col-xs-12">
+              <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa  fa-medkit bigicon"></i></span>
+              <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                <div align="center" class="group-control">
+                  <input id="codigo" name="codigo" placeholder="Código del Consultorio" class="form-control" required>
+                  <label>Código del Consultorio</label>
+                </div>
+          </div>
 
             <div class="form-group">
                   <div class="col-md-12 text-center">

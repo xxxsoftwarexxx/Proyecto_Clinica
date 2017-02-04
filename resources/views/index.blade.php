@@ -81,7 +81,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 											{{$user_name}} <span class="caret"></span>
 									</a>
-
 									<ul class="dropdown-menu" role="menu">
 											<li>
 													<a href="{{ url('/logout') }}"
@@ -89,7 +88,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																			 document.getElementById('logout-form').submit();">
 															Logout
 													</a>
-
 													<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 															{{ csrf_field() }}
 													</form>
@@ -107,7 +105,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</form>
 							</li>
 					@endif
-
 				</ul>
 			</div>
 		</div>
@@ -116,13 +113,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //header2 -->
 @if(!Auth::guest())
 	@if(Auth::user()->tipo=='Medico')
-		@yield('menumedico')
+		@include('medicos.sub_menu')
 	@endif
 	@if(Auth::user()->tipo=='Paciente')
-    @yield('menupaciente')
+	<div class="header wow zoomIn">
+		<div class="container">
+			<div class="header_right">
+				<div class="login">
+					<ul>
+						<li><a id="Cargar_Datos"> Perfil</a></li>
+						<li><a href="#book">Reservar cita</a></li>
+						<li><a href="">Reportes</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
 	@endif
 	@if(Auth::user()->tipo=='Admi')
-		@yield('menuadmi')
+		@include('Admi.sub_menu')
 	@endif
 @endif
 
@@ -144,10 +155,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--horatio">
 						<ul class="nav navbar-nav menu__list">
+							@if(Auth::guest())
 							<li class="menu__item menu__item--current"><a href="inicio" class="menu__link">Inicio</a></li>
 							<li class="menu__item"><a href="about" class="menu__link">Sobre nosotros</a></li>
 							<li class="menu__item"><a href="gallery" class="menu__link">Galería</a></li>
 							<li class="menu__item"><a href="contact" class="menu__link">Contactanos</a></li>
+							@endif
 						</ul>
 					</nav>
 				</div>
@@ -343,7 +356,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="login-grids">
 
 									<div class="login-right">
-										<h3>Sign in with your account</h3>
+										<h3>Ingrese con su cuenta</h3>
 										<form method="POST" action="/login">
 											<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
@@ -352,7 +365,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 													<div class="col-md-6">
 															<input id="email" type="text" class="form-control" maxlength="8" name="dni" value="{{ old('dni') }}" required autofocus>
-
 															@if ($errors->has('email'))
 																	<span class="help-block">
 																			<strong>{{ $errors->first('email') }}</strong>
@@ -363,10 +375,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 													<label for="password" class="col-md-4 control-label">Password</label>
-
 													<div class="col-md-6">
 															<input id="password" type="password" class="form-control" name="password" required>
-
 															@if ($errors->has('password'))
 																	<span class="help-block">
 																			<strong>{{ $errors->first('password') }}</strong>

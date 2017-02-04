@@ -5,7 +5,7 @@
     left: 0;
     top: 0;
     cursor: text;
-    font-size: 75%;
+    font-size: 100%;
     opacity: 1;
     -webkit-transition: all .2s;
             transition: all .2s;
@@ -28,13 +28,7 @@
     opacity: 1;
     -webkit-transition: all .2s;
             transition: all .2s; }
-  .has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
-    opacity: 0; }
-  .has-float-label .form-control:placeholder-shown:not(:focus) + label {
-    font-size: 150%;
-    opacity: .5;
-    top: .3em;
-    font-weight: normal; }
+  .has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {}
 
 .input-group .has-float-label {
   display: table-cell; }
@@ -47,3 +41,24 @@
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     margin-left: -1px; }
+
+    .opcion{
+      font-size: 14px;
+    }
+    .menu_button{
+      font-size: 14px;
+    	height: 35px;
+    	width:100px;
+      border-radius: 10px;
+      background:#26B99A;border:1px solid #169F85;
+      color: white;
+
+    }
+
+.titulo{
+  font-size: 16px;
+}
+.button{
+  height: 15px;
+}
+    .menu_button:hover,.menu_button:focus,.menu_button:active,.menu_button.active,.open .dropdown-toggle.menu_button{background:#169F85}.btn-dar

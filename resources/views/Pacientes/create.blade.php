@@ -1,9 +1,6 @@
 @extends('Pacientes.mantenimiento_pacientes')
 
-@section('Titulo')
-<i class="fa fa-gear fa-fw"></i>
-<a1>Mantenimiento de Pacientes<a1>
-@endsection
+
 @section('Contenido')
       <form role="form" method="post" action="/pacientes" autocomplete="off">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -13,125 +10,130 @@
             </div></br>
 
 
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <select onclick="MostrarFormulario()" id="Tipo_Paciente" name="tipo_paciente" placeholder="Tipo Paciente" class="form-control" required>
+              <div class="input-group col-md-12 col-xs-12">
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                  <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                <div align="center" class="group-control">
+                      <select onclick="MostrarFormulario()" id="Tipo_Paciente" name="tipo_paciente"  class="form-control" required>
                         <option value="ESTUDIANTE">ESTUDIANTE</option>
-                        <option value="PERSONA EXTERNA">PERSONA EXTERNA</option>
+                        <option value="PERSONA EXTERNA" selected>PERSONA EXTERNA</option>
                       </select>
+                      <label>Tipo de Paciente</label>
                   </div>
-            </div></br></br>
-
-
+            </div>
+         <div>
             <div id='Seccion_Estudiante' style="display:none">
-                <div class="form-group">
+              <div class="input-group col-md-12 col-xs-12">
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                  <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                <div align="center" class="group-control">
+                    <input id="Codigo" name="codigo" placeholder="Ejm. 137280" class="form-control" required>
+                    <label>Código de Estudiante</label>
+                  </div></br>
+            </div>
 
-                    <div class="col-md-6 col-xs-10">
-                        <input id="Codigo" name="codigo" placeholder="Código" class="form-control">
-                    </div>
-                </div></br></br>
-
-                <div class="form-group">
-                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                    <div class="col-md-6 col-xs-10">
-                        <select id="Escuela" name="escuelas_profesionales_id" placeholder="Escuela Profesional" class="form-control">
+            <div class="input-group col-md-12 col-xs-12">
+                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-university bigicon"></i></span>
+                  <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                    <div align="center" class="group-control">
+                        <select id="Escuela" name="escuelas_profesionales_id" class="form-control">
                           @foreach($escuelas_profesionales as $escuela)
                             <option value={{$escuela->id}} >{{$escuela->nombre}}</option>
                           @endforeach
                         </select>
+                  <label>Escuela Profesional</label>
                     </div>
-                </div></br></br>
+                </div></div>
             </div>
 
             <div id="Seccion_General">
-                <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                      <div class="col-md-6 col-xs-10">
-                          <input id="dni" name="dni" placeholder="DNI" class="form-control" required>
+              <div class="input-group col-md-12 col-xs-12">
+                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                  <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                    <div align="center" class="group-control">
+                          <input id="dni" name="dni" placeholder="Ejm. 70502321 " class="form-control" required>
+                          <label>DNI</label>
                       </div>
-                </div></br></br>
-
-                <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
-                      <div class="col-md-6 col-xs-10">
-                          <input id="Password" type="Password" name="contraseña" placeholder="Password" class="form-control" required>
+                </div>
+                <div class="input-group col-md-12 col-xs-12">
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
+                    <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                      <div align="center" class="group-control">
+                        <input id="Password" name="contraseña" type=Password placeholder="********" class="form-control" required autocomplete="new-password">
+                        <label>Contraseña</label>
                       </div>
-                </div></br></br>
+                </div>
 
-                <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                      <div class="col-md-6 col-xs-10">
-                          <input id="Nombres" name="nombres" placeholder="Nombres" class="form-control" required>
+                </div>
+                <div class="input-group col-md-12 col-xs-12">
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                    <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                      <div align="center" class="group-control">
+                          <input id="Nombres" name="nombres" placeholder="Ejm. Raisa" class="form-control" required>
+                            <label>Nombres</label>
                       </div>
-                </div></br></br>
-
-                <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                      <div class="col-md-6 col-xs-10">
-                          <input id="Apellidos" name="apellidos" placeholder="Apellidos" class="form-control" required>
+                </div>
+                <div class="input-group col-md-12 col-xs-12">
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                    <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                      <div align="center" class="group-control">
+                          <input id="Apellidos" name="apellidos" placeholder="Ejm. Sanchez Farfan" class="form-control" required>
+                          <label>Apellidos</label>
                       </div>
-                </div></br></br>
-
-                <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
-
-                      <div class="col-md-6 col-xs-10">
-                          <input id="Fecha_Nacimiento" name="fecha_nacimiento" type ="date" placeholder="Fecha de Nacimiento" class="form-control" required>
+                </div>
+                <div class="input-group col-md-12 col-xs-12">
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+                    <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                      <div align="center" class="group-control">
+                          <input id="Fecha_Nacimiento" name="fecha_nacimiento" type ="date" class="form-control" required>
+                            <label>Fecha de Nacimiento</label>
                       </div>
-                </div></br></br>
-
-               <div class="form-group">
-                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-
-                    <div class="col-md-6 col-xs-10">
+                </div>
+                <div class="input-group col-md-12 col-xs-12">
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-female bigicon"></i></span>
+                    <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                      <div align="center" class="group-control">
                         <select class="form-control" id="Sexo" name="sexo">
                           <option>MASCULINO</option>
                           <option>FEMENINO</option>
                         </select>
+                        <label>Sexo</label>
                     </div>
-              </div></br></br>
-
-
-              <div class="form-group">
-                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
-
-                    <div class="col-md-6 col-xs-10">
-                        <input id="Telefono" name="telefono" placeholder="Teléfono" class="form-control" required>
+              </div>
+              <div class="input-group col-md-12 col-xs-12">
+                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
+                  <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                    <div align="center" class="group-control">
+                        <input id="Telefono" name="telefono" placeholder="Ejm. 984572612" class="form-control" required>
+                          <label>Teléfono</label>
                     </div>
-              </div></br></br>
-
-                 <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-
-                      <div class="col-md-6 col-xs-10">
-                          <input id="E_mail" name="correo" placeholder="E-Mail" class="E_mail" required>
+              </div>
+              <div class="input-group col-md-12 col-xs-12">
+                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
+                  <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                    <div align="center" class="group-control">
+                      <input id="E_mail" name="correo" placeholder="Ejm. maria_22@gmail.com" class="form-control" required>
+                      <label>E-Mail</label>
+                    </div>
+              </div>
+              <div class="input-group col-md-12 col-xs-12">
+                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                  <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                    <div align="center" class="group-control">
+                          <input id="Direccion" name="direccion" placeholder="Ejm. Av. Universitaria 548" class="form-control" required>
+                          <label>Dirección</label>
                       </div>
-                </div></br></br>
+                </div>
 
-
-                <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
-
-                      <div class="col-md-6 col-xs-10">
-                          <input id="Direccion" name="direccion" placeholder="dirección" class="form-control" required>
-                      </div>
-                </div></br></br>
-
-                <div class="form-group">
-                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
-
-                      <div class="col-md-6 col-xs-10">
+                <div class="input-group col-md-12 col-xs-12">
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-cog bigicon"></i></span>
+                    <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                      <div align="center" class="group-control">
                           <select id="Estado" name="estado" placeholder="Estado" class="form-control">
                               <option>Habilitado</option>
                               <option>Deshabilitado</option>
                           </select>
+                          <label>Estado del Paciente</label>
 
                       </div>
                 </div></br></br>

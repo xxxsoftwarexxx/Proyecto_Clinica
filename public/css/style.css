@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
 html, body{
 	margin:0;
 	background:	#fff;
@@ -69,7 +70,7 @@ body a:hover{
 .copy-right{
     color: #9caec2;
     font-size: 14px;
-    margin-top: 50px;	
+    margin-top: 50px;
 }
 .copy-right a {
     color: #9caec2;
@@ -82,7 +83,7 @@ body a:hover{
     background: #00b4f9;
     width: 50px;
     height: 2px;
-    margin-top: 20px;	
+    margin-top: 20px;
 }
 .contact-left {
     border-right: 1px solid #9caec2;
@@ -134,7 +135,7 @@ ul.con-icons li span {
     margin-right: 9px;
 }
 ul.con-icons li a {
-    color: #9caec2;	
+    color: #9caec2;
 	text-decoration:none;
 }
 ul.con-icons li a:hover {
@@ -271,14 +272,14 @@ ul.con-icons{
 	color:#000;
 }
 .logo h1 a,.logo h1 a:hover{
-    color: #FDA30E;	
-	text-decoration:none;	
+    color: #FDA30E;
+	text-decoration:none;
 }
 .logo h1 a i{
     background: url(../images/clinic.png) no-repeat 0px 0px;
 	width:32px;
 	height:32px;
-	display:inline-block;	
+	display:inline-block;
 }
 /*-- nav-hover --*/
 .menu__list {
@@ -720,7 +721,7 @@ ul.social-slide li i.mac{
   -ms-border-radius: 30px;
 }
 .callbacks_here a:after{
-	background: #00a4e4;	
+	background: #00a4e4;
 }
 a.callbacks_nav.callbacks2_nav.prev {
 background: transparent url("../images/2.png") no-repeat left top;
@@ -758,7 +759,7 @@ top: 9%;
     margin: 6px 0 17px 0px;
 }
 .login-right input[type="text"]:hover, .login-right input[type="password"]:hover, .login-bottom input[type="text"]:hover, .login-bottom input[type="password"]:hover{
-    border: 1px solid #FDA30E;	
+    border: 1px solid #FDA30E;
 }
 .login-right h4,.login-bottom h4 {
     color: #000000;
@@ -803,7 +804,7 @@ top: 9%;
     text-decoration: none;
 }
 .sign-in a:hover{
-    color: #FDA30E;	
+    color: #FDA30E;
 }
 .single-bottom input[type="checkbox"] {
   display: none;
@@ -850,7 +851,7 @@ top: 9%;
     text-decoration: none;
 }
 .login-grids p a:hover{
-    color: #FDA30E;	
+    color: #FDA30E;
 }
 /*-- //login --*/
 /*-- banner --*/
@@ -861,7 +862,7 @@ top: 9%;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 700px;		
+    min-height: 700px;
 }
 .banner2{
     background: url(../images/banner1.jpg) no-repeat center;
@@ -870,7 +871,7 @@ top: 9%;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 700px;		
+    min-height: 700px;
 }
 .banner-info,.banner-info2 {
     margin-top: 11em;
@@ -922,7 +923,7 @@ top: 9%;
 
 }
 .hvr-outline-out:hover{
-  color:#fff !important;	
+  color:#fff !important;
 }
 .banner-info p {
     font-size: 14px;
@@ -935,7 +936,7 @@ top: 9%;
     font-size: 14px;
     color: #fff;
     line-height: 2.2em;
-    margin: 30px 0 45px;	
+    margin: 30px 0 45px;
 }
 /*-- //banner --*/
 /*-- content --*/
@@ -949,7 +950,7 @@ top: 9%;
     color: #fff;
     text-decoration: none;
     background: url(../images/ar1.png) no-repeat 0px 2px;
-    padding-left: 36px;	
+    padding-left: 36px;
 }
 .content_left ul li a:hover {
     padding-left: 44px;
@@ -975,7 +976,7 @@ top: 9%;
     color: #00A4E4;
     font-size: 27px;
     margin-bottom: 30px;
-    text-align: center;		
+    text-align: center;
 }
 .content_middle input[type="text"],.content_middle select{
 	background:none;
@@ -984,13 +985,13 @@ top: 9%;
 	outline:none;
 	width:100%;
 	margin-bottom:15px;
-	padding:8px 10px;	
+	padding:8px 10px;
 }
 .content_middle input[type="submit"]{
 	background:#FDA30E;
 	padding:10px 20px;
 	font-size:16px;
-	color:#fff;	
+	color:#fff;
 	border:none;
 	outline:none;
 }
@@ -1257,7 +1258,7 @@ h3.tittle{
 	padding:12px 10px;
 }
 .contact-grid input[type="text"]:hover,.contact-grid input[type="email"]:hover,.contact-grid textarea:hover,.newsletter:hover,.contact-grid input[type="password"]:hover{
-    border: 1px solid #FDA30E;	
+    border: 1px solid #FDA30E;
 	transition:.5s all;
 	-webkit-transition:.5s all;
 	-moz-transition:.5s all;
@@ -1272,7 +1273,7 @@ h3.tittle{
 	margin:.5em 0;
 }
 .contact-grid input[type="password"]{
-	margin-bottom:.5em;	
+	margin-bottom:.5em;
 }
 .contact-grid input[type="submit"]{
 	outline:none;
@@ -1334,8 +1335,8 @@ h3.tittle{
 }
 .tab-content {
 	padding: 15px;
-	padding-top: 0px; 
-	padding-left: 0px; 
+	padding-top: 0px;
+	padding-left: 0px;
 	padding-bottom: 0px;
 	border-top: none;
 }
@@ -1387,7 +1388,7 @@ h3.tittle{
 .grid_4{
 	background:#fff;
 	padding:0em 0em 0em 0em;
-}  
+}
 .grid_5{
 	background:#fff;
 	padding:1em 0 2em 0;
@@ -1755,7 +1756,7 @@ p.para_abt {
     font-size: 23px;
     color: #FDA30E;
 	line-height:1.4em;
-} 
+}
 .choose-grid p {
     font-size: 14px;
     line-height: 2em;
@@ -1816,10 +1817,10 @@ p.para_abt {
 
 }
 @media (max-width: 1366px){
-	
+
 }
 @media (max-width: 1280px){
-	
+
 }
 @media (max-width: 1080px){
 	.map iframe {
@@ -1892,7 +1893,7 @@ p.para_abt {
 	.info-gal-con h4 {
 		font-size: 22px;
 		margin-bottom: 16px;
-	}	
+	}
 }
 @media (max-width: 1024px){
 	.banner2,.banner1 {
@@ -1909,7 +1910,7 @@ p.para_abt {
 		width: 62%;
 	}
 	.banner-info2 p,.content_left ul li,.services_left p.ser-para,.list-left p,.ser-bottom h5,.contact-left p.para,ul.con-icons li,.copy-right,.capil_text p,.ind-gds p,.choose-grid p,.testimonials-grid2 p,.info-gal-con p,.contact-left-map p{
-		font-size: 13px;	
+		font-size: 13px;
 	}
 	.banner2, .banner1 {
 		min-height: 499px;
@@ -1926,7 +1927,7 @@ p.para_abt {
 	}
 	.contact-grids {
 		margin-bottom: 72px;
-	}	
+	}
 }
 @media (max-width: 991px){
 	.navbar-default .navbar-nav > li > a {
@@ -2079,7 +2080,7 @@ p.para_abt {
 	.contact-grid,.contact-left-map {
 		float: left;
 		width: 50%;
-	}	
+	}
 }
 @media (max-width: 800px){
 	h3.tittle {
@@ -2093,10 +2094,10 @@ p.para_abt {
 	}
 	.contact-grids {
 		margin-bottom: 51px;
-	}	
+	}
 }
 @media (max-width: 768px){
-	
+
 }
 @media (max-width: 767px){
 	ul.nav.navbar-nav.menu__list {
@@ -2109,7 +2110,7 @@ p.para_abt {
 	.navbar-collapse {
 		padding-right: 0px;
 		padding-left: 0px;
-	}	
+	}
 	.navbar-default .navbar-toggle .icon-bar {
 		background-color: #FDA30E;
 	}
@@ -2144,7 +2145,7 @@ p.para_abt {
 	.banner-info p {
 		width: 77%;
 		margin: 9px 0 15px;
-	}	
+	}
 	.header_left ul li {
 		padding: 11px 6px;
 	}
@@ -2182,7 +2183,7 @@ p.para_abt {
 	.contact-left {
 		padding: 45px 0 0px;
 	}
-	
+
 	.contact-right input[type="text"], .contact-right input[type="email"] {
 		width: 35%;
 	}
@@ -2266,7 +2267,7 @@ p.para_abt {
 	}
 	.modal-dialog {
 		width: 454px;
-	}	
+	}
 	.content_left,.content_middle{
 		width: 61%;
 		float: none;
@@ -2333,7 +2334,7 @@ p.para_abt {
 	}
 	.baner-top {
 		width: 63%;
-	}	
+	}
 	h1.t-button, h2.t-button, h3.t-button, h4.t-button, h5.t-button {
 		font-size: 18px;
 	}
@@ -2360,7 +2361,7 @@ p.para_abt {
 	.contact-grid input[type="submit"] {
 		font-size: 16px;
 		padding: 10px 0px;
-	}	
+	}
 	.content_right,.content_left, .content_middle {
 		width: 73%;
 	}
@@ -2440,7 +2441,7 @@ p.para_abt {
 		width: 100%;
 		padding: 50px 0 0 0;
 	}
-	.content_left, .content_middle {	
+	.content_left, .content_middle {
 		width: 100%;
 		padding:0;
 	}
@@ -2458,7 +2459,7 @@ p.para_abt {
 	}
 	.banner-info p,.banner-info2 p{
 		font-size:12px;
-	}	
+	}
 	.banner2, .banner1 {
 		min-height: 322px;
 	}
@@ -2569,12 +2570,12 @@ p.para_abt {
 	}
 	.contact-right input[type="text"], .contact-right input[type="email"] {
 		margin: 0 0 1em 0;
-	}	
+	}
 }
 @media (max-width: 375px){
 	.ui-datepicker {
 		width: 64.7%;
-	}	
+	}
 }
 @media (max-width: 320px){
 	.header_left ul li, .login ul li {
@@ -2661,6 +2662,6 @@ p.para_abt {
 	}
 	.map iframe {
 		min-height: 177px;
-	}	
+	}
 }
 /*-- responsive media queries --*/

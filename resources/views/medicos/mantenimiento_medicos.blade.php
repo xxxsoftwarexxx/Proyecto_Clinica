@@ -3,11 +3,12 @@
 @section('Mantenimiento')
 <div class="col-lg-12">
     <div class="panel panel-default">
-        <div class="panel-heading">
-              @yield('Titulo')
+        <div class="panel-heading" style="height:60px;">
+          <i class="fa fa-gear fa-fw"></i>
+          <a1 class="titulo">Mantenimiento de Médicos<a1>
             <div class="pull-right">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                    <button type="button" class="menu_button dropdown-toggle" data-toggle="dropdown">
                         Acciones
                         <span class="caret"></span>
                     </button>

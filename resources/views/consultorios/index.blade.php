@@ -13,6 +13,7 @@
 @section('Contenido')
       <div class="panel-body">
           <div class="dataTable_wrapper">
+            <div class="col-md-6">
               <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                   <thead>
                       <tr>
@@ -29,7 +30,7 @@
                           <td>{{ $consultorio->ubicacion }}</td>
 
                           <td align="center">
-                            <button type="button" class="btn btn-success btn-xs"
+                            <button style="width:56px" type="button" class="btn btn-success btn-xs"
                             onClick="location.href='/consultorios/{{ $consultorio->id }}/edit'">
                             Editar</button>
                                <form action="/consultorios/{{ $consultorio->id }}" method="post">
@@ -43,7 +44,8 @@
                     @endforeach
                   </tbody>
               </table>
-          </div
+            </div>
+          </div>
       </div>
 @endsection
 
@@ -56,6 +58,7 @@
       <script>
       $(document).ready(function() {
           $('#dataTables-example').DataTable({
+
                   responsive: true
           });
       });

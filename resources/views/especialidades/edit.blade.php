@@ -15,28 +15,32 @@
             </div></br>
 
 
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+            <div class="input-group col-md-12 col-xs-12">
+                            <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-h-square bigicon"></i></span>
+                            <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                              <div align="center" class="group-control">
+                                <input id="codigo" name="codigo" placeholder="Código de la Especialidad" class="form-control"  value="{{$especialidades->codigo}}" required disabled="true">
+                                <label>Código de la Especialidad</label>
+                              </div>
+                        </div>
 
-                  <div class="col-md-6 col-xs-10">
-                      <input id="codigo" name="codigo" placeholder="codigo" class="form-control" value="{{$especialidades->codigo}}" required disabled="true">
-                  </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+            <div class="input-group col-md-12 col-xs-12">
+                            <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
+                            <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                              <div align="center" class="group-control">
+                                <input id="nombre" name="nombre" placeholder="Nombre de la Especialidad" class="form-control" value="{{$especialidades->nombre}}"required>
+                                <label>Nombre de la Especialidad</label>
+                              </div>
+            </div>
 
-                  <div class="col-md-6 col-xs-10">
-                      <input id="nombre" name="nombre" placeholder="NOMBRE" class="form-control" value="{{$especialidades->nombre}}" required >
-                  </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-                  <div class="col-md-6 col-xs-10">
-                      <input id="nombre" name="habilitado" placeholder="Estado" class="form-control" value="{{$especialidades->habilitado}}" required >
-                  </div>
-            </div></br></br>
-
+            <div class="input-group col-md-12 col-xs-12">
+               <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-bitbucket bigicon"></i></span>
+               <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                 <div align="center" class="group-control">
+                   <input id="nombre" name="habilitado" placeholder="Estado de la Especialidad" class="form-control" value="{{$especialidades->habilitado}}" required>
+                   <label>Estado de la Especialidad</label>
+                 </div>
+           </div>
 
             <div class="form-group">
                   <div class="col-md-12 text-center">
