@@ -7,40 +7,41 @@
 
 @section('Titulo')
       <i class="fa fa-gear fa-fw"></i>
-      <a1>Mantenimiento de Especialidades<a1>
+      <a1>MANTENIMIENTO DE ESPECIALIDADES<a1>
 @endsection
 
 @section('Contenido')
       <div class="panel-body">
           <div class="dataTable_wrapper">
               <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                  <thead>
+                  <thead bgcolor = "‎#CCFFFF">
                       <tr>
-                          <th>Codigo</th>
-                          <th>Nombre</th>
-                          <th>Estado</th>
-                          <th>ID del Consultorio</th>
-                          <th>Operaciones</th>
+                          <th align="center">Código</th>
+                          <th align="center">Nombre</th>
+                          <th align="center">ID del Consultorio</th>
+                          <th align="center">Operaciones</th>
 
                       </tr>
                   </thead>
                   <tbody>
-                    @foreach($especialidades as $especialidade)
+                    @foreach($especialidades as $especialidad)
                       <tr class="odd gradeX">
-                          <td>{{ $especialidade->codigo }}</td>
-                          <td>{{ $especialidade->nombre }}</td>
-                          <td>{{ $especialidade->habilitado }}</td>
-                          <td>{{ $especialidade->consultorios_id }}</td>
-                          <td align="center">
-                            <button type="button" class="btn btn-success btn-xs"
-                            onClick="location.href='/especialidades/{{ $especialidade->codigo }}/edit'">
-                            Editar</button>
-                               <form action="/especialidades/{{ $especialidade->codigo }}" method="post">
+                          <td>{{ $especialidad->codigo}}</td>
+                          <td>{{ $especialidad->nombre}}</td>
+                          <td>{{ $especialidad->consultorios_id}}</td>
+                          <td align="center" width = "25%">
+                            <form action="/especialidades/{{ $especialidad->codigo}}" method="post">
                                  {{ csrf_field() }}
-                                 {{ method_field('DELETE')}}
-                                 <button class="btn btn-danger btn-xs">Eliminar</button>
-                               </form>
-
+                                 {{ method_field('PUT')}}
+                            <button type="button" class="btn btn-success btn-sm"
+                            onClick="location.href='/especialidades/{{ $especialidad->codigo }}/edit'">
+                            EDITAR</button>
+                            @if ($especialidad->habilitado == 0)
+                              <button class="btn btn-warning btn-sm">HABILITAR</button>
+                            @else
+                              <button class="btn btn-danger btn-sm">INHABILITAR</button>
+                            @endif
+                            </form>
                            </td>
                       </tr>
                     @endforeach

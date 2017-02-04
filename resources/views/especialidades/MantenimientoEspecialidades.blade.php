@@ -7,17 +7,10 @@
               @yield('Titulo')
             <div class="pull-right">
                 <div class="btn-group">
-                    <button type="button" class="menu_button dropdown-toggle" data-toggle="dropdown">
-                        Acciones
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu pull-right" role="menu">
-                        <li><a type="button" href='/especialidades/create'>Agregar Especialidade</a>
-                        </li>
-                        <li><a type="button" href='/especialidades'>Editar/Eliminar</a>
-                        </li>
-                        </li>
-                    </ul>
+                  <button type="button" class="btn btn-primary btn-md"
+                  onClick="location.href='/especialidades/create'">NUEVA ESPECIALIDAD</button>
+                  <button type="button" class="btn btn-info btn-md"
+                  onClick="location.href='/especialidades'">INDICE</button>
                 </div>
             </div>
         </div>
