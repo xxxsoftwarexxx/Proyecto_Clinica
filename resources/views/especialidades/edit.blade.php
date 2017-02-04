@@ -5,7 +5,7 @@
 <a1>Mantenimiento de Especialidades<a1>
 @endsection
 @section('Contenido')
-        <form method="POST" action="/especialidades/{{ $especialidades->codigo }}" autocomplete="off">
+        <form method="POST" action="/especialidades/{{ $especialidades->codigo}}" autocomplete="off">
           {{csrf_field()}}
           {{method_field('PUT')}}
 
