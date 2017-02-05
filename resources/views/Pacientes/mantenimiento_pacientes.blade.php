@@ -7,19 +7,12 @@
           <i class="fa fa-gear fa-fw"></i>
           <a1 class="titulo">Mantenimiento de Pacientes</a1>
             <div class="pull-right">
-                <div class="btn-group">
-                    <button type="button" class="menu_button dropdown-toggle" data-toggle="dropdown">
-                        Acciones
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu pull-right" role="menu">
-                        <li><a class="opcion" type="button" href='/pacientes/create'>Agregar paciente</a>
-                        </li>
-                        <li><a class="opcion" type="button" href='/pacientes'>Editar/Eliminar</a>
-                        </li>
-
-                    </ul>
-                </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-md"
+                onClick="location.href='/pacientes/create'">NUEVO PACIENTE</button>
+                <button type="button" class="btn btn-info btn-md"
+                onClick="location.href='/pacientes'">INDICE</button>
+              </div>
             </div>
         </div>
         <!-- /.panel-heading -->

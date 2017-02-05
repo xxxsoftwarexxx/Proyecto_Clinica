@@ -38,12 +38,16 @@
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-university bigicon"></i></span>
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <select id="Escuela" name="escuelas_profesionales_id" placeholder="Escuela Profesional" class="form-control">
-                          @foreach($escuelas_profesionales as $escuela)
-                            <option>{{$escuela->id}}</option>
-                          @endforeach
-                        </select>
-                        <label>Código de Escuela Profesional</label>
+                      <select id="Escuela" name="escuelas_profesionales_id" class="form-control">
+                        @foreach($escuelas_profesionales as $escuela)
+                          @if($escuela->id == $pacientes->escuelas_profesionales_id )
+                              <option selected value={{$escuela->id}} >{{$escuela->nombre}}</option>
+                          @else
+                              <option value={{$escuela->id}} >{{$escuela->nombre}}</option>
+                          @endif
+                        @endforeach
+                      </select>
+                      <label>Escuela Profesional<label>
                     </div>
                 </div>
             </div>
@@ -96,7 +100,7 @@
                 </div>
 
                 <div class="input-group col-md-12 col-xs-12">
-                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-female bigicon"></i></span>
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-male bigicon"></i></span>
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <div align="center" class="group-control">
                         <select class="form-control" id="Sexo" name="sexo" value="{{$pacientes->sexo}}" required>
