@@ -27,7 +27,7 @@
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                 <div align="center" class="group-control">
-                    <input id="Codigo" name="codigo" placeholder="Ejm. 137280" class="form-control" required>
+                    <input id="Codigo" name="codigo" placeholder="Ejm. 137280" class="form-control" required maxlength="6" size="6">
                     <label>Código de Estudiante</label>
                   </div></br>
             </div>
@@ -51,7 +51,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                          <input id="dni" name="dni" placeholder="Ejm. 70502321 " class="form-control" required>
+                          <input id="dni" name="dni" placeholder="Ejm. 70502321 " class="form-control" required maxlength="8" size="8">
                           <label>DNI</label>
                       </div>
                 </div>
@@ -104,7 +104,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Telefono" name="telefono" placeholder="Ejm. 984572612" class="form-control" required>
+                        <input id="Telefono" name="telefono" placeholder="Ejm. 984572612" class="form-control" required maxlength="9" size="9">
                           <label>Teléfono</label>
                     </div>
               </div>
@@ -130,8 +130,8 @@
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <div align="center" class="group-control">
                           <select id="Estado" name="estado" placeholder="Estado" class="form-control">
-                              <option>Habilitado</option>
-                              <option>Deshabilitado</option>
+                              <option>HABILITADO</option>
+                              <option>INHABILITADO</option>
                           </select>
                           <label>Estado del Paciente</label>
 
@@ -141,11 +141,35 @@
 
                 <div class="form-group">
                       <div class="col-md-12 text-center">
-                          <input type="submit" style="width:80px" class="btn btn-success" align="center" class="form-control" value="Guardar">
+                          <a data-target="#confirmar" data-toggle="modal" style="width:80px" class="btn btn-success" align="center" class="form-control" value="Guardar">Guardar</a>
                           <button type="reset" style="width:80px" class="btn btn-primary" align="center" class="form-control" >Limpiar</button>
 
                       </div>
                 </div></br></br>
+
+                <div class="modal fade modal-slide-in-rigth" aria-hidden="true"
+                  role="dialog" tabindex="-1" id="confirmar">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-Label="Close">
+                            <span aria-hidden="true">X</span>
+                          </button>
+                          <h3 class="modal-title">Agregar Paciente</h3>
+                        </div>
+                        <div class="modal-body">
+                          <p>Esta seguro si desea agregar los datos del paciente ?</p>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                              <button type="submit" style="width:80px" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
             </div>
             </fieldset>
 
@@ -161,6 +185,7 @@
     if(Seleccionado=='ESTUDIANTE')
     {
       document.getElementById('Seccion_Estudiante').style="display:visible";
+
     }
     else
     {

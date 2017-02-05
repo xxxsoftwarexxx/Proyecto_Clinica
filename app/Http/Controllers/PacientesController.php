@@ -70,7 +70,14 @@ class PacientesController extends Controller
     }
 
     public function destroy($id)    {
-      DB::table($this->tabla)->where($this->item_id,$id)->delete();
+    /*  DB::table($this->tabla)->where($this->item_id,$id)->delete();
+      return redirect($this->tabla);*/
+      $paciente = DB::table($this->tabla)->where($this->item_id,$id)->first();
+      $estado = 'INHABILITADO';
+      if($paciente->estado == 'INHABILITADO'){
+        $estado = 'HABILITADO';
+      }
+      DB::table($this->tabla)->where($this->item_id,$id)->update(['estado'=>$estado]);
       return redirect($this->tabla);
     }
 }

@@ -40,17 +40,17 @@ class EscuelasProfesionalesController extends Controller
      */
     public function store(Request $request)
     {
-      $id = $request->input('id');
-    $nombre = $request->input('nombre');
+        $id = $request->input('id');
+        $nombre = $request->input('nombre');
 
-    DB::table('escuelas_profesionales')->insert([
-      'id'=> $id,
-      'nombre'=>$nombre
-      ]);
+        DB::table('escuelas_profesionales')->insert([
+        'id'=> $id,
+        'nombre'=>$nombre
+        ]);
 
-      return $this->index();
+        //return $this->index();
 
-      return redirect('escuelas_profesionales');
+        return redirect('escuelas_profesionales');
     }
 
     /**
@@ -86,15 +86,14 @@ class EscuelasProfesionalesController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $id = $request->input('id');
-  $nombre = $request->input('nombre');
 
-  DB::table('escuelas_profesionales')->where('id',$id)
-    ->update([
-    'id'=> $id,
-    'nombre'=>$nombre
-  ]);
-  return redirect('escuelas_profesionales');
+      $nombre = $request->input('nombre');
+
+      DB::table('escuelas_profesionales')->where('id',$id)
+        ->update([
+        'nombre'=>$nombre
+      ]);
+      return redirect('escuelas_profesionales');
     }
 
     /**
