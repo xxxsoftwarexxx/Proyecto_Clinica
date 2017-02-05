@@ -20,8 +20,9 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
-                                            <th>nombre</th>
+                                            <th>Id</th>
+                                            <th>Nombre</th>
+                                            <th>Operaciones</th>
                                             </tr>
                                     </thead>
                                     <tbody>
@@ -36,13 +37,6 @@
                                                 <button type="button" class="btn btn-success btn-xs"
                                                 onClick="location.href='/escuelas_profesionales/{{ $escuela_profesional->id }}/edit'">
                                                 Editar</button>
-
-
-                                                  <form action="/escuelas_profesionales/{{ $escuela_profesional->id }}" method="post">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE')}}
-                                                    <button class="btn btn-danger btn-xs">Eliminar</button>
-                                                  </form>
 
                                             </td>
                                         </tr>
