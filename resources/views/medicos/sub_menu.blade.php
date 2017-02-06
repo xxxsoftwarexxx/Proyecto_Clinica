@@ -1,4 +1,3 @@
-
 <div class="header wow zoomIn">
 	<div class="container">
 		<div class="header_right">
@@ -7,7 +6,6 @@
 					<li><a href="">Profile</a></li>
 					<li><a href="medcitas">Consultas del Dia</a></li>
 					<li><a href="">Reportes</a></li>
-
 				</ul>
 			</div>
 			<div class="clearfix"></div>

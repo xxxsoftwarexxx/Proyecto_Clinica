@@ -65,7 +65,12 @@ class EspecialidadesController extends Controller
     }
 
     public function destroy($id)    {
-      DB::table($this->tabla)->where($this->item_id,$id)->delete();
-      return redirect($this->tabla);
+        $especialidad = DB::table($this->tabla)->where($this->item_id,$id)->first();
+        $habilitado = 'INHABILITADO';
+        if($especialidad->habilitado == 'INHABILITADO'){
+          $habilitado = 'HABILITADO';
+        }
+        DB::table($this->tabla)->where($this->item_id,$id)->update(['habilitado'=>$habilitado]);
+        return redirect($this->tabla);
     }
 }
