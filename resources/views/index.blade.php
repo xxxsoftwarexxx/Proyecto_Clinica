@@ -116,21 +116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		@include('medicos.sub_menu')
 	@endif
 	@if(Auth::user()->tipo=='Paciente')
-	<div class="header wow zoomIn">
-		<div class="container">
-			<div class="header_right">
-				<div class="login">
-					<ul>
-						<li><a id="Cargar_Datos"> Perfil</a></li>
-						<li><a href="#book">Reservar cita</a></li>
-						<li><a href="">Reportes</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
+		@yield("Menu")
 	@endif
 	@if(Auth::user()->tipo=='Admi')
 		@include('Admi.sub_menu')

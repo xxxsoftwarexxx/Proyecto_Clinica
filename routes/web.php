@@ -47,6 +47,8 @@ Route::group(['middleware' => 'MDpaciente'], function () {
   Route::get('Recuperar_Datos_Cita','ReservaController@Recuperar_Bloque');
   });
 
+Route::get('Recuperar_Horario', ['uses'=>'ReservaController@Recuperar_Horario']);
+
 Route::group(['middleware' => 'MDmedico'], function () {
 });
 

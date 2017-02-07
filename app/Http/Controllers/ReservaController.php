@@ -85,6 +85,12 @@ class ReservaController extends Controller
         'pacientes_dni'=> $Id_Paciente,
         'bloques_idbloques'=>$id
         ]);
+
+
+          DB::table('pacientes')->where('id',$id)->update([
+        'estado'=>'INHABILITADO'
+      ]);
+
         return redirect('inicio');
      }
      public function store(Request $request)
@@ -116,32 +122,74 @@ class ReservaController extends Controller
          'pacientes_dni'=> $Id_Paciente,
          'bloques_idbloques'=>$id
          ]);
+
      }
 
- 		public function Recuperar_Bloque()
- 		{
- 			$id = Input::get("Id");
+        public function Recuperar_Bloque()
+        {
+            $id = Input::get("Id");
 
 
- 			$Bloque = DB::table('bloques')->where('idbloques',$id)->first();
+            $Bloque = DB::table('bloques')->where('idbloques',$id)->first();
 
- 			$Medico = DB::table('medicos')->where('dni',$Bloque->medicos_dni)->first();
+            $Medico = DB::table('medicos')->where('dni',$Bloque->medicos_dni)->first();
 
- 			$Especialidad = DB::table('especialidades')->where('codigo',$Medico->especialidades_codigo)->first();
+            $Especialidad = DB::table('especialidades')->where('codigo',$Medico->especialidades_codigo)->first();
 
- 			$Consultorio = DB::table('consultorios')->where('id',$Especialidad->consultorios_id)->first();
+            $Consultorio = DB::table('consultorios')->where('id',$Especialidad->consultorios_id)->first();
 
- 			$Datos_Bloque = array(
- 				$Bloque->hora_inicio,
- 				$Bloque->dia,
- 				$Medico->nombres.' '.$Medico->apellidos,
- 				$Especialidad->nombre,
- 				$Consultorio->id
- 				);
+            $Datos_Bloque = array(
+                $Bloque->hora_inicio,
+                $Bloque->dia,
+                $Medico->nombres.' '.$Medico->apellidos,
+                $Especialidad->nombre,
+                $Consultorio->id
+                );
 
- 			return $Datos_Bloque;
- 		}
+            return $Datos_Bloque;
+        }
 
+    public function Recuperar_Horario()
+    {
+        $especialidad = Input::get("Especialidad");
+            
+          $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
+
+          $prog_dias=[];
+          $prog_fecha=[];
+          $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+          $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+          $fecha =date('Y-m-j');
+          $estado=[];
+          $id=[];
+          for($i=0;$i<7;$i++){
+            $estado[$i]=db::table('bloques')
+            ->where('medicos_dni',$medicos->dni)
+            ->where('dia',$dias[date('w',strtotime($fecha))])
+            ->orderBy('hora_inicio')
+            ->get();
+            $prog_dias[]=$dias[date('w',strtotime($fecha))];
+            $prog_fecha[]=date('d',strtotime($fecha)).
+            ' de '.
+            $meses[date('n',strtotime($fecha))-1].
+            ' del '.
+            $prog_y[]=date('Y',strtotime($fecha));
+            $nuevafecha = strtotime ( '+1 day' , strtotime ( $fecha ) ) ;
+            $fecha = date ( 'Y-m-j' , $nuevafecha );
+          }
+
+          $res=[];
+          for($i=0;$i<7;$i++){
+            $aux=$estado[$i];
+            for($j=0;$j<24;$j++){
+              $res[$i.'-'.$j]=$aux[$j];
+            }
+          }
+
+
+//          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
+          return Array($prog_dias,$prog_fecha,$estado,$res);
+    }
     public function horario(Request $request)
     {
           $especialidad = $request->input('Especialidad');
@@ -178,7 +226,8 @@ class ReservaController extends Controller
             }
           }
 
-//          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')->get();
+//          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
+          
           return view('reservas.index',[
             'dias'=>$prog_dias,
             'fecha'=>$prog_fecha,
