@@ -17,10 +17,44 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-qrcode bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Id" name="Id" placeholder="Código de Historial Médico" class="form-control" value="{{$historial_medico->id_historial_medico}}" required>
+                    <input id="Id" name="Id" placeholder="Código de Historial Médico" class="form-control" value="{{$historial_medico->id_historial_medico}}" required readonly>
                     <label>Código de Historial Médico</label>
                   </div>
             </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                    <select id="Pacientes_DNI" name="Pacientes_DNI" placeholder="DNI Pacientes" class="form-control" required readonly disabled="true">
+                      @foreach($pacientes as $paciente)
+                          @if($paciente->dni==$historial_medico->pacientes_dni)
+                              <option selected>{{$paciente->dni}}</option>
+
+                          @else
+                              <option>{{$paciente->dni}}</option>
+                          @endif
+                      @endforeach
+                    </select>
+                    <label>DNI de Pacientes</label>
+
+            </div>
+
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Tipo_Sangre" name="Tipo_Sangre" placeholder="Tipo de Sangre" class="form-control" value="{{$historial_medico->tipo_sangre}}" required>
+                    <label>Tipo de Sangre</label>
+                  </div>
+            </div>
+
+
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                     <input id="Fecha_Apertura" type="date" name="Fecha_Apertura" placeholder="Fecha de Apertura" class="form-control" value="{{$historial_medico->fecha_apertura}}" required>
+                       <label>Fecha de Apertura</label>
+            </div>
+
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
@@ -44,40 +78,8 @@
                         <input id="Antecedentes" name="Antecedentes" placeholder="Antecedentes" class="form-control" value="{{$historial_medico->antecedentes}}" required>
                         <label>Antecedentes</label>
                       </div>
-                    </div>
-                    <div class="input-group col-md-12 col-xs-12">
-                        <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
-                        <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                          <div align="center" class="group-control">
-                            <input id="Tipo_Sangre" name="Tipo_Sangre" placeholder="Tipo de Sangre" class="form-control" value="{{$historial_medico->tipo_sangre}}" required>
-                            <label>Tipo de Sangre</label>
-                          </div>
-                    </div>
+                </div>
 
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                    <select id="Pacientes_DNI" name="Pacientes_DNI" placeholder="DNI Pacientes" class="form-control" required disabled="true">
-                      @foreach($pacientes as $paciente)
-                          @if($paciente->dni==$historial_medico->pacientes_dni)
-                              <option selected>{{$paciente->dni}}</option>
-
-                          @else
-                              <option>{{$paciente->dni}}</option>
-                          @endif
-                      @endforeach
-                    </select>
-                    <label>Código de Pacientes</label>
-
-                    </div>
-            </div
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                     <input id="Fecha_Apertura" name="Fecha_Apertura" placeholder="Fecha de Apertura" class="form-control" value="{{$historial_medico->fecha_apertura}}" required>
-                       <label>Fecha de Apertura</label>
-                 </div>
-           </div>
 
             <div class="form-group">
                   <div class="col-md-12 text-center">

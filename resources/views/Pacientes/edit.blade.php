@@ -29,7 +29,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Codigo" name="codigo" placeholder="Código" class="form-control" value="{{$pacientes->codigo}}">
+                        <input id="Codigo" name="codigo" placeholder="Código" class="form-control"  maxlength="6"value="{{$pacientes->codigo}}">
                         <label>Código de Estudiante</label>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Telefono" name="telefono" placeholder="Teléfono" class="form-control" value="{{$pacientes->telefono}}" required>
+                        <input id="Telefono" name="telefono"  placeholder="Teléfono" class="form-control" value="{{$pacientes->telefono}}" maxlength="9" size="9" required>
                         <label>Teléfono</label>
                     </div>
               </div>
@@ -122,7 +122,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                          <input id="E_mail" name="correo" placeholder="E-Mail" class="form-control" value="{{$pacientes->correo}}"required>
+                          <input id="E_mail" name="correo"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="E-Mail" class="form-control" value="{{$pacientes->correo}}"required>
                           <label>E-Mail</label>
                       </div>
                 </div>

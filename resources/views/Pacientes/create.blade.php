@@ -112,7 +112,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                      <input id="E_mail" name="correo" placeholder="Ejm. maria_22@gmail.com" class="form-control" required>
+                      <input id="E_mail" name="correo" placeholder="Ejm. maria_22@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" required>
                       <label>E-Mail</label>
                     </div>
               </div>

@@ -98,10 +98,7 @@
                                 </li>
                                 <li>
                                     <a href="/historial_medico"> Mantenimiento Historial Medico</a>
-                                </li>
-                                <li>
-                                    <a href="/historiales_medicos_detalles"> Mantenimiento Historial Medico detelles</a>
-                                </li>
+                                </li>                              
                                 <li>
                                     <a href="/escuelas_profesionales"> Mantenimiento Escuelas Profecionales </a>
                                 </li>

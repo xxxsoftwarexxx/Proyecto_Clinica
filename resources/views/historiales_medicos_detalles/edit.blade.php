@@ -5,7 +5,7 @@
 <a1>Mantenimiento de Historiales Médicos Detalles<a1>
 @endsection
 @section('Contenido')
-        <form method="POST" action="/historiales_medicos_detalles/{{$historiales_medicos_detalles->id_historial_medico }}" autocomplete="off">
+        <form method="POST" action="/historiales_medicos_detalles/{{$historiales_medicos_detalles->id_cita}}" autocomplete="off">
           {{csrf_field()}}
           {{method_field('PUT')}}
 
@@ -16,21 +16,22 @@
 
 
             <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-credit-card bigicon"></i></span>
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-qrcode bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <select id="Id" name="Id" placeholder="ID" class="form-control" requires disabled="true">
-                      @foreach($historial_medico as $historial_medico)
-                          @if($historial_medico->id_historial_medico== $historiales_medicos_detalles->id_historial_medico)
-                              <option selected>{{$historial_medico->id_historial_medico}}</option>
-                          @else
-                              <option>{{$historial_medico->id_historial_medico}}</option>
-                          @endif
-                      @endforeach
-                    </select>
-                    <label>Código de Historial Médico</label>
+                    <input id="Id" name="Id"  class="form-control"  value="{{$historiales_medicos_detalles->id_historial_medico}}" required readonly="">
+                      <label>Id Historial Medico</label>
                   </div>
-            </div>
+           </div>
+           <div class="input-group col-md-12 col-xs-12">
+               <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+               <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                 <div align="center" class="group-control">
+                         <input id="IdCita" name="IdCita" class="form-control" readonly value="{{$historiales_medicos_detalles->id_cita}}" required>
+                         <label>Id Cita</label>
+                 </div>
+
+           </div>
 
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-long-arrow-up bigicon"></i></span>
@@ -58,31 +59,17 @@
                         <label>Presión</label>
                   </div>
           </div>
+
+
           <div class="input-group col-md-12 col-xs-12">
               <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
               <span align="center" class="col-md-6 col-xs-10 has-float-label">
                 <div align="center" class="group-control">
-                        <input id="Fecha" name="Fecha" placeholder="Fecha" class="form-control" value="{{$historiales_medicos_detalles->fecha}}" required>
-                        <label>Fecha</label>
+                        <input id="Descripcion" name="Descripcion" class="form-control" value="{{$historiales_medicos_detalles->descripcion}}" required>
+                        <label>Descripcion </label>
                   </div>
           </div>
 
-          <div class="input-group col-md-12 col-xs-12">
-              <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
-              <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                <div align="center" class="group-control">
-                    <select id="Medicos_DNI" name="Medicos_DNI" placeholder="Medicos_DNI" class="form-control">
-                      @foreach($medicos as $medico)
-                          @if($medico->dni==$historiales_medicos_detalles-> medicos_dni)
-                              <option selected>{{$historiales_medicos_detalles-> medicos_dni}}</option>
-                          @else
-                              <option>{{$historiales_medicos_detalles-> medicos_dni}}</option>
-                          @endif
-                      @endforeach
-                    </select>
-                      <label>DNI del Médico</label>
-                  </div>
-          </div></br></br>
 
             <div class="form-group">
                   <div class="col-md-12 text-center">
