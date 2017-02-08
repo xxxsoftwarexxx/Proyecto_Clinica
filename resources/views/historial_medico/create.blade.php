@@ -73,12 +73,33 @@
 
             <div class="form-group">
                   <div class="col-md-12 text-center">
-                      <input type="submit" style="width:80px" class="btn btn-success" align="center" class="form-control" value="Guardar">
+                      <a data-target="#confirmar" data-toggle="modal" style="width:80px" class="btn btn-success" align="center" class="form-control" value="Guardar">Guardar</a>
                       <button type="reset" style="width:80px" class="btn btn-primary" align="center" class="form-control" >Limpiar</button>
 
                   </div>
             </div></br></br>
 
+            <div class="modal fade modal-slide-in-rigth" aria-hidden="true"
+              role="dialog" tabindex="-1" id="confirmar">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-Label="Close">
+                        <span aria-hidden="true">X</span>
+                      </button>
+                      <h3 class="modal-title">Agregar Historial Paciente</h3>
+                    </div>
+                    <div class="modal-body">
+                      <p>¿ Esta seguro si desea agregar los datos del al historial del paciente ?</p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                          <button type="submit" style="width:80px" class="btn btn-success">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
             </fieldset>
 
 
