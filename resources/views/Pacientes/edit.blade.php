@@ -29,7 +29,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Codigo" name="codigo" placeholder="Código" class="form-control"  maxlength="6"value="{{$pacientes->codigo}}">
+                        <input id="Codigo" name="codigo" placeholder="Código" class="form-control"  maxlength="6"value="{{$pacientes->codigo}}" readonly>
                         <label>Código de Estudiante</label>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                          <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$pacientes->dni}}"required maxlength="8" size="8">
+                          <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$pacientes->dni}}"required maxlength="8" size="8" readonly>
                             <label>DNI</label>
                       </div>
                 </div>
@@ -114,7 +114,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Telefono" name="telefono"  placeholder="Teléfono" class="form-control" value="{{$pacientes->telefono}}" maxlength="9" size="9" required>
+                        <input id="Telefono" name="telefono"  placeholder="Teléfono" pattern="[0-9]{9}" class="form-control" value="{{$pacientes->telefono}}" maxlength="9" size="9" required>
                         <label>Teléfono</label>
                     </div>
               </div>
