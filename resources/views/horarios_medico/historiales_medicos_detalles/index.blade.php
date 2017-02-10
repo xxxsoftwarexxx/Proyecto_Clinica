@@ -1,4 +1,4 @@
-@extends('historial_medico.mantenimiento_historial_medico')
+@extends('historiales_medicos_detalles.mantenimiento_historiales_medicos_detalles')
 
 @section('estilos')
 
@@ -12,7 +12,7 @@
 
 @section('Titulo')
 <i class="fa fa-gear fa-fw"></i>
-<a1>Mantenimiento de Historial Médico<a1>
+<a1>Mantenimiento de Historiales Médicos Detalles<a1>
 @endsection
 
 @section('Contenido')
@@ -21,35 +21,38 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Cirugias</th>
-                                            <th>Alergias</th>
-                                            <th>Antecedentes</th>
-                                            <th>Tipo Sangre</th>
-                                            <th>DNI Pacientes</th>
-                                            <th>Fecha Apertura</th>
+                                            <th>Estatura</th>
+                                            <th>Peso</th>
+                                            <th>Presión</th>
+                                            <th>Fecha</th>
+                                            <th>DNI Medicos</th>
                                             <th>Operaciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
-                                    @foreach($historial_medico as $historial_medico)
+                                    @foreach($historiales_medicos_detalles as $historial_medico_detalle)
 
                                         <tr class="odd gradeA" rol="row">
-                                            <td>{{ $historial_medico-> id_historial_medico }}</td>
-                                            <td>{{ $historial_medico-> cirugias}}</td>
-                                            <td>{{ $historial_medico-> alergias }}</td>
-                                            <td>{{ $historial_medico-> antecedentes }}</td>
-                                            <td>{{ $historial_medico-> tipo_sangre }}</td>
-                                            <td>{{ $historial_medico-> pacientes_dni }}</td>
-                                            <td>{{ $historial_medico-> fecha_apertura }}</td>
+                                            <td>{{ $historial_medico_detalle-> id_historial_medico}}</td>
+                                            <td>{{ $historial_medico_detalle-> estatura }}</td>
+                                            <td>{{ $historial_medico_detalle-> peso }}</td>
+                                            <td>{{ $historial_medico_detalle-> presion }}</td>
+                                            <td>{{ $historial_medico_detalle-> fecha}}</td>
+                                            <td>{{ $historial_medico_detalle-> medicos_dni }}</td>
+
 
                                             <td align="center">
-                                                <button type="button" style="height:30px" class="btn btn-info btn-xs"
-                                                onClick="location.href='/historial_medico/{{ $historial_medico->id_historial_medico }}'">
-                                                Ver Detalles</button>
-                                                <button type="button" style="height:30px" class="btn btn-success btn-xs"
-                                                onClick="location.href='/historial_medico/{{ $historial_medico->id_historial_medico }}/edit'">
+                                                <button type="button" class="btn btn-success btn-xs"
+                                                onClick="location.href='/historiales_medicos_detalles/{{ $historial_medico_detalle-> id_historial_medico }}/edit'">
                                                 Editar</button>
+
+
+                                                  <form action="/historiales_medicos_detalles/{{ $historial_medico_detalle-> id_historial_medico }}" method="post">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE')}}
+                                                    <button class="btn btn-danger btn-xs">Eliminar</button>
+                                                  </form>
 
                                             </td>
                                         </tr>

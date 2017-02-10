@@ -21,15 +21,17 @@
                 <div class="form-group">
                       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
 
-                      <div class="col-md-6 col-xs-10">
+                      <div class="col-md-3 col-xs-10">
                           <select id="Especialidad" name="Especialidad" placeholder="Especialidad" class="form-control">
                             @foreach($especialidades as $especialidad)
                                     <option value="{{$especialidad->codigo}} " name ="Especialidad">{{$especialidad->nombre}}</option>
                             @endforeach
                           </select>
 
-                      </div>
+                      
+
                 </div></br></br>
+
 
                 <div class="form-group">
                       <div class="col-md-12 text-center">

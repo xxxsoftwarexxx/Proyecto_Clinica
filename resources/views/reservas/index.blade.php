@@ -30,18 +30,12 @@
 
             <div class="form-group">
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                  <label for="dia">Hora</label>
-                  <div class="col-md-6 col-xs-10">
-                      <input id="dia" name="dia" class="form-control" required>
-                  </div>
-            </div></br></br>
-            <div class="form-group">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                  <label for="dia">Fecha</label>
+                  <label for="dia">Paciente</label>
                   <div class="col-md-6 col-xs-10">
                       <input id="fecha" name="fecha" class="form-control" required>
                   </div>
             </div></br></br>
+
             <div class="form-group">
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <label for="dia">Fecha</label>
@@ -51,6 +45,25 @@
             </div></br></br>
 
           </form>
+          <div class="form-group">
+
+
+                    <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                      <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <form action="reservas_horarios">
+                        @foreach($especialidades as $especialidad)
+                                <li><button type="submit" class="btn btn-danger"  value="{{$especialidad->codigo}}" name ="especialidad">{{$especialidad->nombre}}</a></li>
+                        @endforeach
+                      </form>
+
+                      </ul>
+                    </div>
+
+
+          </div></br></br>
+
         <div class="dataTable_wrapper table-responsive">
                                   <table class="table table-bordered table-condensed" >
                                     <thead>

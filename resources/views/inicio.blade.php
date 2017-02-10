@@ -8,13 +8,12 @@
 			<div class="header_right">
 				<div class="login">
 					<ul>
-					<li><a id="Cargar_Datos"> Perfil{{Auth::user()->estado}}</a></li>
-					{{Auth::user()->estado}}
-					@if(Auth::user()->estado=='HABILITADO')
+					<li><a id="Cargar_Datos"> Perfil</a></li>
+
 					<li><a href="#book" id="Reservar_Cita">Reservar cita</a></li>
-					@else
-					<li><a id="No_Reservar_Cita">Reservar cita</a></li>				
-					@endif
+
+					<!--<li><a id="No_Reservar_Cita">Reservar cita</a></li>-->
+
 					<li><a href="">Reportes</a></li>
 					</ul>
 				</div>
@@ -98,24 +97,7 @@
 				</ul>
 			</div>
 		</div>
-		@if(!Auth::guest())
-		@if(Auth::user()->tipo=='Paciente'||Auth::user()->tipo=='Admi')
-		<div name="book" id="book" class="col-md-4 content_middle wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.3s">
-			<h3>Reservar una cita</h3>
-			<form method="post" action="/reservas/horario">
-				  <input type="hidden" name="_token" value="{{csrf_token()}}">
-				<select id="Especialidad" name="Especialidad" placeholder="Especialidad"  class="frm-field required sect">
-									<option value="null">Seleccionar Especialedad</option>
-					@foreach($especialidades as $especialidad)
-									<option value="{{$especialidad->codigo}} " name ="Especialidad">{{$especialidad->nombre}}</option>
-					@endforeach
-				</select>
-				<input type="submit" value="Reserver">
-			</form>
-		</div>
-		@endif
-		@endif
-		<div class="clearfix"></div>
+		
 @endsection
 <!-- //content -->
 <!-- services -->
@@ -185,8 +167,9 @@
 @endsection
 
 @if(!Auth::guest())
+	@if(Auth::user()->tipo=='Paciente')
 
-<div class="modal fade" id="Mo_Datos_Paciente" tabindex="-1" role="dialog" >
+<div class="modal fade" id="Mo_Datos_Paciente" tabindex="-1" role="dialog" style="top:-70px">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content modal-info">
 			<div class="modal-header">
@@ -204,32 +187,13 @@
 
 						        <div class="text-center"><h2 align="center">Editar datos personales</h2></div></br>
 
-						            <div id='Seccion_Estudiante'>
-						                <div class="form-group">
-						                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
 
-						                    <div class="col-md-7 col-xs-10">
-						                        <input id="Codigo" name="codigo" placeholder="Código" class="form-control" value="{{$Datos_Paciente->codigo}}" readonly="readonly">
-						                    </div>
-						                </div></br></br>
-
-						                <div class="form-group">
-						                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-						                    <div class="col-md-7 col-xs-10">
-						                        <input id="Escuela_Profesional" name="Escuela_Profesional" placeholder="Escuela_Profesional" class="form-control" value="{{$Datos_Paciente->escuelas_profesionales_id}}" readonly="readonly">
-						                    </div>
-						                </div></br>
-						            </div>
-
-						            <div id="Seccion_General">
+						            <div id="Seccion_General" class="row">
 						                <div class="form-group">
 						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
 						                      <div class="col-md-7 col-xs-10">
 						                          <input id="dni" name="dni" placeholder="DNI" class="form-control" required value="{{$Datos_Paciente->dni}}" readonly="readonly">
 						                      </div>
-						                
 						                </div></br></br>
 
 
@@ -243,7 +207,6 @@
 
 						                <div class="form-group">
 						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
 						                      <div class="col-md-7 col-xs-10">
 						                          <input id="Apellidos" name="apellidos" placeholder="Apellidos" class="form-control" required value="{{$Datos_Paciente->apellidos}}" readonly="readonly">
 						                      </div>
@@ -295,18 +258,16 @@
 						                </div></br></br>
 
 						                <div class="form-group">
-						                      <div class="col-md-12 text-center">
-						                          <input type="submit" style="width:200px" class="btn btn-success" align="center" class="form-control" value="Guardar Cambios">
+						                      <div class="ccol-md-12 text-center">
+						                          <input id="btn_Modificar_Datos_Paciente" type="button" style="width:200px" class="btn btn-primary" align="center" class="form-control" value="Guardar Cambios">
 						                      </div>
-						                </div></br></br>
+						                </div>
 						            </div>
 
 						            </fieldset>
-						       </form>	
+						       </form>
 
 							</div>
-
-						
 					</div>
 				</div>
 			</div>
@@ -314,9 +275,11 @@
 	</div>
 </div>
 @endif
+@endif
 
 
 @if(!Auth::guest())
+@if(Auth::user()->tipo=='Paciente')
 
 <div class="modal fade" id="Mo_Especialidades" tabindex="-1" role="dialog" >
 	<div class="modal-dialog" role="document">
@@ -328,8 +291,8 @@
 				<div class="login-grids">
 					<div class="login-right">
 						<div class="modal-body" align="center">
-						    
-							
+
+
 								<h3 align="center" >Reservar una cita</h3>
 
 								<select id="Especialidad_Cita" name="Especialidad_Cita" placeholder="Especialidad"  class="form-control frm-field required sect">
@@ -342,7 +305,7 @@
 								<button id="btn_Mostrar_Horario" style="width:350px"  type="button" class="btn btn-primary">Siguiente</button>
 						</div>
 
-						
+
 					</div>
 				</div>
 			</div>
@@ -350,11 +313,11 @@
 	</div>
 </div>
 @endif
-
+@endif
 
 
 @if(!Auth::guest())
-
+@if(Auth::user()->tipo=='Paciente')
 <div class="modal fade" id="Mo_Horario" role="dialog" >
 	<div class="modal-dialog">
 		<div style="width: 1250px;left: -70%;" class="modal-content">
@@ -363,7 +326,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="modal-body" id="Mo_Body_Horario">
-				    
+
 
 				</div>
 			</div>
@@ -400,6 +363,7 @@
 
 </div>
 </div>
+@endif
 
 <style>
 .Hora_Cita_Libre:hover{
@@ -432,7 +396,7 @@ $("#Reservar_Cita").click(function(event){
 </script>
 <script>
 $(document).ready(function() {
-	
+
 $("#btn_Mostrar_Horario").click(function(event){
 
 var Especialidad = $('#Especialidad_Cita').val();
@@ -456,22 +420,22 @@ $.get('Recuperar_Horario',{Especialidad:Especialidad},function(data){
                                     '</thead>'+
                                    '</table>');
 
-Tabla.append('<th><div style="width:100px"class="panel panel-red"><div><h3>Hora</h3></div></th>');
+Tabla.append('<th><div style="width:100px;height:85px;background-color:#2FAED5;"class="panel-heading"><h3>Hora</h3></div></th>');
             for(var i=0;i<7;i++)
             {
 
             Tabla.append(
 			  '<th>'+
-                  '<div class="panel panel-red">'+
-                    '<div align="center" style="width:150px;" class="panel-heading">'+
+
+                    '<div align="center" style="width:150px;height:85px;background-color:#2FAED5;" class="panel-heading">'+
                         '<h3>'+dias[i]+'</h3>'+
                         fecha[i] +
                   '</div>'+
-                '</div>'+
+
               '</th>');
 			}
 
-			Tabla_Body = $('<tbody></tbody>');
+			Tabla_Body = $('<tbody style="background-color:#A6CEE0"></tbody>');
 
 
 			for(var i=7;i<19;i++)
@@ -480,7 +444,7 @@ Tabla.append('<th><div style="width:100px"class="panel panel-red"><div><h3>Hora<
             	{
 					Tabla_Body.append(
 						'<tr>'+
-                            '<td align ="right" background-color="#be25b5">');
+                            '<td align ="right" style="background-color:#be25b5">');
                             	if(i<9)
                             	{
                             		Tabla_Body.append('0'+i+':00 - 0'+(i+1)+':00');
@@ -497,7 +461,7 @@ Tabla.append('<th><div style="width:100px"class="panel panel-red"><div><h3>Hora<
 
                             for(var j=0;j<7;j++)
                             {
-								
+
 								if(res[j+'-'+i]['estado']==1)
 								{
 									Tabla_Body.append('<td align="center" class="Hora_Cita_Ocupado" id="'+j+'-'+i+'" value="'+res[j+'-'+i]["idbloques"]+'">Reservado</td>');
@@ -514,10 +478,10 @@ Tabla.append('<th><div style="width:100px"class="panel panel-red"><div><h3>Hora<
             	{
 					Tabla_Body.append('<td colspan="8" height="25px"></td>');
             	}
-			Tabla_Body.append('</tr>');            	
+			Tabla_Body.append('</tr>');
             }
             Tabla.append(Tabla_Body);
-            
+
              $(".Hora_Cita_Libre").click(function(event){
 
                    event.preventDefault();
@@ -538,7 +502,7 @@ Tabla.append('<th><div style="width:100px"class="panel panel-red"><div><h3>Hora<
                       var th = td.closest('table').find('th').eq(td.index());
                       //alert(th.val());
                       info.append('<p>Médico:'+data[2]+'</p><p>Día:'+data[1]+'</p>');
-                      			
+
                       			if(data[0]<9)
                             	{
                             		info.append('<p>Hora:0'+data[0]+':00');
@@ -561,7 +525,7 @@ Tabla.append('<th><div style="width:100px"class="panel panel-red"><div><h3>Hora<
 
 		});
 
-		
+
       $('#Mo_Horario').modal({
       show: 'true'
   		});
@@ -573,4 +537,18 @@ Tabla.append('<th><div style="width:100px"class="panel panel-red"><div><h3>Hora<
  	alert('No puede recervar una cita');
 });
 </script>
+<script>
+$("#btn_Modificar_Datos_Paciente").click(function(event){
+	var dni = $('#dni').val();
+	var sexo = $('#Sexo').val();
+	var telefono = $('#Telefono').val();
+	var correo = $('#E_mail').val();
+	var direccion = $('#Direccion').val();
+
+	 $.get('/Modificar_Datos_Paciente',{dni:dni,sexo:sexo,telefono:telefono,correo:correo,direccion:direccion},function(data){
+	 	alert(Actualizado correctamente);
+	 });
+});
+</script>
+
 @endsection

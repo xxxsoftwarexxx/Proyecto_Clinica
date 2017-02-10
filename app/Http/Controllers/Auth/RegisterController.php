@@ -79,6 +79,8 @@ class RegisterController extends Controller
             'dni' => $data['dni'],
             'password' => bcrypt($data['password']),
             'tipo' => $data['tipo'],
+            'estado' => $data['estado'],
+
         ]);
               return 'ddd';
     }

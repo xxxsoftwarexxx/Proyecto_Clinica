@@ -2,7 +2,7 @@
 
 @section('Titulo')
 <i class="fa fa-gear fa-fw"></i>
-<a1>Sancionar<a1>
+<a1>HISTORIAL DETALLE <a1>
 @endsection
 @section('Mantenimiento')
 <div class="col-lg-12">
@@ -10,80 +10,60 @@
         <div class="panel-heading">
 
               <i class="fa fa-gear fa-fw"></i>
-              <a1>Sancion<a1>
+              <a1>HIstorial Detalle<a1>
         </div>
         <div class="panel-body">
         <div >
         @yield('Contenido')
 
-        <form role="form" method="post" action="/medcitas/cita/citSancion/">
+        <form role="form" method="post" action="/medcitas/citadetalle/{{$idcita}}/{{$idhistorial}}/">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
             <fieldset>
-              <div class="text-center"><h2 align="center">Crear sanciones</h2>
+              <!--<div class="text-center"><h2 align="center">HISTORIAL cita:{{$idcita}} histo: {{$idhistorial}}</h2>-->
+                <div class="text-center"><h2 align="center">HISTORIAL </h2>
               </div></br>
 
               <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="ID" name="ID" placeholder="ID" class="form-control" value="{{$tablas->id}}"  required>
-                    <label>Código Médico</label>
+                    <input id="ID" name="ID" placeholder="ID" class="form-control" value=""  required>
+                    <label>ID Historial</label>
                   </div>
             </div>
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Id_tipo_sancion" name="Id_tipo_sancion" placeholder="tipo Sancion" class="form-control"  required>
-                    <label>tipo Sancion</label>
+                    <input id="Estatura" name="Estatura" placeholder="Estatura" class="form-control"  value="{{$historial_ultimo->estatura}}" required>
+                    <label>Estatura</label>
                   </div>
             </div>
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Duracion" name="Duracion" placeholder="Duracion" class="form-control" disabled="true" required>
-                    <label>Duracion</label>
+                    <input id="Peso" name="Peso" placeholder="Peso" class="form-control" value="{{$historial_ultimo->peso}}" required>
+                    <label>Peso</label>
                   </div>
             </div>
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Descripcion" name="Descripcion" placeholder="Descripcion" class="form-control" disabled="true" required>
-                    <label>Descripcion</label>
+                    <input id="Presion" name="Presion" placeholder="Presion" class="form-control" value="{{$historial_ultimo->presion}}" required>
+                    <label>Presion</label>
                   </div>
             </div>
-              <div class="dataTable_wrapper table-responsive">
-                                      <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                          <thead>
-                                              <tr>
-                                                <th>Seleccionar</th>
-                                                <th>tiempo</th>
-                                                <th>descripcion</th>
-                                              </tr>
-                                          </thead>
-                                          <tbody>
 
-                                          @foreach($tablas2 as $t)
-
-                                              <tr class="odd gradeA" rol="row">
-                                                <td align="center">
-                                                    <button type="button" class="btn btn-success btn-xs"
-                                                    onClick="cambiarTexto('{{$t->tiempo}}','{{$t->descripcion}}','{{$t->id_tipo_sancion}}')">
-                                                    Elegir</button>
-
-                                                </td>
-                                                  <td>{{ $t-> tiempo }} dias</td>
-                                                  <td>{{ $t-> descripcion }}</td>
-
-
-                                              </tr>
-
-                                          @endforeach
-                                          </tbody>
-                                      </table>
-                                  </div>
+            <div class="input-group col-md-12 col-xs-12">
+              <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
+              <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                <div align="center" class="group-control">
+                  <input id="Descripcion" name="Descripcion" placeholder="Descripción" class="form-control" value=""  required>
+                  <label>Descripción</label>
+                </div>
+          </div>
 
               <div class="form-group">
                     <div class="col-md-12 text-center">
@@ -120,12 +100,7 @@
         });
     });
 </script>
-<script>
-    function cambiarTexto(duracion,descripcion,id) {
-     document.getElementById('Descripcion').value = descripcion;
-     document.getElementById('Duracion').value = duracion;
-     document.getElementById('Id_tipo_sancion').value = id;
-}
-</script>
+
+
 
 @endsection

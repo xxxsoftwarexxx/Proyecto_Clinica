@@ -98,7 +98,7 @@ class HistorialesMedicosDetallesController extends Controller
     public function edit($id)
     {
 
-      $historiales_medicos_detalles = DB::table('historiales_medicos_detalles')->where('id_historial_medico',$id)->first();
+      $historiales_medicos_detalles = DB::table('historiales_medicos_detalles')->where('id_cita',$id)->first();
       $historial_medico= DB::table('historial_medico')->get();
       $medicos = DB::table('medicos')->get();
       return view('historiales_medicos_detalles.edit',['historiales_medicos_detalles'=>$historiales_medicos_detalles,'historial_medico'=>$historial_medico,'medicos'=>$medicos]);
@@ -118,36 +118,19 @@ class HistorialesMedicosDetallesController extends Controller
       $estatura = $request->input('Estatura');
       $peso = $request->input('Peso');
       $presion = $request->input('Presion');
-      $fecha = $request->input('Fecha');
-      $medicos_dni = $request->input('Medicos_DNI');
 
-    $historial_medico = DB::table('historial_medico')->get();
-    foreach($historial_medico as $historial)
-    {
-      if($id==$historial->id_historial_medico){
-        $id = $historial->id_historial_medico;
-      }
-    }
+      $historial_medico = DB::table('historial_medico')->get();
 
-    $medicos = DB::table('medicos')->get();
-    foreach($medicos as $medico)
-    {
-      if($medicos_dni==$medico->dni){
-      $medicos_dni = $medico->dni;
-      }
-    }
 
-    DB::table('historiales_medicos_detalles')->where('id_historial_medico',$id)
-      ->update([
-    'estatura'=>$estatura,
-    'peso'=>$peso,
-    'presion'=>$presion,
-    'fecha'=>$fecha,
-    'medicos_dni'=>$medicos_dni,
+      DB::table('historiales_medicos_detalles')->where('id_cita',$id)
+        ->update([
+      'estatura'=>$estatura,
+      'peso'=>$peso,
+      'presion'=>$presion,
 
-  ]);
+      ]);
 
-  return redirect('historiales_medicos_detalles');
+      return redirect('historial_medico');
 
     }
 
@@ -160,6 +143,6 @@ class HistorialesMedicosDetallesController extends Controller
     public function destroy($id)
     {
       DB::table('historiales_medicos_detalles')->where('id_historial_medico',$id)->delete();
-    return redirect('historiales_medicos_detalles');
+      return redirect('historiales_medicos_detalles');
     }
 }

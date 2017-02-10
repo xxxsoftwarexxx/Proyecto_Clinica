@@ -104,7 +104,12 @@ class EscuelasProfesionalesController extends Controller
      */
     public function destroy($id)
     {
-      DB::table('escuelas_profesionales')->where('id',$id)->delete();
+      $escuela_profesional = DB::table('escuelas_profesionales')->where('id',$id)->first();
+      $estado = 'INHABILITADO';
+      if($escuela_profesional->estado == 'INHABILITADO'){
+        $estado = 'HABILITADO';
+      }
+      DB::table('escuelas_profesionales')->where('id',$id)->update(['estado'=>$estado]);
       return redirect('escuelas_profesionales');
     }
 }

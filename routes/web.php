@@ -36,20 +36,30 @@ Route::group(['middleware' => 'MDadmi'], function () {
   Route::resource('medhorarios', 'HorariosMedicosController');
   Route::resource('cambiar/{idbloque}/{medDNI}/', 'HorariosMedicosController@resaltar');
 
+
+    Route::resource('reservas_horarios', 'ReservaController@dif_horario');
+    Route::resource('reservas_horario', 'ReservaController@horario');
+    Route::resource('reservas/citas', 'ReservaController@citas');
+
   });
 
 Route::group(['middleware' => 'MDpaciente'], function () {
 
-  Route::resource('reservas', 'ReservaController@mostrar');
-  Route::resource('reservas/horario', 'ReservaController@horario');
-  Route::resource('reservas/citas', 'ReservaController@citas');
   Route::get('reservas_Almacenar','ReservaController@almacenar');
   Route::get('Recuperar_Datos_Cita','ReservaController@Recuperar_Bloque');
   });
 
 Route::get('Recuperar_Horario', ['uses'=>'ReservaController@Recuperar_Horario']);
-
 Route::group(['middleware' => 'MDmedico'], function () {
+    Route::resource('/medcitas/', 'CitasMedicosController');
+    Route::resource('/medcitas/{id}/', 'CitasMedicosController@mostrar');
+    Route::resource('/medcitas/{id}/atendidos', 'CitasMedicosController@mostrarAtendidos');
+    Route::get('/medcitas/{dniMed}/sancionar', 'CitasMedicosController@sancionar');
+    Route::get('/medcitas/{dniMed}/historial', 'CitasMedicosController@historial');
+    Route::resource('/medcitas/cita/citSancion/', 'CitasMedicosController@guardar');
+    Route::resource('/medcitas/citadetalle/{id}/', 'CitasMedicosController@siguiente');
+    Route::resource('/medcitas/citadetalle/{idcita}/{idhistorial}/', 'CitasMedicosController@Save');
+    Route::resource('/reportes/medico/', 'ReportesController@medico');
 });
 
 
@@ -61,18 +71,15 @@ Route::get('/medcitas/{dniMed}/enlistar', ['uses' => 'CitasMedicosController@enl
 Route::get('/', 'InicioController@index');
 
 Route::resource('inicio', 'InicioController');
-Route::get('about', function () {
-    return view('about');
-});
-Route::get('gallery', function () {
-    return view('gallery');
-});
-Route::get('contact', function () {
-    return view('contact');
-});
-Route::get('configuracion', function () {
-    return view('configuracion');
-});
+Route::get('about', 'InicioController@abaut');
+Route::get('gallery','InicioController@gallery');
+Route::get('contact', 'InicioController@contact');
+Route::get('configuracion', 'InicioController@configuracion');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

@@ -78,7 +78,7 @@ class ReservaController extends Controller
         $Cita_Id = date("Y-m-d-g:i");
 
         DB::table('citas')->insert([
-    
+
         'fecha_cita'=>$nuevafecha,
         'fecha_reserva'=>$fecha,
         'estado'=>1,
@@ -152,7 +152,7 @@ class ReservaController extends Controller
     public function Recuperar_Horario()
     {
         $especialidad = Input::get("Especialidad");
-            
+
           $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
 
           $prog_dias=[];
@@ -190,10 +190,15 @@ class ReservaController extends Controller
 //          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
           return Array($prog_dias,$prog_fecha,$estado,$res);
     }
-    public function horario(Request $request)
+    public $especialidad='CAR';
+    public function dif_horario(Request $request){
+      $this->especialidad=$request->input('especialidad');
+      return $this->horario();
+    }
+    public function horario()
     {
-          $especialidad = $request->input('Especialidad');
-          $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
+
+          $medicos=db::table('medicos')->where('especialidades_codigo',$this->especialidad)->first();
 
           $prog_dias=[];
           $prog_fecha=[];
@@ -227,12 +232,13 @@ class ReservaController extends Controller
           }
 
 //          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
-          
+        $especialidades = DB::table('especialidades')->get();
+
           return view('reservas.index',[
             'dias'=>$prog_dias,
             'fecha'=>$prog_fecha,
-            'estado'=>$estado,
-            'res'=>$res
+            'res'=>$res,
+            'especialidades'=>$especialidades
           ]);
     }
 

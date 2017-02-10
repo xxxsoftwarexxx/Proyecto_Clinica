@@ -27,7 +27,7 @@
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                 <div align="center" class="group-control">
-                    <input id="Codigo" name="codigo" placeholder="Ejm. 137280" class="form-control" required maxlength="6" size="6">
+                    <input id="Codigo" name="codigo" pattern="[0-9]{6}" placeholder="Ejm. 137280" class="form-control" required maxlength="6" size="6">
                     <label>Código de Estudiante</label>
                   </div></br>
             </div>
@@ -51,7 +51,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                          <input id="dni" name="dni" placeholder="Ejm. 70502321 " class="form-control" required maxlength="8" size="8">
+                          <input id="dni" name="dni" placeholder="Ejm. 70502321 " pattern="[0-9]{8}" class="form-control" required maxlength="8" size="8">
                           <label>DNI</label>
                       </div>
                 </div>
@@ -104,7 +104,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Telefono" name="telefono" placeholder="Ejm. 984572612" class="form-control" required maxlength="9" size="9">
+                        <input id="Telefono" name="telefono" placeholder="Ejm. 984572612" pattern="[0-9]{9}" class="form-control" required maxlength="9" size="9">
                           <label>Teléfono</label>
                     </div>
               </div>
@@ -112,7 +112,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                      <input id="E_mail" name="correo" placeholder="Ejm. maria_22@gmail.com" class="form-control" required>
+                      <input id="E_mail" name="correo" placeholder="Ejm. maria_22@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" required>
                       <label>E-Mail</label>
                     </div>
               </div>

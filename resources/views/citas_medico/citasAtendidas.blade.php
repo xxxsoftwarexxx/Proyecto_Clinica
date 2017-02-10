@@ -26,13 +26,13 @@
         <div class="panel-heading">
 
               <i class="fa fa-gear fa-fw"></i>
-              <a1>Citas del Dia <a1>
+              <a1>Citas del Dia que fueron Atendidas <a1>
         </div>
         <div class="panel-body">
           <div >
                 @yield('Contenido')
-                <div class="text-center"><h2 align="center">Citas de Hoy</h2>
-                </div></br>
+                <div class="text-center"><h2 align="center">Citas Atendias</h2>
+            </div></br>
                 <div class="clearfix"></div>
                 <div class="dataTable_wrapper table-responsive">
                   <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -56,7 +56,6 @@
                           <td>{{$tabla-> nombres }}</td>
                           <td>{{$tabla-> apellidos }}</td>
                           <td>{{$tabla-> tipo_paciente }}</td>
-                            @if($tabla->estado=="atendido")
                             <td align="center">
                               <a href="" class="btn btn-warning btn-xs" disabled="true">Sancionar</a>
                             </td>
@@ -66,28 +65,6 @@
                             <td align="center">
                               <a href="" class="btn btn-warning btn-xs" disabled="true">Siguiente</a>
                             </td>
-                            @elseif($tabla->estado=="pendiente")
-                            <td align="center">
-                              <a href="/medcitas/{{ $tabla->id }}/sancionar" class="btn btn-success btn-xs" >Sancionar</a>
-                            </td>
-                            <td align="center">
-                                <a href="/medcitas/{{ $tabla->dni }}/historial" class="btn btn-success btn-xs">Historial</a>
-                            </td>
-                            <td align="center">
-                                <a href="/medcitas/citadetalle/{{$tabla->id}}/" class="btn btn-success btn-xs">Siguiente</a>
-
-                            </td>
-                            @elseif($tabla->estado=="sancionado")
-                            <td align="center">
-                              <a class="btn btn-danger btn-xs" disabled="true">Sancionado</a>
-                            </td>
-                            <td align="center">
-                                <a href="/medcitas/{{ $tabla->dni }}/historial" class="btn btn-danger btn-xs">Historial</a>
-                            </td>
-                            <td align="center">
-                                <a href="/medcitas/citadetalle/{{$tabla->id}}/" class="btn btn-danger btn-xs" >Siguiente</a>
-                            </td>
-                            @ENDIF
                       </tr>
                   @endforeach
                 </tbody>
