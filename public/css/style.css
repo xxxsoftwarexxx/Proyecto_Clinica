@@ -165,7 +165,7 @@ body a:hover{
     padding:100px 0 0px 60px;
 	float:right;
 }
-.contact-left h2 ,.contact-right h3{
+.contact-left h2 ,.contact-right h3 h9{
     font-size: 25px;
     color: #fff;
 }
@@ -1024,12 +1024,12 @@ top: 9%;
 .banner-info2 {
     margin-top: 11em;
 }
-.banner-info h3,.banner-info2 h3 {
+.banner-info h3 h9,.banner-info2 h3 h9{
     color: #00A4E4;
     font-size: 35px;
     line-height: 1.5em;
 }
-.banner-info h3 span,.banner-info2 h3 span {
+.banner-info h3 h9 span,.banner-info2 h3 h9 span {
     display: block;
 }
 /* Outline Out */
@@ -1158,7 +1158,7 @@ top: 9%;
 	padding:100px 0 ;
 
 }
-.services_left h3 {
+.services_left h3 h9 {
     color: #00A4E4;
     font-size: 32px;
 }
@@ -1227,7 +1227,7 @@ top: 9%;
 .ind-team {
     padding-top:50px  ;
 }
-.ind-team h3 {
+.ind-team h3 h9 {
     font-size: 35px;
     color: #00A4E4;
     text-align: center;
@@ -1370,7 +1370,7 @@ top: 9%;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
 }
-.capacity h3 {
+.capacity h3 h9 {
     font-size: 35px;
     color: #00A4E4;
     text-align: center;
@@ -1672,7 +1672,7 @@ section#tables  p {
 .alert {
   font-size: 0.85em;
 }
-h1.t-button,h2.t-button,h3.t-button,h4.t-button,h5.t-button {
+h1.t-button,h2.t-button,h3.t-button,h4.t-button,h5.t-button,h9.t-button {
 line-height:1.8em;
   margin-top:0.5em;
   margin-bottom: 0.5em;
@@ -2060,7 +2060,7 @@ p.para_abt {
 	.banner-info, .banner-info2 {
 		margin-top: 6em;
 	}
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9 {
 		font-size: 27px;
 	}
 	.banner-info p {
@@ -2190,7 +2190,7 @@ p.para_abt {
 		width: 27%;
 		font-size: 15px;
 	}
-	.contact-left h2, .contact-right h3 {
+	.contact-left h2, .contact-right h3 h9 {
 		font-size: 22px;
 	}
 	.contact-right {
@@ -2373,21 +2373,21 @@ p.para_abt {
 	}
 }
 @media (max-width: 640px){
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9 {
 		font-size: 20px;
 	}
 	.banner-info2 p {
 		line-height: 2em;
 		margin: 12px 0 26px;
 	}
-	.banner-info h3 span, .banner-info2 h3 span {
+	.banner-info h3 h9 span, .banner-info2 h3 h9 span {
 		display: inline-block;
 
 	}
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9 {
 		width: 75%;
 	}
-	.banner-info2 h3 {
+	.banner-info2 h3 h9 {
 		margin:0 auto;
 	}
 	.banner-info p {
@@ -2402,7 +2402,7 @@ p.para_abt {
 	.content_left ul li {
 		text-indent: 1em;
 	}
-	.services_left h3,.ind-team h3,h3.tittle,h9.tittle,.capacity h3 {
+	.services_left h3 h9,.ind-team h3 h9,h3.tittle,h9.tittle,.capacity h3 h9 {
 		font-size: 28px;
 	}
 	.ind-gds {
@@ -2490,13 +2490,13 @@ p.para_abt {
 	.login ul li {
 		margin: 0px 6px 0 0;
 	}
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9 {
 		width: 80%;
 	}
 	.baner-top {
 		width: 63%;
 	}
-	h1.t-button, h2.t-button, h3.t-button, h4.t-button, h5.t-button {
+	h1.t-button, h2.t-button, h3.t-button, h4.t-button, h5.t-button, h9.t-button {
 		font-size: 18px;
 	}
 	.ui-datepicker {
@@ -2529,7 +2529,7 @@ p.para_abt {
 	.banner-info, .banner-info2 {
 		margin-top: 3em;
 	}
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9 {
 		width: 100%;
 	}
 	.banner-info p {
@@ -2587,7 +2587,7 @@ p.para_abt {
 		height: 21px;
 		background-size: 100% !important;
 	}
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9 {
 		font-size: 17px;
 	}
 	.banner-info2 p ,.banner-info p{
@@ -2645,7 +2645,7 @@ p.para_abt {
 	.contact {
 		padding-bottom: 50px;
 	}
-	.contact-left h2, .contact-right h3 {
+	.contact-left h2, .contact-right h3 h9 {
 		font-size: 20px;
 	}
 	.ser-bottom h5{
@@ -2693,7 +2693,7 @@ p.para_abt {
 	.navbar-toggle {
 		margin-top: 2px;
 	}
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9{
 		font-size: 16px;
 	}
 	.hvr-outline-out {
@@ -2717,7 +2717,7 @@ p.para_abt {
 	.choose-grid h4 {
 		font-size: 19px;
 	}
-	h1.t-button, h2.t-button, h3.t-button, h4.t-button, h5.t-button {
+	h1.t-button, h2.t-buttonh3.t-button, h4.t-button, h5.t-button, h9.t-button {
 		font-size: 16px;
 	}
 	.page_head {
@@ -2770,7 +2770,7 @@ p.para_abt {
 	.banner-info, .banner-info2 {
 		margin-top: 2em;
 	}
-	.banner-info h3, .banner-info2 h3 {
+	.banner-info h3 h9, .banner-info2 h3 h9 {
 		font-size: 14px;
 	}
 	.content_left ul li {
@@ -2818,7 +2818,7 @@ p.para_abt {
 	.separator {
 		margin: 3px auto;
 	}
-	.services_left h3, .ind-team h3,h9.tittle, h3.tittle, .capacity h3 {
+	.services_left h3 h9, .ind-team h3 h9, h9.tittle, h3.tittle, .capacity h3 h9 {
 		font-size: 26px;
 	}
 	.map iframe {
