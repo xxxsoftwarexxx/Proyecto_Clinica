@@ -5,8 +5,8 @@
 @endsection
 @section('mas')
 <div class="gallery">
-	<div class="container">
-		<h3 class="tittle">Galería</h3>
+
+		<center><azul>Especialidades</azul></center>
 				<div class="gallery-grids">
 					<div class="col-md-6 baner-top wow fadeInRight animated" data-wow-delay=".5s">
 						<a href="images/g1.jpg" class="b-link-stripe b-animate-go  swipebox">

@@ -1,58 +1,54 @@
 @extends('index')
-
+@section('opcion')
+@endsection
 @section('benners')
-<div class="banner page_head"></div>
 @endsection
 @section('mas')
-<div class="about-page">
-	<div class="container">
-		<h3 class="tittle">Sobre nosotros</h3>
-            <div class="col-md-6 about_img wow fadeInRight animated" data-wow-delay=".5s">
-				<img src="images/g1.jpg" alt="">
-            </div>
-			<div class="col-md-6 about_img about_img_left">
-				<div class="choose-grid wow fadeInRight animated" data-wow-delay=".5s">
-					<h4>Temporibus autem quibusdam et aut officiis saepe eveniet ut et voluptates</h4>
-					<p>Aenean ac leo eget nunc fringilla fringilla a non nulla! Nunc orci mi, venenatis quis ultrices vitae, congue non nibh. Nulla bibendum justo eget.</p>
+<div class="container">
+		<div class="panel panel-primary">
+      <div class="panel-heading" color=red><blancog>Sobre nosotros</azul></blancog></div>
+      <div class="panel-body">
+				<div class="row">
+					<div class="col-sm-9"> <img class="img-responsive" src="images/meds.jpg" alt=""></div>
+					<div class="col-sm-3">
+					<negro>Brindamos a nuestros pacientes
+						"Atención especializada con trato personalizado y seguro", porque son ellos nuestra prioridad y
+						 la razón de ser de la institución. Estamos comprometidos a trabajar en equipo, y a cumplir con
+						nuestra responsabilidad social</negro>
+					</div>
 				</div>
-				<div class="choose-grid wow fadeInLeft animated" data-wow-delay=".5s">
-					<h4>Necessitatibus saepe eveniet ut et </h4>
-					<p>Aenean ac leo eget nunc fringilla fringilla a non nulla! Aenean ac leo eget nunc fringilla fringilla a non nulla! Nunc orci mi, venenatis quis ultrices vitae, congue non nibh. Nulla bibendum justo eget.</p>
-				</div>
-            </div>
-			<div class="clearfix"></div>
-		<p class="para_abt wow fadeInUp animated" data-wow-delay=".5s">Temporibus autem quibusdam et aut officiis
-		debitis aut rerum necessitatibus saepe eveniet ut et voluptates
-		repudiandae sint et molestiae non recusandae. Sed ut perspiciatis
-		unde omnis iste natus error sit voluptatem accusantium.</p>
+			</div>
+			</div>
+		</div>
+
+ <div class="container">
+		<p class="para_abt wow fadeInUp animated" data-wow-delay=".5s">No hay un medicamento como la esperanza,
+			ningún incentivo tan grande,
+			 y ningún tónico tan poderoso como la expectativa de que algo ocurra mañana.-Orison Swett Marden.</p>
 	</div>
 </div>
 @endsection
 @section('info')
 	<div class="testimonials">
 		<div class="container">
-			<h3 class="tittle">Testimonials</h3>
+			<center><azul>Testimonios</azul></center>
 			<div class="testimonials-grids">
 				<div class="col-md-6 testimonials-grid animated wow slideInLeft" data-wow-delay=".5s">
 					<div class="testimonials-grid1">
-						<img src="images/3.png" alt=" " class="img-responsive" />
-						<p>Chris Won</p>
+						<img src="images/3.jpg" alt=" " class="img-responsive" />
+						<p>Alvaro Quiñones</p>
 					</div>
 					<div class="testimonials-grid2">
-						<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-							suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-							quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+						<p>La paciencia y buen servicio hacen la la atencion seas mas eficaz</p>
 					</div>
 				</div>
-				<div class="col-md-6 testimonials-grid">
+				<div class="col-md-6 testimonials-grid animated wow slideInLeft" data-wow-delay=".5s">
 					<div class="testimonials-grid1">
-						<img src="images/4.png" alt=" " class="img-responsive" />
-						<p>James Alley</p>
+						<img src="images/4.jpg" alt=" " class="img-responsive" />
+						<p>Grecia Usca</p>
 					</div>
 					<div class="testimonials-grid2">
-						<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-							suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-							quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+						<p>Considero que los especialistas son expertos en sus correspondientes areas </p>
 					</div>
 				</div>
 				<div class="clearfix"> </div>

@@ -44,16 +44,12 @@
                                             <td>{{ $historial_medico-> fecha_apertura }}</td>
 
                                             <td align="center">
-                                                <button type="button" class="btn btn-success btn-xs"
+                                                <button type="button" style="height:30px" class="btn btn-info btn-xs"
+                                                onClick="location.href='/historial_medico/{{ $historial_medico->id_historial_medico }}'">
+                                                Ver Detalles</button>
+                                                <button type="button" style="height:30px" class="btn btn-success btn-xs"
                                                 onClick="location.href='/historial_medico/{{ $historial_medico->id_historial_medico }}/edit'">
                                                 Editar</button>
-
-
-                                                  <form action="/historial_medico/{{ $historial_medico->id_historial_medico }}" method="post">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE')}}
-                                                    <button class="btn btn-danger btn-xs">Eliminar</button>
-                                                  </form>
 
                                             </td>
                                         </tr>

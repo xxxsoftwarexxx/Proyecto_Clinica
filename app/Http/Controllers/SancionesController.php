@@ -17,7 +17,7 @@ class SancionesController extends Controller
      */
     public function index()
     {
-      $sanciones = DB::table('sanciones')->get();
+      $sanciones = DB::table('sancion')->get();
       return view('sanciones.index',['sanciones'=>$sanciones]);
     }
 

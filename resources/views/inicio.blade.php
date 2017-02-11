@@ -1,5 +1,4 @@
 @extends('index')
-
 @section('opcion')
 @endsection
 @section('benners')
@@ -8,11 +7,12 @@
 				<li>
 					<div class="banner2">
 						<div class="container">
-							<div class="banner-info">
-								<h3>Para Adultos,Jovenes y Adolecentes<span> Planificación Familiar </span>Visítanos </h3>
-								<p>Contamos con psicologos expertos, que te guiaran en el tema,
-								responderan tus dudas y aconsejaran.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">Ver Mas</a>
+							<div class="banner-info text-center">
+								<h3><k>TE DAMOS LA BIENVENIDA </k></h3>
+										<blanco>El centro de salud contribuye en formar una cultura solidaria en el campo de salud, ya que brinda un espacio de
+											ayuda social que favorece a los alumnos del campo univeristario y beneficiarios de programas sociales.Ademas fortalecemos nuestra atencion
+											 basadonos en el Respeto, Confianza y Vocacion de servicio al nuestros pacientes que se reciben
+											atencion en la esta institucion</blanco>
 							</div>
 						</div>
 					</div>
@@ -20,37 +20,38 @@
 				<li>
 					<div class="banner1">
 						<div class="container">
-							<div class="banner-info2 text-center">
-								<h3>Nuestro Local <span>Visítanos</span></h3>
-								<p>Non encontramos en el campus de la universidad,
-								nacional de San Antonio Abad del Cuso.
-								Av de la Cultura</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">Ver</a>
+							<div class="banner-info text-center">
+								<h3><k>SALUD OCUPACIONAL</k></h3>
+										<negro>Nuestra Clínica cuenta con un staff de profesionales para gestionar la seguridad y la salud en el trabajo de todos
+										sus colaboradores de acuerdo a la normatividad peruana. La Salud Ocupacional a nivel mundial es considerada como un pilar
+										 fundamental en el desarrollo de un país, sus acciones están dirigidas a la promoción y protección de la salud de los trabajadores
+										 y pacientes.</negro>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li>
-					<div class="banner2">
+					<div class="banner3">
 						<div class="container">
-							<div class="banner-info">
-							<h3>Para Adultos,Jovenes y Adolecentes<span> Planificación Familiar </span>Visítanos </h3>
-							<p>Contamos con psicologos expertos, que te guiaran en el tema,
-							responderan tus dudas y aconsejaran.</p>
-							<a href="#book" class="hvr-outline-out button2 scroll">Ver Mas</a>
+							<div class="banner-info text-center">
+								<h3><k>NUESTROS PROFESIONALES </k></h3>
+										<blanco>Contamos con personal capacitado para
+											todo tipo de servicios, con infraestructura adecuada para brindar servicios integrales que den bienestar al paciente
+											Ademas el personal médico se encuentra altamente calificado en las especialidades que brindamos:
+											Cirugia General, Ginecología y Obstetricia, Laboratorio Clinico entre otros.</blanco>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li>
-					<div class="banner1">
+					<div class="banner4">
 						<div class="container">
-							<div class="banner-info2 text-center">
-							<h3>Nuestro Local <span>Visítanos</span></h3>
-							<p>Non encontramos en el campus de la universidad,
-							nacional de San Antonio Abad del Cuso.
-							 Av de la Cultura</p>
-							<a href="#book" class="hvr-outline-out button2 scroll">Ver</a>
+							<div class="banner-info text-center">
+								<h3><k>CONVENIOS CON ESSALUD </k></h3>
+										<negro>Desde hace dos años nuestra Clínica firmó un convenio con EsSalud para reducir el tiempo de espera
+											 y mejorar las prestaciones asistenciales a la comunidad estudiantil UNSAAC.
+										  	Dichos beneficios se reflejan en la infraestructura y tambien a los profesionales que pertenecen a
+												 esta institucion</negro>
 							</div>
 						</div>
 					</div>
@@ -62,24 +63,24 @@
 @section('mas')
 @endsection
 @section('info')
-		<div class="col-md-4 content_right wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<img class="img-responsive" src="images/pic1.jpg" alt=" " />
+		<div class="container">
+			<div class="col-sm-4"><img class="img-responsive" src="images/blank.PNG" alt=" " /></div>
 		</div>
-		<div class="col-md-4 content_left wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.2s">
-			<div class="welcome">
-				<h3>Bienevnido a la clinica UNSAAC</h3>
-				<ul>
-				<h5>Ofresemos atencion de alta calidad a
-				estudiantes universitarios como a personas
-				externas; contamos con personal altamente
-				calificado</h5>
-				</ul>
+		<div class="panel panel-primary">
+      <div class="panel-heading"><e>COMODA Y MODERNA INFRAESTRUCTURA</e></div>
+      <div class="panel-body">
+				<div class="row">
+					<div class="col-sm-4"><img class="img-responsive" src="images/enf1.jpg" alt=" " /> </div>
+					<div class="col-sm-4"><img class="img-responsive" src="images/pl1.jpg" alt=" " /> </div>
+					<div class="col-sm-4"><img class="img-responsive" src="images/sal1.jpg" alt=" " /> </div>
+				</div>
 			</div>
-		</div>
+    </div>
+
 		@if(!Auth::guest())
 		@if(Auth::user()->tipo=='Paciente'||Auth::user()->tipo=='Admi')
 		<div name="book" id="book" class="col-md-4 content_middle wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.3s">
-			<h3>Reservar una cita</h3>
+			<h9>Reservar una cita</h9>
 			<form method="post" action="/reservas/horario">
 				  <input type="hidden" name="_token" value="{{csrf_token()}}">
 				<select id="Especialidad" name="Especialidad" placeholder="Especialidad"  class="frm-field required sect">
@@ -100,31 +101,30 @@
 @section('servicios')
 	<div class="container">
 		<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
-			<h3>Our Best Services</h3>
-			<p class="ser-para" >Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-				sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-			<a href="about.html" class="hvr-outline-out button2">See More About Us</a>
+			<f>Nuestros servicios</f>
+			<p class="ser-para" > En el centro de salud universitario te brindamos la mas calida atencion,siendo nuestro
+				 mayor objetivo la calidez humana que recibe cada uno de nuestros pacientes. </p>
+			<a href="about.html" class="hvr-outline-out button2">Ver Especialidades</a>
 			<div  class="callbacks_container">
 				<ul class="rslides" id="slider4">
 					<li>
 						<div class="ser-bottom">
-							<h5>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-							sed quia consequuntur magni dolores eos qui </h5>
-							<p>- Alia Smith</p>
+							<h5>Mantener el cuerpo con buena salud es un deber,
+								 de lo contrario no seremos capaces de mantener nuestro cuerpo y mente fuertes y claros </h5>
+							<p>-Dr.Bruno Zanabria Guzman </p>
 						</div>
 					</li>
 					<li>
 						<div class="ser-bottom">
-							<h5>Voluptas sit aspernatur aut odit aut fugit,sed quia consequuntur magni dolores
-							eos qui ratione voluptatem sequi nesciunt</h5>
-							<p>- Thompson</p>
+							<h5>La salud de nuestro cuerpo la gastamos al por mayor; mas, una vez perdida, la compramos al por menor.</h5>
+								<p>- Dr.Eduardo Chura Huaman</p>
 						</div>
 					</li>
 					<li>
 						<div class="ser-bottom">
-							<h5>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-							sed quia consequuntur magni dolores eos qui </h5>
-							<p>- Federic</p>
+							<h5>Si tienes salud, probablemente serás feliz, y si tienes salud y felicidad, tienes toda la riqueza
+								 que necesitas, incluso si no es todo lo que quieres. </h5>
+							<p>-Dra.Lara Carazas Quispe</p>
 						</div>
 					</li>
 				</ul>
@@ -134,27 +134,24 @@
 		<div class="col-md-8 services_right ">
 			<div class="list-left text-center wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.1s">
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
+				<h4>Beneficios</h4>
+				<p>Cada uno de nuestros pacientes tiene acceso a diferentes campañas de salud realizadas durante el año</p>
 			</div>
 			<div class="list-left text-center wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.2s">
 				<span class="glyphicon glyphicon-scissors" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
+				<h4>Tiempo de espera</h4>
+				<p>A traves de nuestra plataforma onlinne puedes acceder a reservar tu cita, sin colas u otros tramites</p>
 			</div>
 			<div class="list-left text-center no_marg wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.3s">
 				<span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
+				<h4>Programa Nutricional</h4>
+				<p> El centro de salud te ofrece mejorar tu nutricion a traves de vitaminas y proteinas,que son
+					entregadas gratituiamente a los alumnos afiliados a este programa semestralmente</p>
 			</div>
 			<div class="list-left text-center no_marg wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.4s">
 				<span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
+				<h4>Equipo Profesional</h4>
+				<p>Desde el año 2013 nos encontramos en convenio con Essalud, abriendo paso a contar con mayores especialistas </p>
 			</div>
 			<div class="clearfix"></div>
 		</div>

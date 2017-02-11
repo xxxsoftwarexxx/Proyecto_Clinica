@@ -77,7 +77,9 @@ class HistorialMedicoController extends Controller
      */
     public function show($id)
     {
-        return $this->index();
+            $historial_medico = DB::table('historial_medico')->where('id_historial_medico',$id)->first();
+            $historial_medico_detalle = DB::table('historiales_medicos_detalles')->get();
+            return view('historial_medico.show',['historial_medico'=>$historial_medico,'historial_medico_detalle'=>$historial_medico_detalle]);
     }
 
     /**
@@ -110,24 +112,17 @@ class HistorialMedicoController extends Controller
       $alergias = $request->input('Alergias');
       $antecedentes = $request->input('Antecedentes');
       $tipo_sangre = $request->input('Tipo_Sangre');
-      $pacientes_dni = $request->input('Pacientes_DNI');
       $fecha_apertura = $request->input('Fecha_Apertura');
 
-      $pacientes = DB::table('pacientes')->get();
-      foreach($pacientes as $patient)
-      {
-        if($pacientes_dni==$patient->dni){
-          $pacientes_dni = $patient->dni;
-        }
-      }
-      
+
+
+
       DB::table('historial_medico')->where('id_historial_medico',$id)
         ->update([
           'cirugias'=>$cirugias,
           'alergias'=>$alergias,
           'antecedentes'=>$antecedentes,
           'tipo_sangre'=>$tipo_sangre,
-          'pacientes_dni'=>$pacientes_dni,
           'fecha_apertura'=>$fecha_apertura,
       ]);
 

@@ -3,7 +3,7 @@
 <head>
 <title>Clinica UNSAAC</title>
 <!-- for-mobile-apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=devi-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Infirmary Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
@@ -146,8 +146,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="sr-only">Toggle navigation</span>
 				  </button>
 					<div class="logo grid">
-						<div class="grid__item color-3">
-							<h1><a class="link link--nukun" href="index"><i></i>CLI<span>N</span>ICA</a></h1>
+						<div class="grid__item color-2">
+							<div class="row">
+							  <div class="col-xs-2 col-md-1"><img src="../images/logo.png" alt=""></div>
+								<div class="col-xs-10 col-md-10"><h1><a>CENTRO DE SALUD UNIVERSITARIO UNSAAC</a></h1>
+							 </div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -158,7 +162,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							@if(Auth::guest())
 							<li class="menu__item menu__item--current"><a href="inicio" class="menu__link">Inicio</a></li>
 							<li class="menu__item"><a href="about" class="menu__link">Sobre nosotros</a></li>
-							<li class="menu__item"><a href="gallery" class="menu__link">Galería</a></li>
+							<li class="menu__item"><a href="gallery" class="menu__link">Especialidades</a></li>
 							<li class="menu__item"><a href="contact" class="menu__link">Contactanos</a></li>
 							@endif
 						</ul>
@@ -179,6 +183,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							pager: true,
 							nav: false,
 							speed: 500,
+
 							namespace: "callbacks",
 							before: function () {
 						$('.events').append("<li>before event fired.</li>");
@@ -212,6 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							pager: true,
 							nav: false,
 							speed: 500,
+
 							namespace: "callbacks",
 							before: function () {
 						$('.events').append("<li>before event fired.</li>");
@@ -226,12 +232,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //services -->
 <!-- team -->
-<div class="ind-team">
+<div class="container">
+	<div class="col-sm-4"><img class="img-responsive" src="images/blank.PNG" alt=" " />
+</div></div>
+<center><azul>Nuestros profesionales</azul></center>
+</div>
 	<div class="container">
-		<h3>Profesionales</h3>
 		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 			<div class="team-img">
-				<img class="img-responsive" src="images/pic4.jpg" alt=" "/>
+				<img class="img-responsive" src="images/d1.jpg" alt=" "/>
 				<div class="team-info">
 					<ul>
 						<li class="hvr-rectangle-out"><a class="eco1" href="#"></a></li>
@@ -242,12 +251,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 			</div>
-			<h4>Dr. Federica</h4>
-			<p>Dental Surgeon</p>
+			<h4>Dr.Bruno Zanabria Guzman</h4>
+			<p>Dentista</p>
 		</div>
 		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 			<div class="team-img">
-				<img class="img-responsive" src="images/pic5.jpg" alt=" "/>
+				<img class="img-responsive" src="images/d2.png" alt=" "/>
 				<div class="team-info">
 					<ul>
 						<li class="hvr-rectangle-out"><a class="eco1" href="#"></a></li>
@@ -258,13 +267,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 			</div>
-			<h4>Dr. Thompson</h4>
-			<p>Cardiology</p>
+			<h4>-Dra.Lara Carazas Quispe</h4>
+			<p>Psicologia</p>
 
 		</div>
 		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 			<div class="team-img">
-				<img class="img-responsive" src="images/pic6.jpg" alt=" "/>
+				<img class="img-responsive" src="images/d3.jpg" alt=" "/>
 				<div class="team-info">
 					<ul>
 						<li class="hvr-rectangle-out"><a class="eco1" href="#"></a></li>
@@ -275,52 +284,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 			</div>
-			<h4>Dr. Victoria</h4>
-			<p>Neurology</p>
+			<h4>Dr.Eduardo Chura Huaman</h4>
+			<p>Medicina general</p>
 		</div>
 
 		<div class="clearfix"></div>
 	</div>
 </div>
 <!-- team -->
-<!-- capabilities -->
-<div class="capacity">
-	<div class="container">
-		<h3>Capabilities</h3>
-		<div class="col-md-3 capabil_grid1 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5700' data-delay='.5' data-increment="100">5700</div>
-				<p>Happy Patients</p>
-			</div>
-		</div>
-		<div class="col-md-3 capabil_grid2 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="5">1700</div>
-				<p>Our Staff</p>
-			</div>
-		</div>
-		<div class="col-md-3 capabil_grid3 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='0021' data-delay='.5' data-increment="100">0021</div>
-				<p>Foundation</p>
-			</div>
-		</div>
-		<div class="col-md-3 capabil_grid4 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='2500' data-delay='.5' data-increment="1">2500</div>
-				<p>Clients</p>
-			</div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //capabilities -->
 <!-- contact -->
 <div class="contact">
 	<div class="container">
 
 		<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s">
-			<h3>Contactanos</h3>
+			<bl>Contactanos</bl>
 			<div class="strip"></div>
 			<ul class="con-icons">
 				<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>+123 456 7890</li>
@@ -336,10 +313,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="strip"></div>
 		</div>
 		<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s">
-			<h2>Información</h2>
+			<bl>Información</bl>
 			<div class="strip"></div>
-			<p class="para">Estamos al servicion de los pacientes
-      para ofercer una atencion oportuna y de calidad.</p>
+			<p class="para">Estamos al servicio de los pacientes
+      para ofrecer una atencion oportuna y de calidad.</p>
 		</div>
 		<div class="clearfix"></div>
 	</div>
@@ -356,7 +333,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="login-grids">
 
 									<div class="login-right">
-										<h3>Ingrese con su cuenta</h3>
+										<h9>Ingrese con su cuenta</h9>
 										<form method="POST" action="/login">
 											<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
