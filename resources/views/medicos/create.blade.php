@@ -8,6 +8,9 @@
     #Apellidos{
       text-transform: uppercase;
     }
+    #Dirección{
+      text-transform: uppercase;
+    }
   </style>
 @endsection
 
@@ -22,7 +25,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="dni" name="id" pattern="[0-9]{8}" placeholder="Ejm. 12345678" class="form-control" required>
+        <input id="dni" name="dni" pattern="[0-9]{8}" placeholder="Ejm. 12345678" class="form-control" required>
         <label>DNI</label>
       </div>
     </div>
@@ -49,7 +52,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="Nombres" name="nombres" pattern="[a-zA-Z]{0,}"placeholder="Ejm. Luis" class="form-control" required>
+        <input id="Nombres" name="nombres" pattern="[a-zA-Z ]{0,}"placeholder="Ejm. Luis" class="form-control" required>
         <label>Nombres</label>
       </div>
     </div>
@@ -58,7 +61,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="Apellidos" name="apellidos" pattern="[a-zA-Z]{0,}" placeholder="Ejm. Castro Fuentes" class="form-control" required>
+        <input id="Apellidos" name="apellidos" pattern="[a-zA-Z ]{0,}" placeholder="Ejm. Castro Fuentes" class="form-control" required>
         <label>Apellidos</label>
       </div>
     </div>
@@ -153,7 +156,7 @@
             <h3 class="modal-title">Agregar Médico</h3>
           </div>
           <div class="modal-body">
-            <p>¡Desea agregar a este médico?</p>
+            <p>¿Desea agregar a este médico?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

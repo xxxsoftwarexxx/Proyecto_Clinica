@@ -20,7 +20,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="nombre" name="nombre" pattern="[A-Z]{3,}"placeholder="Nombre de la Especialidad" class="form-control" value="{{$especialidades->nombre}}"required>
+        <input id="nombre" name="nombre" pattern="[A-Z ]{3,}"placeholder="Nombre de la Especialidad" class="form-control" value="{{$especialidades->nombre}}"required>
         <label>Nombre de Especialidad</label>
       </div>
     </div>

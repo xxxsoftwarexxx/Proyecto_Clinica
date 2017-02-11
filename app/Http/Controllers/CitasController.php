@@ -11,16 +11,17 @@ class CitasController extends Controller
 {
     public $item_id='id';
      public $item=[
-    'fecha',
-     'hora',
+    'fecha_cita',
+     'fecha_reserva',
      'estado',
-     'medicos_dni',
-     'pacientes_dni'
+     'pacientes_dni',
+    'bloques_idbloques',
      ];
 
      public $tabla='citas';
-     public $tabla1='medicos';
-     public $tabla2='pacientes';
+     public $tabla1='pacientes';
+      public $tabla2='bloques';
+
 
     public function index(){
         $t = DB::table($this->tabla)->get();
@@ -50,10 +51,13 @@ class CitasController extends Controller
     public function edit($id){
       $t = DB::table($this->tabla)->where($this->item_id,$id)->first();
       $t1 = DB::table($this->tabla1)->get();
+      $t2 = DB::table($this->tabla2)->get();
 
       return view($this->tabla.'.edit',[
         $this->tabla=>$t,
-        $this->tabla1=>$t1
+        $this->tabla1=>$t1,
+        $this->tabla2=>$t2,
+
       ]);
     }
 
@@ -68,7 +72,12 @@ class CitasController extends Controller
     }
 
     public function destroy($id)    {
-      DB::table($this->tabla)->where($this->item_id,$id)->delete();
+      $cita = DB::table($this->tabla)->where($this->item_id,$id)->first();
+      $habilitado = 'INHABILITADO';
+      if($cita->estado == 'INHABILITADO'){
+        $habilitado = 'HABILITADO';
+      }
+      DB::table($this->tabla)->where($this->item_id,$id)->update(['estado'=>$habilitado]);
       return redirect($this->tabla);
     }
 }
