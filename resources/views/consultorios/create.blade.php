@@ -26,6 +26,18 @@
         <input id="Dni" name="ubicacion" placeholder="Nombre del Consultorio" class="form-control" required>
         <label>Nombre del Consultorio</label>
       </div>
+    </div>
+
+    <div class="input-group col-md-12 col-xs-12">
+      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-bitbucket bigicon"></i></span>
+      <span align="center" class="col-md-6 col-xs-10 has-float-label">
+      <div align="center" class="group-control">
+        <select id="Estado" name="estado"  class="form-control" >
+          <option>HABILITADO</option>
+          <option>INHABILITADO</option>
+        </select>
+        <label>Estado</label>
+      </div>
     </div></br>
 
     <div class="form-group">
