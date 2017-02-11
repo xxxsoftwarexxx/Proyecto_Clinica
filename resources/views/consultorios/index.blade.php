@@ -7,7 +7,8 @@
 
 @section('Contenido')
 <div class="panel-body">
-  <div class="dataTable_wrapper">
+          <div class="dataTable_wrapper">
+            <div class="col-md-6">
       <table class="table table-striped table-bordered table-hover" id="dataTables-example">
         <thead>
           <tr>

@@ -106,6 +106,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	@if(Auth::user()->tipo=='Paciente')
 		@yield("Menu")
 	@endif
+	@if(Auth::user()->tipo=='Admi')
+		@include('Admi.sub_menu')
+	@endif
 @endif
 
 <!-- //header -->

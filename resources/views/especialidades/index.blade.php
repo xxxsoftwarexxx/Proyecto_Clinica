@@ -7,10 +7,10 @@
 
 @section('Contenido')
 <div class="panel-body">
-  <div class="dataTable_wrapper">
+          <div class="dataTable_wrapper">
+            <div class="col-md-10">
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-      <thead bgcolor = "‎#CCFFFF">
-        <tr>
+          <tr>
           <th align="center">Código</th>
           <th align="center">Nombre</th>
           <th align="center">Consultorio</th>

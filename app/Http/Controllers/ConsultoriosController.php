@@ -63,7 +63,12 @@ class ConsultoriosController extends Controller
     }
 
     public function destroy($id)    {
-      DB::table($this->tabla)->where($this->item_id,$id)->delete();
+      $consultorio = DB::table($this->tabla)->where($this->item_id,$id)->first();
+      $habilitado = 'INHABILITADO';
+      if($consultorio->estado == 'INHABILITADO'){
+        $habilitado = 'HABILITADO';
+      }
+      DB::table($this->tabla)->where($this->item_id,$id)->update(['estado'=>$habilitado]);
       return redirect($this->tabla);
     }
 }

@@ -1,9 +1,5 @@
 @extends('historial_medico.mantenimiento_historial_medico')
 
-@section('Titulo')
-<i class="fa fa-gear fa-fw"></i>
-<a1>Mantenimiento de Historial Médico<a1>
-@endsection
 @section('Contenido')
         <form method="POST" action="/historial_medico/{{$historial_medico->id_historial_medico }}" autocomplete="off">
           {{csrf_field()}}

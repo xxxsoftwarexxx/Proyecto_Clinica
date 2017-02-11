@@ -2,9 +2,10 @@
 
 @section('Mantenimiento')
 <div class="col-lg-12">
-    <div class="panel panel-default">
-        <div class="panel-heading" style="height:60px;">
-              @yield('Titulo')
+  <div class="panel panel-default">
+    <div class="panel-heading" style="height:60px;">
+      <i class="fa fa-gear fa-fw"></i>
+      <a1 class="titulo">Mantenimiento de Hstoriales Médicos<a1>
               <div class="pull-right">
                 <div class="btn-group">
                   <button type="button" class="btn btn-primary btn-md"
@@ -29,7 +30,7 @@
 <div class="col-lg-12">
     <div class="panel panel-default">
         <div class="panel-heading" style="height:60px;">
-              @yield('Titulo1')              
+              @yield('Titulo1')
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">

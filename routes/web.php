@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('hola',function(){
+  return view("Pacientes.index");
+});
 
 Route::group(['middleware' => 'MDadmi'], function () {
   Route::resource('personas', 'PersonasController');
@@ -35,23 +38,30 @@ Route::group(['middleware' => 'MDadmi'], function () {
   Route::resource('telefono','TelefonoController');
   Route::resource('medhorarios', 'HorariosMedicosController');
   Route::resource('cambiar/{idbloque}/{medDNI}/', 'HorariosMedicosController@resaltar');
-
-
-    Route::resource('reservas_horarios', 'ReservaController@dif_horario');
-    Route::resource('reservas_horario', 'ReservaController@horario');
-    Route::resource('reservas/citas', 'ReservaController@citas');
+  Route::resource('/reportes/admi/', 'ReportesController@admi');
+Route::resource('pdfcitas','PDFControllerCitas@pdfcitas');
+Route::resource('pdfsancion','PDFControllerSancion@pdfsancion');
+Route::resource('pdfhistorialmedico','PDFControllerHistorial_medico@PDFHistorialmedico');
+Route::resource('pdfpacientes','PDFControllerPacientes@PDFPaciente');
 
   });
 
 Route::group(['middleware' => 'MDpaciente'], function () {
 
+  Route::resource('reservas', 'ReservaController@mostrar');
+  Route::resource('reservas/horario', 'ReservaController@horario');
+  Route::resource('reservas/citas', 'ReservaController@citas');
   Route::get('reservas_Almacenar','ReservaController@almacenar');
   Route::get('Recuperar_Datos_Cita','ReservaController@Recuperar_Bloque');
+
   });
 
 Route::get('Recuperar_Horario', ['uses'=>'ReservaController@Recuperar_Horario']);
+Route::get('Modificar_Datos_Paciente',['uses'=>'PacientesController@Modificar_Datos_Paciente']);
+
+
 Route::group(['middleware' => 'MDmedico'], function () {
-    Route::resource('/medcitas/', 'CitasMedicosController');
+  Route::resource('/medcitas/', 'CitasMedicosController');
     Route::resource('/medcitas/{id}/', 'CitasMedicosController@mostrar');
     Route::resource('/medcitas/{id}/atendidos', 'CitasMedicosController@mostrarAtendidos');
     Route::get('/medcitas/{dniMed}/sancionar', 'CitasMedicosController@sancionar');
@@ -60,26 +70,20 @@ Route::group(['middleware' => 'MDmedico'], function () {
     Route::resource('/medcitas/citadetalle/{id}/', 'CitasMedicosController@siguiente');
     Route::resource('/medcitas/citadetalle/{idcita}/{idhistorial}/', 'CitasMedicosController@Save');
     Route::resource('/reportes/medico/', 'ReportesController@medico');
+
 });
 
 
-Route::resource('medcitas','CitasMedicosController');
-Route::get('/medcitas/{dniMed}/sancionar', ['uses' => 'CitasMedicosController@sancionar']);
-Route::get('/medcitas/{dniMed}/enlistar', ['uses' => 'CitasMedicosController@enlistar']);
-
-
+//
 Route::get('/', 'InicioController@index');
 
 Route::resource('inicio', 'InicioController');
 Route::get('about', 'InicioController@about');
-Route::get('gallery','InicioController@gallery');
+Route::get('gallery', 'InicioController@gallery');
 Route::get('contact', 'InicioController@contact');
-Route::get('configuracion', 'InicioController@configuracion');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
+Route::get('configuracion', function () {
+    return view('configuracion');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

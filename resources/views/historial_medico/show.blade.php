@@ -52,7 +52,7 @@
             </div>
 
             <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-userbigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                      <input id="Dni_Paciente" name="Dni_Paciente"  class="form-control" value="{{$historial_medico->pacientes_dni}}" required readonly>
                        <label>DNI Paciente</label>

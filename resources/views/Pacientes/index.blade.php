@@ -47,7 +47,7 @@
                         <td>{{ $paciente-> estado }}</td>
 
                         <td align="center">
-                            <button type="button" class="btn btn-success btn-sm"
+                            <button style="width:77px"  type="button" class="btn btn-success btn-sm"
                             onClick="location.href='/pacientes/{{ $paciente->dni }}/edit'">   Editar   </button>
                             <br>
                             @if($paciente->estado =='HABILITADO')

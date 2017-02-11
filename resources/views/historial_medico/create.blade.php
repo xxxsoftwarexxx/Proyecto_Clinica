@@ -1,9 +1,6 @@
 @extends('historial_medico.mantenimiento_historial_medico')
 
-@section('Titulo')
-<i class="fa fa-gear fa-fw"></i>
-<a1>Mantenimiento de Historiales Médicos<a1>
-@endsection
+
 @section('Contenido')
       <form role="form" method="post" action="/historial_medico" autocomplete="off">
             <input type="hidden" name="_token" value="{{csrf_token()}}">

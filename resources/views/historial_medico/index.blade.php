@@ -10,10 +10,7 @@
     <script src={{ URL::asset('bower_components/datatables-responsive/css/dataTables.responsive.css') }}></script>
 @endsection
 
-@section('Titulo')
-<i class="fa fa-gear fa-fw"></i>
-<a1>Mantenimiento de Historial Médico<a1>
-@endsection
+
 
 @section('Contenido')
         <div class="dataTable_wrapper table-responsive">
