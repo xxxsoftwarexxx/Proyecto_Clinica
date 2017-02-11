@@ -77,25 +77,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					@if (Auth::guest())
 							<li><a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-user" 	aria-hidden="true"></span>Iniciar sesión</a></li>
 					@else
-							<li class="dropdown">
-									<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-											{{$user_name}} <span class="caret"></span>
-									</a>
-									<ul class="dropdown-menu" role="menu">
-											<li>
-													<a href="{{ url('/logout') }}"
-															onclick="event.preventDefault();
-																			 document.getElementById('logout-form').submit();">
-															Logout
-													</a>
-													<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-															{{ csrf_field() }}
-													</form>
-											</li>
-									</ul>
-							</li>
-							<li>
-									<a href="{{ url('/logout') }}"
+							<li><a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+												{{$user_name}}
+										</a></li>
+							<li><a href="{{ url('/logout') }}"
 											onclick="event.preventDefault();
 															 document.getElementById('logout-form').submit();">
 											Logout
@@ -104,6 +89,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											{{ csrf_field() }}
 									</form>
 							</li>
+							@if(Auth::user()->tipo=='Admi')
+								<li><a href="pacientes"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Configuracion</a></li>
+							@endif
 					@endif
 				</ul>
 			</div>
@@ -116,24 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		@include('medicos.sub_menu')
 	@endif
 	@if(Auth::user()->tipo=='Paciente')
-	<div class="header wow zoomIn">
-		<div class="container">
-			<div class="header_right">
-				<div class="login">
-					<ul>
-						<li><a id="Cargar_Datos"> Perfil</a></li>
-						<li><a href="#book">Reservar cita</a></li>
-						<li><a href="">Reportes</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	@endif
-	@if(Auth::user()->tipo=='Admi')
-		@include('Admi.sub_menu')
+		@yield("Menu")
 	@endif
 @endif
 
@@ -159,12 +130,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--horatio">
 						<ul class="nav navbar-nav menu__list">
-							@if(Auth::guest())
 							<li class="menu__item menu__item--current"><a href="inicio" class="menu__link">Inicio</a></li>
 							<li class="menu__item"><a href="about" class="menu__link">Sobre nosotros</a></li>
 							<li class="menu__item"><a href="gallery" class="menu__link">Especialidades</a></li>
 							<li class="menu__item"><a href="contact" class="menu__link">Contactanos</a></li>
-							@endif
 						</ul>
 					</nav>
 				</div>
