@@ -60,7 +60,7 @@
                   <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
                     {{ csrf_field() }}
                     {{ method_field('DELETE')}}
-                  <button type="submit" style="width:80px" class="btn btn-success">Si</button>
+                  <button type="submit" class="btn btn-success">Si</button>
               </div>
             </div>
           </div>

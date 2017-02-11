@@ -2,11 +2,14 @@
 
 @section('estilos')
   <style>
-    #Nombres{
+    #nombres{
       text-transform: uppercase;
     }
-    #Apellidos{
+    #apellidos{
       text-transform: uppercase;
+    }
+    #direccion{
+      text-transform: uppercase;;
     }
   </style>
 @endsection
@@ -50,7 +53,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="nombres" name="nombres" pattern="[a-zA-Z]{0,}" placeholder="Nombres" class="form-control" value="{{$medicos->nombres}}" required>
+        <input id="nombres" name="nombres" pattern="[a-zA-Z ]{0,}" placeholder="Nombres" class="form-control" value="{{$medicos->nombres}}" required>
         <label>Nombres</label>
       </div>
     </div>
@@ -59,7 +62,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="apellidos" name="apellidos" pattern="[a-zA-Z]{0,}" placeholder="Apellidos" class="form-control" value="{{$medicos->apellidos}}" required>
+        <input id="apellidos" name="apellidos" pattern="[a-zA-Z ]{0,}" placeholder="Apellidos" class="form-control" value="{{$medicos->apellidos}}" required>
         <label>Apellidos</label>
       </div>
     </div>
