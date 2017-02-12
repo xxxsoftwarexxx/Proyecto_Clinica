@@ -5,7 +5,7 @@
   <div class="panel panel-default" >
     <div class="panel-heading" style="height:60px;">
       <i class="fa fa-gear fa-fw"></i>
-      <a1 class="titulo">Mantenimiento de Consultorios<a1>
+      <a1>MANTENIMIENTO CONSULTORIOS<a1>
       <div class="pull-right">
         <div class="btn-group">
           <button type="button" class="btn btn-primary btn-md"

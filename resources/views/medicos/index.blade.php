@@ -15,7 +15,7 @@
         <th>Nombres</th>
         <th>Apellidos</th>
         <th>Email</th>
-        <th>Telefono</th>
+        <th>Teléfono</th>
         <th>Operaciones</th>
       </tr>
     </thead>
@@ -47,20 +47,20 @@
                 <button type="button" class="close" data-dismiss="modal" aria-Label="Close">
                   <span aria-hidden="true">X</span>
                 </button>
-                <h3 class="modal-title">Estado del Medico</h3>
+                <h3 class="modal-title">Estado del Médico</h3>
               </div>
               <div class="modal-body">
                 @if($medico->estado == 'HABILITADO')
-                  <p>¿Esta seguro de que desea modificar el estado a INHABILITADO del medico?</p>
+                  <p>¿Esta seguro de que desea modificar el estado a INHABILITADO del médico?</p>
                 @else
-                  <p>¿Esta seguro de que desea modificar el estado a HABILITADO del medico?</p>
+                  <p>¿Esta seguro de que desea modificar el estado a HABILITADO del médico?</p>
                 @endif
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
                     {{ csrf_field() }}
                     {{ method_field('DELETE')}}
-                  <button type="submit" style="width:80px" class="btn btn-success">Si</button>
+                  <button type="submit"  class="btn btn-success">Si</button>
               </div>
             </div>
           </div>

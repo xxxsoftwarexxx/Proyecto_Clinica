@@ -6,10 +6,9 @@
 @endsection
 
 @section('Contenido')
-<div class="panel-body">
-          <div class="dataTable_wrapper">
-            <div class="col-md-10">
+<div class="dataTable_wrapper table responsive">
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+      <thead>
           <tr>
           <th align="center">Código</th>
           <th align="center">Nombre</th>
@@ -55,16 +54,15 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
                       {{ csrf_field() }}
                       {{ method_field('DELETE')}}
-                    <button type="submit" style="width:80px" class="btn btn-success">Si</button>
+                    <button type="submit" class="btn btn-success">Si</button>
                 </div>
               </div>
             </div>
             </form>
-        </div>
-      @endforeach
-      </tbody>
-    </table>
-  </div>
+      </div>
+    @endforeach
+    </tbody>
+  </table>
 </div>
 @endsection
 

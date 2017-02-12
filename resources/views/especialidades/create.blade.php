@@ -73,7 +73,7 @@
                 <h3 class="modal-title">Agregar Especialidad</h3>
               </div>
               <div class="modal-body">
-                <p>¡Desea agregar este especialidad?</p>
+                <p>¿Desea agregar este especialidad?</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

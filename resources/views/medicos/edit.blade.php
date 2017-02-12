@@ -8,6 +8,9 @@
     #Apellidos{
       text-transform: uppercase;
     }
+    #direccion{
+      text-transform: uppercase;
+    }
   </style>
 @endsection
 
@@ -170,7 +173,7 @@
             <p>Nombre:        {{$medicos->codigo}}</p>
             <p>Nombres:       {{$medicos->nombres}}</p>
             <p>Apellidos:     {{$medicos->apellidos}}</p>
-            <p>Telefono:      {{$medicos->telefono}}</p>
+            <p>Teléfono:      {{$medicos->telefono}}</p>
             <p>Correo:        {{$medicos->correo}}</p>
             <p>Dirección:     {{$medicos->direccion}}</p>
             <p>Especialidad:  {{$medicos->especialidades_codigo}}</p>

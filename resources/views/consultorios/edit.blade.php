@@ -24,6 +24,23 @@
         <input id="nombre" name="ubicacion" placeholder="Ubicación del Consultorio" class="form-control" value="{{$consultorios->ubicacion}}" required>
         <label>Nombre del Consultorio</label>
       </div>
+    </div>
+
+    <div class="input-group col-md-12 col-xs-12">
+      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-bitbucket bigicon"></i></span>
+      <span align="center" class="col-md-6 col-xs-10 has-float-label">
+      <div align="center" class="group-control">
+        <select id="habilitado" name="habilitado" placeholder="Estado de Especialidad" class="form-control" >
+          @if($consultorios->estado == "HABILITADO")
+            <option selected value = "HABILITADO">HABILITADO</option>
+            <option value="INHABILITADO">INHABILITADO</option>
+          @else
+            <option value="HABILITADO">HABILITADO</option>
+            <option selected value = "INHABILITADO">INHABILITADO</option>
+          @endif
+        </select>
+         <label>Estado de Especialidad</label>
+      </div>
     </div></br>
 
     <div class="form-group">
