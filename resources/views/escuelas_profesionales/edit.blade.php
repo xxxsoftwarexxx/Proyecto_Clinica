@@ -19,7 +19,7 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-mortar-board bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="id" name="id" placeholder="Código de Escuela Profesional" class="form-control" value="{{$escuela_profesional->id}}" required maxlength="2" size="2">
+                    <input id="id" name="id" placeholder="Código de Escuela Profesional" class="form-control" value="{{$escuela_profesional->id}}" required maxlength="2" size="2" readonly>
                     <label>Código de Escuela Profesional</label>
                   </div>
             </div></br>
