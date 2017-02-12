@@ -104,7 +104,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Telefono" name="telefono" placeholder="Ejm. 984572612" title="Ingrese numero no letras."pattern="[0-9]{9}" class="form-control" required maxlength="9" size="9">
+                        <input id="Telefono" name="telefono" placeholder="Ejm. 984572612" title="Solo ingrese numeros."pattern="[0-9]{9}" class="form-control" required maxlength="9" size="9">
                           <label>Teléfono</label>
                     </div>
               </div>

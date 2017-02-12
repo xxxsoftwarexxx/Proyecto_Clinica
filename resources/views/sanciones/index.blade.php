@@ -16,27 +16,23 @@
               <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                   <thead>
                       <tr>
-                          <th>ID</th>
-                          <th>Descripción</th>
+                          <th>ID_Sancion</th>
+                          <th>Id Cita</th>
+                          <th>Fecha Sancion</th>
                           <th>Operaciones</th>
                       </tr>
                   </thead>
                   <tbody>
                     @foreach($sanciones as $sancion)
                       <tr class="odd gradeX">
-                          <td>{{ $sancion->id }}</td>
-                          <td>{{ $sancion->descripcion }}</td>
-
+                          <td>{{ $sancion->id_sancion }}</td>
+                          <td>{{ $sancion->id_cita }}</td>
+                          <td>{{ $sancion->fecha_sancion }}</td>
                           <td align="center">
-                            <button type="button" class="btn btn-success btn-xs"
-                            onClick="location.href='/sanciones/{{ $sancion->id }}/edit'">
+                            <button type="button" class="btn btn-success btn-sm"
+                            onClick="location.href='/sanciones/{{ $sancion->id_sancion }}/edit'">
                             Editar</button>
-                               <form action="/sanciones/{{ $sancion->id }}" method="post">
-                                 {{ csrf_field() }}
-                                 {{ method_field('DELETE')}}
-                                 <button class="btn btn-danger btn-xs">Eliminar</button>
-                               </form>
-
+                               
                            </td>
                       </tr>
                     @endforeach
