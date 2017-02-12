@@ -17,7 +17,7 @@ class SancionesController extends Controller
      */
     public function index()
     {
-      $sanciones = DB::table('sanciones')->get();
+      $sanciones = DB::table('sancion')->get();
       return view('sanciones.index',['sanciones'=>$sanciones]);
     }
 
@@ -28,7 +28,8 @@ class SancionesController extends Controller
      */
     public function create()
     {
-        return view('sanciones.create');
+        $t1 = DB::table('citas')->get();
+        return view('sanciones.create',['citas'=>$t1]);
     }
 
     /**
@@ -39,12 +40,14 @@ class SancionesController extends Controller
      */
     public function store(Request $request)
     {
-      $id = $request->input('Id');
-      $descripcion = $request->input('Descripcion');
+      $id_sancion = $request->input('id_sancion');
+      $id_cita = $request->input('id_cita');
+      $fecha_sancion = $request->input('fecha_sancion');
 
-      DB::table('sanciones')->insert([
-        'id'=> $id,
-        'descripcion'=>$descripcion,
+      DB::table('sancion')->insert([
+        'id_sancion'=> $id_sancion,
+        'id_cita'=> $id_cita,
+        'fecha_sancion'=>$fecha_sancion,
       ]);
 
       return redirect('sanciones');
@@ -69,7 +72,7 @@ class SancionesController extends Controller
      */
     public function edit($id)
     {
-      $sanciones = DB::table('sanciones')->where('id',$id)->first();
+      $sanciones = DB::table('sancion')->where('id_sancion',$id)->first();
       return view('sanciones.edit',['sanciones'=>$sanciones]);
     }
 
@@ -82,11 +85,11 @@ class SancionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $descripcion = $request->input('Descripcion');
+      $fecha_sancion= $request->input('fecha_sancion');
 
-      DB::table('sanciones')->where('id',$id)
+      DB::table('sancion')->where('id_sancion',$id)
         ->update([
-      'descripcion'=>$descripcion,
+      'fecha_sancion'=>$fecha_sancion,
       ]);
 
       return redirect('sanciones');
