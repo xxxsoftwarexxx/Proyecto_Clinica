@@ -76,7 +76,12 @@ class CitasController extends Controller
     }
 
     public function destroy($id)    {
-      DB::table($this->tabla)->where($this->item_id,$id)->delete();
+      $cita = DB::table($this->tabla)->where($this->item_id,$id)->first();
+      $habilitado = 'INHABILITADO';
+      if($cita->estado == 'INHABILITADO'){
+        $habilitado = 'HABILITADO';
+      }
+      DB::table($this->tabla)->where($this->item_id,$id)->update(['estado'=>$habilitado]);
       return redirect($this->tabla);
     }
 }
