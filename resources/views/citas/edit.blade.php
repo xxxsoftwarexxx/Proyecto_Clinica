@@ -1,6 +1,4 @@
 @extends('citas.mantenimiento_citas')
-
-
 @section('Contenido')
         <form method="POST" action="/citas/{{$citas->id}}" autocomplete="off">
           {{csrf_field()}}
@@ -22,7 +20,7 @@
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                      <input id="Fecha Cita" name="fecha_cita" placeholder="Fecha Cita " class="form-control" value="{{$citas->fecha_cita}}" required>
+                      <input id="fecha_cita" name="fecha_cita" placeholder="Fecha Cita " class="form-control" value="{{$citas->fecha_cita}}" required>
                       <label>Fecha de la Cita</label>
                   </div>
 
@@ -30,14 +28,14 @@
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                    <input id="Fecha Reserva" name="fecha_reserva" placeholder="Fecha Reserva" class="form-control" value="{{$citas->fecha_reserva}}" required>
+                    <input id="fecha_reserva" name="fecha_reserva" placeholder="Fecha Reserva" class="form-control" value="{{$citas->fecha_reserva}}" required>
                     <label>Fecha de reserva de la Cita</label>
                 </div>
 
               <div class="input-group col-md-12 col-xs-12">
               <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-cog bigicon"></i></span>
               <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                      <select id="Estado" name="estado" placeholder="Estado" class="form-control" value="{{$citas->estado}}" required>
+                      <select id="estado" name="estado" placeholder="Estado" class="form-control" value="{{$citas->estado}}" required>
                             <option value="HABILITADO">HABILITADO</option>
                             <option value ="INHABILITADO">INHABILITADO</option>
                         </select>
@@ -47,9 +45,13 @@
                   <div class="input-group col-md-12 col-xs-12">
                       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                       <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                    <select id="Pacientes" name="pacientes_dni"  class="form-control" value="{{$citas->pacientes_dni}}" required>
+                    <select id="pacientes_dni" name="pacientes_dni"  class="form-control" value="{{$citas->pacientes_dni}}" required>
                       @foreach($pacientes as $paciente)
-                        <option>{{$paciente->dni}}</option>
+                        @if($paciente->dni == $citas->pacientes_dni)
+                          <option selected>{{$paciente->dni}}</option>
+                        @else
+                          <option >{{$paciente->dni}}</option>
+                        @endif
                       @endforeach
                 </select>
                 <label>DNI del Paciente</label>
@@ -58,9 +60,13 @@
         <div class="input-group col-md-12 col-xs-12">
             <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-square bigicon"></i></span>
             <span align="center" class="col-md-6 col-xs-10 has-float-label">
-              <select id="ID Bloques" name="bloques_idbloques"  class="form-control" value="{{$citas->bloques_idbloques}}">
+              <select id="bloques_idbloques" name="bloques_idbloques"  class="form-control" value="{{$citas->bloques_idbloques}}">
                 @foreach($bloques as $bloque)
-                  <option>{{$bloque->idbloques}}</option>
+                  @if($bloque->idbloques == $citas->bloques_idbloques)
+                    <option selected>{{$bloque->idbloques}}</option>
+                  @else
+                    <option>{{$bloque->idbloques}}</option>
+                  @endif
                 @endforeach
               </select>
                 <label>Bloque de la Cita</label>

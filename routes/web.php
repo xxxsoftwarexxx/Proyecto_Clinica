@@ -31,6 +31,8 @@ Route::group(['middleware' => 'MDadmi'], function () {
 
   Route::resource('citas', 'CitasController');
   Route::resource('sanciones', 'SancionesController');
+  Route::resource('tipo_sancion', 'tipo_sancionController');
+
 
   Route::resource('horarios','HorariosController');
   Route::resource('pacientes','PacientesController');

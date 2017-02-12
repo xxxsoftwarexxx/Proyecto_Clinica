@@ -36,8 +36,8 @@
               <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-cog bigicon"></i></span>
               <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <select id="Estado" name="estado"  class="form-control">
-                          <option value="1">Habilitado</option>
-                          <option value ="0">Deshabilitado</option>
+                          <option value="HABILITADO">HABILITADO</option>
+                          <option value ="INHABILITADO">INHABILITADO</option>
                       </select>
                       <label>Estado de la Cita</label>
                   </div>

@@ -11,16 +11,17 @@ class CitasController extends Controller
 {
     public $item_id='id';
      public $item=[
-    'fecha',
-     'hora',
+    'fecha_cita',
+     'fecha_reserva',
      'estado',
-     'medicos_dni',
-     'pacientes_dni'
+     'pacientes_dni',
+     'bloques_idbloques'
      ];
 
      public $tabla='citas';
      public $tabla1='medicos';
      public $tabla2='pacientes';
+     public $tabla3 = 'bloques';
 
     public function index(){
         $t = DB::table($this->tabla)->get();
@@ -30,7 +31,11 @@ class CitasController extends Controller
     public function create(){
       $t1 = DB::table($this->tabla1)->get();
       $t2 = DB::table($this->tabla2)->get();
-        return view($this->tabla.'.create',[$this->tabla1=>$t1,$this->tabla2=>$t2]);
+      $t3 = DB::table($this->tabla3)->get();
+        return view($this->tabla.'.create',
+        [$this->tabla1=>$t1,
+        $this->tabla2=>$t2,
+        $this->tabla3=>$t3]);
     }
 
     public function store(Request $request){
@@ -50,10 +55,13 @@ class CitasController extends Controller
     public function edit($id){
       $t = DB::table($this->tabla)->where($this->item_id,$id)->first();
       $t1 = DB::table($this->tabla1)->get();
-
+      $t2 =DB::table($this->tabla2)->get();
+      $t3 =DB::table($this->tabla3)->get();
       return view($this->tabla.'.edit',[
         $this->tabla=>$t,
-        $this->tabla1=>$t1
+        $this->tabla1=>$t1,
+        $this->tabla2=>$t2,
+        $this->tabla3=>$t3
       ]);
     }
 
