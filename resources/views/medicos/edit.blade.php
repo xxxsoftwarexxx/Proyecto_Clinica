@@ -20,13 +20,15 @@
 {{method_field('PUT')}}
   <fieldset>
     <div class="text-center"><h2 align="center">MODIFICAR MÉDICO</h2>
-    </div></br>
+    </div>
+    @include('partials/errores')
+    </br>
 
     <div class="input-group col-md-12 col-xs-12">
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$medicos->dni}}" required disabled="true">
+        <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$medicos->dni}}"  disabled="true">
         <label>DNI</label>
       </div>
     </div>
@@ -35,7 +37,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="contraseña" type="password" name="contraseña" placeholder="Contraseña" class="form-control" value="{{$medicos->contraseña}}" required>
+        <input id="contraseña" type="password" name="contraseña" placeholder="Contraseña" class="form-control"
+          value="{{$medicos->contraseña}}" required>
         <label>Contraseña</label>
       </div>
     </div>
@@ -44,7 +47,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
         <div align="center" class="group-control">
-          <input id="codigo" name="codigo" pattern="[A-Z0-9]{6}" placeholder="Código Médico" class="form-control" value="{{$medicos->codigo}}" required>
+          <input id="codigo" name="codigo" placeholder="Código Médico" class="form-control"
+            value="{{$medicos->codigo}}">
           <label>Código Médico</label>
         </div>
     </div>
@@ -53,7 +57,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="nombres" name="nombres" pattern="[a-zA-Z]{0,}" placeholder="Nombres" class="form-control" value="{{$medicos->nombres}}" required>
+        <input id="nombres" name="nombres" placeholder="Nombres" class="form-control" value="{{$medicos->nombres}}" >
         <label>Nombres</label>
       </div>
     </div>
@@ -62,7 +66,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="apellidos" name="apellidos" pattern="[a-zA-Z]{0,}" placeholder="Apellidos" class="form-control" value="{{$medicos->apellidos}}" required>
+        <input id="apellidos" name="apellidos" placeholder="Apellidos" class="form-control"
+          value="{{$medicos->apellidos}}">
         <label>Apellidos</label>
       </div>
     </div>
@@ -71,7 +76,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="fecha_nacimiento" name="fecha_nacimiento" type="date"placeholder="Fecha de Nacimiento" class="form-control" value="{{$medicos->fecha_nacimiento}}" required>
+        <input id="fecha_nacimiento" name="fecha_nacimiento" type="date"placeholder="Fecha de Nacimiento"
+          class="form-control" value="{{$medicos->fecha_nacimiento}}" required>
         <label>Fecha de Nacimiento</label>
       </div>
     </div>
@@ -97,7 +103,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="telefono" name="telefono" pattern="9.[0-9]{6,9}" placeholder="Teléfono" class="form-control" value="{{$medicos->telefono}}" required>
+        <input id="telefono" name="telefono" placeholder="Teléfono" class="form-control"
+        value="{{$medicos->telefono}}" >
         <label>Teléfono</label>
       </div>
     </div>
@@ -106,7 +113,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="correo" name="correo" type="email"placeholder="E-Mail" class="form-control" value="{{$medicos->correo}}" required>
+        <input id="correo" name="correo" type="email"placeholder="E-Mail" class="form-control"
+          value="{{$medicos->correo}}">
         <label>E-Mail</label>
       </div>
     </div>
@@ -115,7 +123,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="direccion" name="direccion" placeholder="Dirección" class="form-control" value="{{$medicos->direccion}}" required>
+        <input id="direccion" name="direccion" placeholder="Dirección" class="form-control"
+          value="{{$medicos->direccion}}">
         <label>Dirección</label>
       </div>
     </div>
@@ -154,11 +163,13 @@
       <div class="col-md-12 text-center">
         <a data-target="#confirmar-{{ $medicos->dni }}" data-toggle="modal" style="width:80px"
           class="btn btn-success" align="center" class="form-control" value="Guardar" >Guardar</a>
-        <button type="reset" style="width:80px" class="btn btn-primary" align="center" class="form-control" >Limpiar</button>
+        <button type="reset" style="width:80px" class="btn btn-primary" align="center"
+          class="form-control" >Limpiar</button>
       </div>
     </div></br></br>
 
-    <div class="modal fade modal-slide-in-rigth" aria-hidden="true" role="dialog" tabindex="-1" id="confirmar-{{$medicos->dni}}">
+    <div class="modal fade modal-slide-in-rigth" aria-hidden="true" role="dialog" tabindex="-1"
+      id="confirmar-{{$medicos->dni}}">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">

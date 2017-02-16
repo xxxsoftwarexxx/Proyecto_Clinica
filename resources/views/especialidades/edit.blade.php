@@ -6,12 +6,16 @@
 {{method_field('PUT')}}
   <fieldset>
     <div class="text-center"><h2 align="center">MODIFICAR ESPECIALIDAD</h2>
-    </div></br>
+    </div>
+    @include('partials/errores')
+    </br>
+
     <div class="input-group col-md-12 col-xs-12">
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-h-square bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-          <input id="codigo" name="codigo" placeholder="Código de la Especialidad" class="form-control"  value="{{$especialidades->codigo}}" required disabled="true">
+          <input id="codigo" name="codigo" placeholder="Código de la Especialidad" class="form-control"
+            value="{{$especialidades->codigo}}"  disabled="true">
           <label>Código de Especialidad</label>
       </div>
     </div>
@@ -20,7 +24,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="nombre" name="nombre" pattern="[A-Z]{3,}"placeholder="Nombre de la Especialidad" class="form-control" value="{{$especialidades->nombre}}"required>
+        <input id="nombre" name="nombre" placeholder="Nombre de la Especialidad" class="form-control"
+          value="{{$especialidades->nombre}}" onkeyup="this.value=this.value.toUpperCase();">
         <label>Nombre de Especialidad</label>
       </div>
     </div>
@@ -45,7 +50,8 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa  fa-medkit bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <select id="consultorios_id" name="consultorios_id"  placeholder = "Código del Consultorio" class="form-control" required="">
+        <select id="consultorios_id" name="consultorios_id"  placeholder = "Código del Consultorio"
+          class="form-control" required="">
           @foreach($consultorios as $consultorio)
             @if($consultorio->id == $especialidades->consultorios_id)
               <option selected >{{$especialidades->consultorios_id}}</option>
@@ -62,11 +68,13 @@
       <div class="col-md-12 text-center">
         <a data-target="#confirmar-{{ $especialidades->codigo }}" data-toggle="modal" style="width:80px"
           class="btn btn-success" align="center" class="form-control" value="Guardar" >Guardar</a>
-        <button type="reset" style="width:80px" class="btn btn-primary" align="center" class="form-control" >Limpiar</button>
+        <button type="reset" style="width:80px" class="btn btn-primary" align="center"
+          class="form-control" >Limpiar</button>
       </div>
     </div></br></br>
 
-    <div class="modal fade modal-slide-in-rigth" aria-hidden="true" role="dialog" tabindex="-1" id="confirmar-{{$especialidades->codigo}}">
+    <div class="modal fade modal-slide-in-rigth" aria-hidden="true" role="dialog" tabindex="-1"
+      id="confirmar-{{$especialidades->codigo}}">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">

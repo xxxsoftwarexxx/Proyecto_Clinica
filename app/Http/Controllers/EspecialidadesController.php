@@ -10,11 +10,7 @@ use Illuminate\Support\Facades\DB;
 class EspecialidadesController extends Controller
 {
     public $item_id='codigo';
-     public $item=[
-     'nombre',
-     'habilitado',
-     'consultorios_id'
-     ];
+    public $item=['nombre','habilitado','consultorios_id'];
 
      public $tabla='especialidades';
      public $tabla1='consultorios';
@@ -30,8 +26,12 @@ class EspecialidadesController extends Controller
     }
 
     public function store(Request $request){
+      $this->validate($request,[
+        'codigo'=>['required','size:3','regex:/^[A-Z]+$/'],
+        'nombre'=>['required','max:100','min:3','regex:/^[A-Z]+$/'],
+        'habilitado'=>['required','in:HABILITADO,INHABILITADO']
+      ]);
         $aux[$this->item_id]=$request->input($this->item_id);
-
         foreach ($this->item as $it) {
           if(!is_null($it))
           $aux[$it]=$request->input($it);
@@ -55,7 +55,10 @@ class EspecialidadesController extends Controller
     }
 
     public function update(Request $request, $id){
-
+      $this->validate($request,[
+        'nombre'=>['required','max:100','min:3','regex:/^[A-Z ]+$/'],
+        'habilitado'=>['required','in:HABILITADO,INHABILITADO']
+      ]);
       foreach ($this->item as $it) {
         if(!is_null($it))
         $aux[$it]=$request->input($it);

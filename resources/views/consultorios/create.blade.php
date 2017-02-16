@@ -8,13 +8,14 @@
   <input type="hidden" name="_token" value="{{csrf_token()}}">
   <fieldset>
     <div class="text-center"><h2 align="center">NUEVO CONSULTORIO</h2>
-    </div></br>
+    </div>
+    @include('partials/errores')</br>
 
     <div class="input-group col-md-12 col-xs-12">
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-plus-square bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="Dni" name="id" pattern = "[0-9]{3}"placeholder="Código del Consultorio" class="form-control" required>
+        <input id="id" name="id" placeholder="Código del Consultorio" class="form-control" value="{{old('id')}}">
         <label>Código del Consultorio</label>
       </div>
     </div>
@@ -23,8 +24,9 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-h-square bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="Dni" name="ubicacion" placeholder="Nombre del Consultorio" class="form-control" required>
-        <label>Nombre del Consultorio</label>
+        <input id="ubicacion" name="ubicacion" placeholder="Nombre del Consultorio" class="form-control"
+        value="{{old('ubicacion')}}" onKeyUp="this.value = this.value.toUpperCase();">
+        <label>Ubicación del Consultorio</label>
       </div>
     </div>
 
@@ -32,7 +34,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-bitbucket bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <select id="Estado" name="estado"  class="form-control" >
+        <select id="estado" name="estado"  class="form-control" >
           <option>HABILITADO</option>
           <option>INHABILITADO</option>
         </select>
@@ -42,8 +44,10 @@
 
     <div class="form-group">
       <div class="col-md-12 text-center">
-        <a data-target="#confirmar" data-toggle="modal" style="width:80px" class="btn btn-success" align="center" class="form-control" value="Guardar">Guardar</a>
-        <button type="reset" style="width:80px" class="btn btn-primary" align="center" class="form-control" >Limpiar</button>
+        <a data-target="#confirmar" data-toggle="modal" style="width:80px" class="btn btn-success"
+          align="center" class="form-control" value="Guardar">Guardar</a>
+        <button type="reset" style="width:80px" class="btn btn-primary" align="center"
+          class="form-control" >Limpiar</button>
       </div>
     </div></br></br>
 
@@ -57,7 +61,7 @@
             <h3 class="modal-title">Agregar Consultorio</h3>
           </div>
           <div class="modal-body">
-            <p>¡Desea agregar este consultorio?</p>
+            <p>¿Desea agregar este consultorio?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
