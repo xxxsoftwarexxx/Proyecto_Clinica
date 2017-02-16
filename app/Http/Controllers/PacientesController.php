@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use App\User;
+
 
 class PacientesController extends Controller
 {
@@ -54,7 +56,13 @@ class PacientesController extends Controller
           $aux[$it]=$request->input($it);
         }
         DB::table($this->tabla)->insert($aux);
+        User::create([
+            'dni' => $aux['dni'],
+            'password' => bcrypt($aux['contraseña']),
+            'tipo' => 'Paciente',
+        ]);
         return redirect($this->tabla);
+
     }
 
     public function show($id){

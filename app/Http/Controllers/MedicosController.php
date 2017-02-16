@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use App\User;
 
 class MedicosController extends Controller
 {
@@ -53,6 +54,11 @@ class MedicosController extends Controller
           if(!is_null($it))
           $aux[$it]=$request->input($it);
         }
+        User::create([
+            'dni' => $aux['dni'],
+            'password' => bcrypt($aux['contraseña']),
+            'tipo' => 'Medico',
+        ]);
         DB::table($this->tabla)->insert($aux);
         return redirect($this->tabla);
     }
