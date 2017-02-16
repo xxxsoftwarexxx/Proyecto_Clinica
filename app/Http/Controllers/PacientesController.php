@@ -39,7 +39,7 @@ class PacientesController extends Controller
     public function store(Request $request){
 
         $this->validate($request,[
-          'contraseña'=>['required','max:30','min:6'],
+          'contraseña'=>['required','max:60','min:6'],
           'dni'=>['required','size:8','regex:/^[0-9]+$/'],
           'codigo'=>['required','size:6','regex:/^[0-9 ]+$/'],
           'nombres'=>['required','max:100','min:3','regex:/^[A-Za-z ]+$/'],
@@ -94,7 +94,21 @@ class PacientesController extends Controller
         if(!is_null($it))
         $aux[$it]=$request->input($it);
       }
+      $aux['contraseña']=bcrypt($aux['contraseña']);
+      if(DB::table('users')->where($this->item_id,$id)->COUNT()==0){
+        User::create([
+            'dni' => $request->input($this->item_id),
+            'password' =>$aux['contraseña'],
+            'tipo' => 'Paciente',
+        ]);
+      }else{
+        DB::table('users')->where($this->item_id,$id)->update([
+            'password' =>$aux['contraseña'],
+            'tipo' => 'Paciente',
+        ]);
+      }
       DB::table($this->tabla)->where($this->item_id,$id)->update($aux);
+
       return redirect($this->tabla);
     }
 

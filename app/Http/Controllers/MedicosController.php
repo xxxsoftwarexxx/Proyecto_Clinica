@@ -54,9 +54,11 @@ class MedicosController extends Controller
           if(!is_null($it))
           $aux[$it]=$request->input($it);
         }
+        $aux['contraseña']=bcrypt($aux['contraseña']);
+
         User::create([
             'dni' => $aux['dni'],
-            'password' => bcrypt($aux['contraseña']),
+            'password' =>$aux['contraseña'],
             'tipo' => 'Medico',
         ]);
         DB::table($this->tabla)->insert($aux);
@@ -79,7 +81,7 @@ class MedicosController extends Controller
 
     public function update(Request $request, $id){
       $this->validate($request,[
-        'contraseña'=>['required','max:30','min:6'],
+        'contraseña'=>['required','max:60','min:6'],
         'codigo'=>['required','size:6','regex:/^[0-9A-Z]+$/'],
         'nombres'=>['required','max:100','min:3','regex:/^[A-Z ]+$/'],
         'apellidos'=>['required','max:100','min:3','regex:/^[A-Z ]+$/'],
@@ -88,11 +90,24 @@ class MedicosController extends Controller
         'telefono'=>['required','size:9','regex:/^[0-9]+$/'],
         'correo'=>['required','max:50','email'],
         'direccion'=>['required','max:100'],
-        'estado'=>['required','in:HABLITADO,INHABILITADO']
+        'estado'=>['required','in:HABILITADO,INHABILITADO']
       ]);
       foreach ($this->item as $it) {
         if(!is_null($it))
         $aux[$it]=$request->input($it);
+      }
+      $aux['contraseña']=bcrypt($aux['contraseña']);
+      if(DB::table('users')->where($this->item_id,$id)->COUNT()==0){
+        User::create([
+            'dni' => $request->input($this->item_id),
+            'password' =>$aux['contraseña'],
+            'tipo' => 'Medico',
+        ]);
+      }else{
+        DB::table('users')->where($this->item_id,$id)->update([
+            'password' =>$aux['contraseña'],
+            'tipo' => 'Medico',
+        ]);
       }
       DB::table($this->tabla)->where($this->item_id,$id)->update($aux);
       return redirect($this->tabla);

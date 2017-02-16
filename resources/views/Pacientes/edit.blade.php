@@ -69,7 +69,7 @@
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <div align="center" class="group-control">
-                          <input id="Password" type="Password" name="contraseña" placeholder="Contraseña" class="form-control" value="{!!$pacientes->contraseña!!}" required>
+                          <input id="Password" type="Password" name="contraseña" placeholder="Contraseña" class="form-control" value="" required>
                           <label>Contraseña</label>
                       </div>
                 </div>

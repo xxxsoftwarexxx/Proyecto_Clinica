@@ -28,7 +28,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$medicos->dni}}"  disabled="true">
+        <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$medicos->dni}}"  readonly="">
         <label>DNI</label>
       </div>
     </div>
@@ -38,7 +38,7 @@
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
         <input id="contraseña" type="password" name="contraseña" placeholder="Contraseña" class="form-control"
-          value="{{$medicos->contraseña}}" required>
+          value="" required>
         <label>Contraseña</label>
       </div>
     </div>
