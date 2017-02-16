@@ -35,6 +35,18 @@ class PacientesController extends Controller
     }
 
     public function store(Request $request){
+
+        $this->validate($request,[
+          'contraseña'=>['required','max:30','min:6'],
+          'dni'=>['required','size:8','regex:/^[0-9]+$/'],
+          'codigo'=>['required','size:6','regex:/^[0-9 ]+$/'],
+          'nombres'=>['required','max:100','min:3','regex:/^[A-Za-z ]+$/'],
+          'apellidos'=>['required','max:100','min:3','regex:/^[A-Za-z ]+$/'],
+          'fecha_nacimiento'=>['required','date'],
+          'telefono'=>['required','size:9','regex:/^[0-9]+$/'],
+          'correo'=>['required','max:50','email'],
+          'direccion'=>['required','max:100']
+        ]);
         $aux[$this->item_id]=$request->input($this->item_id);
 
         foreach ($this->item as $it) {
@@ -61,6 +73,15 @@ class PacientesController extends Controller
 
     public function update(Request $request, $id){
 
+      $this->validate($request,[
+        'contraseña'=>['required','max:30','min:6'],
+        'nombres'=>['required','max:100','min:3','regex:/^[A-Za-z ]+$/'],
+        'apellidos'=>['required','max:100','min:3','regex:/^[A-Za-z ]+$/'],
+        'fecha_nacimiento'=>['required','date'],
+        'telefono'=>['required','size:9','regex:/^[0-9]+$/'],
+        'correo'=>['required','max:50','email'],
+        'direccion'=>['required','max:100']
+      ]);
       foreach ($this->item as $it) {
         if(!is_null($it))
         $aux[$it]=$request->input($it);

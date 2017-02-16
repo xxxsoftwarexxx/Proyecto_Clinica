@@ -9,8 +9,10 @@
             <fieldset>
 
             <div class="text-center"><h2 align="center">Modificar pacientes</h2>
-            </div></br>
+            </div>
 
+            @include('partials/errores')
+            </br>
             <div class="input-group col-md-12 col-xs-12">
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
@@ -114,7 +116,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="Telefono" name="telefono"  placeholder="Teléfono" class="form-control" pattern="[0-9]{9}"value="{{$pacientes->telefono}}" maxlength="9" size="9" required>
+                        <input id="Telefono" name="telefono"  placeholder="Teléfono" class="form-control" value="{{$pacientes->telefono}}" maxlength="9" size="9" required>
                         <label>Teléfono</label>
                     </div>
               </div>
@@ -122,7 +124,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                          <input id="E_mail" name="correo"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="E-Mail" class="form-control" value="{{$pacientes->correo}}"required>
+                          <input id="E_mail" name="correo" placeholder="E-Mail" class="form-control" value="{{$pacientes->correo}}"required>
                           <label>E-Mail</label>
                       </div>
                 </div>
@@ -176,6 +178,16 @@
                     </div>
                     <div class="modal-body">
                       <p>Esta seguro si desea modificar los datos del paciente ?</p>
+                      <p>DNI:           {{$pacientes->dni}}</p>
+                      <p>Codigo:        {{$pacientes->codigo}}</p>
+                      <p>Nombres:       {{$pacientes->nombres}}</p>
+                      <p>Apellidos:     {{$pacientes->apellidos}}</p>
+                      <p>Teléfono:      {{$pacientes->telefono}}</p>
+                      <p>Correo:        {{$pacientes->correo}}</p>
+                      <p>Dirección:     {{$pacientes->direccion}}</p>
+                      <p>Escuela Profesional:  {{$pacientes->escuelas_profesionales_id}}</p>
+                      <p>Estado:        {{$pacientes->estado}}</p>
+                      <p>Tipo:        {{$pacientes->tipo_paciente}}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
