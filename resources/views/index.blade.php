@@ -713,26 +713,38 @@ Tabla.append('<th><div style="width:100px;height:85px;background-color:#2FAED5;"
 			Tabla_Body = $('<tbody style="background-color:#A6CEE0"></tbody>');
 
 
-			for(var i=7;i<19;i++)
+			for(var i=14;i<38;i++)
             {
-            	if((i<13)||(i>=15))
+            	if((i<26)||(i>=30))
             	{
+								var kk=(i/2);
+								var kk2=(kk*100)%100;
+								var gg="00";
+								var gg2=Math.floor(kk);
+								if(kk2==50)gg=30;
+
+								var kkk=((i+1)/2);
+								var kkk2=(kkk*100)%100;
+								var ggg="00";
+								var ggg2=Math.floor(kkk);
+								if(kkk2==50)ggg=30;
+
 					Tabla_Body.append(
 						'<tr>'+
                             '<td align ="right" style="background-color:#be25b5">');
-                            	if(i<9)
-                            	{
-                            		Tabla_Body.append('0'+i+':00 - 0'+(i+1)+':00');
-                            	}
-                            	if(i==9)
-                            	{
-                            		Tabla_Body.append('0'+i+':00 - '+(i+1)+':00');
-                            	}
-                            	if(i>9)
-                            	{
-                            		Tabla_Body.append(i+':00 - '+(i+1)+':00');
-                            	}
-                            Tabla_Body.append('</td>');
+														if(i<9)
+														{
+															Tabla_Body.append('0'+gg2+':'+gg+' - 0'+(ggg2)+':'+ggg);
+														}
+														if(i==9)
+														{
+															Tabla_Body.append('0'+gg2+':'+gg+' - '+(ggg2)+':'+ggg);
+														}
+														if(i>9)
+														{
+															Tabla_Body.append(gg2+':'+gg+' - '+(ggg2)+':'+ggg);
+														}
+											  Tabla_Body.append('</td>');
 
                             for(var j=0;j<7;j++)
                             {

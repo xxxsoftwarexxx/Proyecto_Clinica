@@ -69,15 +69,18 @@ class ReservaController extends Controller
        $nuevafecha = strtotime ( '+'.$Nro_Dia.' day' , strtotime ( $fecha ) ) ;
        $nuevafecha = date ( 'Y-m-j' , $nuevafecha );
 
-
+/*
         DB::table('bloques')->where('idbloques',$id)
          ->update([
          'estado'=>1
         ]);
+*/
+      $HORA= DB::table('bloques')->where('idbloques',$id)->first();
 
-        $Cita_Id = date("Y-m-d-g:i");
+      $Cita_Id = date('Ymd',strtotime($nuevafecha)).$HORA->hora_inicio;
 
         DB::table('citas')->insert([
+          'id'=>$Cita_Id,
         'fecha_cita'=>$nuevafecha,
         'fecha_reserva'=>$fecha,
         'estado'=>1,
@@ -148,8 +151,8 @@ class ReservaController extends Controller
 
     public function Recuperar_Horario()
     {
-        $especialidad = Input::get("Especialidad");
-            
+      $especialidad = "CAR";
+
           $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
 
           $prog_dias=[];
@@ -159,7 +162,10 @@ class ReservaController extends Controller
           $fecha =date('Y-m-j');
           $estado=[];
           $id=[];
+
+          $fechagg=[];
           for($i=0;$i<7;$i++){
+            $fechagg[$i]=date('Ymd',strtotime($fecha));
             $estado[$i]=db::table('bloques')
             ->where('medicos_dni',$medicos->dni)
             ->where('dia',$dias[date('w',strtotime($fecha))])
@@ -174,11 +180,14 @@ class ReservaController extends Controller
             $nuevafecha = strtotime ( '+1 day' , strtotime ( $fecha ) ) ;
             $fecha = date ( 'Y-m-j' , $nuevafecha );
           }
-
           $res=[];
           for($i=0;$i<7;$i++){
             $aux=$estado[$i];
-            for($j=0;$j<24;$j++){
+            for($j=0;$j<48;$j++){
+              $icita=$fechagg[$i].$aux[$j]->hora_inicio;
+              if(db::table('citas')->where('id',$icita)->count()>'0'){
+                $aux[$j]->estado='1';
+              }
               $res[$i.'-'.$j]=$aux[$j];
             }
           }
@@ -224,7 +233,7 @@ class ReservaController extends Controller
           }
 
 //          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
-          
+
           return view('reservas.index',[
             'dias'=>$prog_dias,
             'fecha'=>$prog_fecha,
