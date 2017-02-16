@@ -16,19 +16,19 @@
 
 
             <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-mortar-board bigicon"></i></span>
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
                     <input id="id" name="id" placeholder="Id Cita" class="form-control" value="{{$sanciones->id_cita}}" required maxlength="17" size="17" readonly>
-                    <label>Id Cita</label>
+                    <label>Código Cita</label>
                   </div>
             </div></br>
             <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-mortar-board bigicon"></i></span>
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-slack bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
                     <input id="id" name="id" placeholder="Id Sancion" class="form-control" value="{{$sanciones->id_sancion}}" required maxlength="10" size="10" readonly>
-                    <label>Id Sancion</label>
+                    <label>Código Sanción</label>
                   </div>
             </div></br>
             <div class="input-group col-md-12 col-xs-12">

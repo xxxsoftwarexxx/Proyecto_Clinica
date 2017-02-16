@@ -13,6 +13,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="css/jquery-ui.css" />
 <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+<link href={{ URL::asset("css/font-awesome.min.css") }} rel="stylesheet">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -67,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="header_left" data-wow-duration="2s" data-wow-delay="0.5s">
 			<ul>
 				<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+123 456 7890</li>
-				<li><a href="correo@unsaac.edu.pe"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe</a></li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe></li>
 			</ul>
 		</div>
 		<div class="header_right">
@@ -83,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="{{ url('/logout') }}"
 											onclick="event.preventDefault();
 															 document.getElementById('logout-form').submit();">
-											Logout
+											Cerrar Sesión
 									</a>
 									<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 											{{ csrf_field() }}
@@ -109,13 +110,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header_right">
 					<div class="login">
 						<ul>
-						<li><a id="Cargar_Datos"> Perfil</a></li>
+						<li><a href="#book"id="Cargar_Datos"> Perfil</a></li>
 
 						<li><a href="#book" id="Reservar_Cita">Reservar cita</a></li>
 
 						<!--<li><a id="No_Reservar_Cita">Reservar cita</a></li>-->
 
-						<li><a href="">Reportes</a></li>
+
 						</ul>
 					</div>
 					<div class="clearfix"></div>
@@ -154,7 +155,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="menu__item menu__item--current"><a href="inicio" class="menu__link">Inicio</a></li>
 							<li class="menu__item"><a href="about" class="menu__link">Sobre nosotros</a></li>
 							<li class="menu__item"><a href="gallery" class="menu__link">Especialidades</a></li>
-							<li class="menu__item"><a href="contact" class="menu__link">Contactanos</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -233,11 +233,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<img class="img-responsive" src="images/d1.jpg" alt=" "/>
 				<div class="team-info">
 					<ul>
-						<li class="hvr-rectangle-out"><a class="eco1" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco2" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco3" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco4" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco5" href="#"></a></li>
+						<li class="hvr-rectangle-out"><a class="eco1" </a></li>
+						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
 					</ul>
 				</div>
 			</div>
@@ -249,11 +249,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<img class="img-responsive" src="images/d2.png" alt=" "/>
 				<div class="team-info">
 					<ul>
-						<li class="hvr-rectangle-out"><a class="eco1" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco2" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco3" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco4" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco5" href="#"></a></li>
+						<li class="hvr-rectangle-out"><a class="eco1" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
 					</ul>
 				</div>
 			</div>
@@ -266,11 +266,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<img class="img-responsive" src="images/d3.jpg" alt=" "/>
 				<div class="team-info">
 					<ul>
-						<li class="hvr-rectangle-out"><a class="eco1" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco2" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco3" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco4" href="#"></a></li>
-						<li class="hvr-rectangle-out"><a class="eco5" href="#"></a></li>
+						<li class="hvr-rectangle-out"><a class="eco1" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
 					</ul>
 				</div>
 			</div>
@@ -291,14 +291,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="strip"></div>
 			<ul class="con-icons">
 				<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>+123 456 7890</li>
-				<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe</a></li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe</li>
 			</ul>
 			<ul class="fb_icons">
-				<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
-				<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
-				<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
-				<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
-				<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
+				<li class="hvr-rectangle-out"><a class="fb" ></a></li>
+				<li class="hvr-rectangle-out"><a class="twit"></a></li>
+				<li class="hvr-rectangle-out"><a class="goog"></a></li>
+				<li class="hvr-rectangle-out"><a class="pin" ></a></li>
+				<li class="hvr-rectangle-out"><a class="drib"></a></li>
 			</ul>
 			<div class="strip"></div>
 		</div>
@@ -328,7 +328,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 											<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-													<label for="text" class="col-md-4 control-label" >Dni</label>
+													<label for="text" class="col-md-4 control-label" >DNI</label>
 
 													<div class="col-md-6">
 															<input id="email" type="text" class="form-control" maxlength="8" name="dni" value="{{ old('dni') }}" required autofocus>
@@ -341,7 +341,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 
 											<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-													<label for="password" class="col-md-4 control-label">Password</label>
+													<label for="password" class="col-md-4 control-label">CONTRASEÑA</label>
 													<div class="col-md-6">
 															<input id="password" type="password" class="form-control" name="password" required>
 															@if ($errors->has('password'))
@@ -358,7 +358,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</form>
 									</div>
 
-								<p>usted esta de acuerdo con nuestros <a href="#">terminos y condiciones</a> and <a href="#">de privacidad</a></p>
+								<p>Usted esta de acuerdo con nuestros terminos y condiciones de privacidad</p>
 							</div>
 						</div>
 					</div>
@@ -467,78 +467,79 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						          {{method_field('PUT')}}
 
 						        <fieldset>
+											<div class="text-center"><h2 align="center">Editar datos personales</h2></div></br>
 
-						        <div class="text-center"><h2 align="center">Editar datos personales</h2></div></br>
-
-
-						            <div id="Seccion_General" class="row">
-						                <div class="form-group">
-						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-						                      <div class="col-md-7 col-xs-10">
-						                          <input id="dni" name="dni" placeholder="DNI" class="form-control" required value="{{$Datos_Paciente->dni}}" readonly="readonly">
-						                      </div>
-						                </div></br></br>
-
-
-						                <div class="form-group">
-						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-
-						                      <div class="col-md-7 col-xs-10">
-						                          <input id="Nombres" name="nombres" placeholder="Nombres" class="form-control" required value="{{$Datos_Paciente->nombres}}" readonly="readonly">
-						                      </div>
-						                </div></br></br>
-
-						                <div class="form-group">
-						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-						                      <div class="col-md-7 col-xs-10">
-						                          <input id="Apellidos" name="apellidos" placeholder="Apellidos" class="form-control" required value="{{$Datos_Paciente->apellidos}}" readonly="readonly">
-						                      </div>
-						                </div></br></br>
-
-						                <div class="form-group">
-						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
-
-						                      <div class="col-md-7 col-xs-10">
-						                          <input id="Fecha_Nacimiento" type ="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" class="form-control" required value="{{$Datos_Paciente->fecha_nacimiento}}" readonly="readonly">
-						                      </div>
-						                </div></br></br>
-
-						               <div class="form-group">
-						                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-
-						                    <div class="col-md-7 col-xs-10">
-						                        <select class="form-control" id="Sexo" name="sexo" >
-						                          <option>MASCULINO</option>
-						                          <option>FEMENINO</option>
-						                        </select>
-						                    </div>
-						              </div></br></br>
+										 										<div class="input-group col-md-12 col-xs-12">
+										 													  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
+										 													 <span  class="col-md-6 col-xs-10 has-float-label">
+										 														      <div class="group-control">
+										 																		<label>DNI</label>
+										 													 				<input id="dni" name="dni" placeholder="DNI" class="form-control" required value="{{$Datos_Paciente->dni}}" readonly="readonly">
+										     														</div>
+										 											</div>
 
 
-						              <div class="form-group">
-						                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
+										 											<div class="input-group col-md-12 col-xs-12">
+										 																<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+										 																<span  class="col-md-6 col-xs-10 has-float-label">
+										 																<div class="group-control">
+										 																	<label>Nombres</label>
+										 																	<input id="Nombres" name="nombres" placeholder="Nombres" class="form-control" required value="{{$Datos_Paciente->nombres}}" readonly="readonly">
+										 															</div>
+										 												</div>
+										 												<div class="input-group col-md-12 col-xs-12">
+										 																	<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+										 																	<span  class="col-md-6 col-xs-10 has-float-label">
+										 																	<div class="group-control">
+										 																			<label for="Apellidos">Apellidos</label>
+										 																	<input id="Apellidos" name="apellidos" placeholder="Apellidos" class="form-control" required value="{{$Datos_Paciente->apellidos}}" readonly="readonly">
+										 															</div>
+										 												</div>
+										 													<div class="input-group col-md-12 col-xs-12">
+										 															<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+										 															<span  class="col-md-6 col-xs-10 has-float-label">
+										 																<div class="group-control">
+										 																	<label>Fecha de Nacimiento</label>
+										 																	<input id="Fecha_Nacimiento" type ="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" class="form-control" required value="{{$Datos_Paciente->fecha_nacimiento}}" readonly="readonly">
+										 														</div>
+										 												</div>
 
-						                    <div class="col-md-7 col-xs-10">
-						                        <input id="Telefono" name="telefono" placeholder="Teléfono" class="form-control" required value="{{$Datos_Paciente->telefono}}">
-						                    </div>
-						              </div></br></br>
+										 												<div class="input-group col-md-12 col-xs-12">
+										 													<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-female bigicon"></i></span>
+										 														<span  class="col-md-6 col-xs-10 has-float-label">
+										 															<div class="group-control">
+										 																<label>Sexo</label>
+										 																<select class="form-control" id="Sexo" name="sexo" >
+										 																	<option>MASCULINO</option>
+										 																	<option>FEMENINO</option>
+										 																	</select>
+										 														</div>
+										 											</div>
+										 											<div class="input-group col-md-12 col-xs-12">
+										 													<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
+										 													<span  class="col-md-6 col-xs-10 has-float-label">
+										 														<div class="group-control">
+										 															<label for="Telefono">Teléfono</label>
+										 																<input id="Telefono" name="telefono" placeholder="Teléfono" class="form-control" required value="{{$Datos_Paciente->telefono}}">
 
-						                 <div class="form-group">
-						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-
-						                      <div class="col-md-7 col-xs-10">
-						                          <input id="E_mail" name="correo" placeholder="E-Mail" class="form-control" required value="{{$Datos_Paciente->correo}}">
-						                      </div>
-						                </div></br></br>
-
-
-						                <div class="form-group">
-						                      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
-
-						                      <div class="col-md-7 col-xs-10">
-						                          <input id="Direccion" name="direccion" placeholder="Dirección" class="form-control" required value="{{$Datos_Paciente->direccion}}">
-						                      </div>
-						                </div></br></br>
+										 														</div>
+										 											</div>
+										 											<div class="input-group col-md-12 col-xs-12">
+										 												<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
+										 												<span  class="col-md-6 col-xs-10 has-float-label">
+										 													<div class="group-control">
+										 														<label>E-Mail</label>
+										 																	<input id="E_mail" name="correo" placeholder="E-Mail" class="form-control" required value="{{$Datos_Paciente->correo}}">
+										 															</div>
+										 												</div>
+										 												<div class="input-group col-md-12 col-xs-12">
+										 													<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+										 													<span  class="col-md-6 col-xs-10 has-float-label">
+										 														<div class="group-control">
+										 															<label>Dirección</label>
+										 																	<input id="Direccion" name="direccion" placeholder="Dirección" class="form-control" required value="{{$Datos_Paciente->direccion}}">
+										 															</div>
+										 												</div>
 
 						                <div class="form-group">
 						                      <div class="ccol-md-12 text-center">

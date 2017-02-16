@@ -15,7 +15,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-plus-square bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="id" name="id" placeholder="Código del Consultorio" class="form-control" value="{{old('id')}}">
+        <input id="id" name="id" placeholder="Ejm. 101" class="form-control" value="{{old('id')}}">
         <label>Código del Consultorio</label>
       </div>
     </div>
@@ -24,7 +24,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-h-square bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="ubicacion" name="ubicacion" placeholder="Nombre del Consultorio" class="form-control"
+        <input id="ubicacion" name="ubicacion" placeholder="Ejm. Primer Piso "  class="form-control"
         value="{{old('ubicacion')}}" onKeyUp="this.value = this.value.toUpperCase();">
         <label>Ubicación del Consultorio</label>
       </div>

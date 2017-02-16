@@ -24,7 +24,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-h-square bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="codigo" name="codigo"  placeholder="Código de la Especialidad" class="form-control"
+        <input id="codigo" name="codigo"  placeholder="Ejm. CAR" class="form-control"
           value="{{old('codigo')}}"  onkeyup="this.value= this.value.toUpperCase();">
         <label>Código de Especialidad</label>
       </div>
@@ -33,7 +33,7 @@
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="nombre" name="nombre" placeholder="Nombre de la Especialidad" class="form-control"
+        <input id="nombre" name="nombre" placeholder="Ejm. Cardiología" class="form-control"
             value="{{old('nombre')}}" onkeyup="this.value= this.value.toUpperCase();">
         <label>Nombre de Especialidad</label>
       </div>

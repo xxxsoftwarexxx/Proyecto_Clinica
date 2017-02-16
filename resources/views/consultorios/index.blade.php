@@ -10,8 +10,8 @@
   <table class="table table-striped table-bordered table-hover" id="dataTables-example">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Ubicacion</th>
+        <th>Código Cita</th>
+        <th>Ubicación</th>
         <th>Operaciones</th>
       </tr>
     </thead>

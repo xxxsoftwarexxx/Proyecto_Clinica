@@ -19,15 +19,15 @@
 
 
             <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-slack bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                        <input id="id_sancion" name="id_sancion" placeholder="Id Sancion"  class="form-control" required maxlength="10" size="10">
-                        <label>Id Sancion</label>
+                        <input id="id_sancion" name="id_sancion" placeholder="Ejm. 02"  class="form-control" required maxlength="10" size="10">
+                        <label>Código Sanción</label>
                     </div>
               </div>
               <div class="input-group col-md-12 col-xs-12">
-                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-university bigicon"></i></span>
+                    <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th bigicon"></i></span>
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <div align="center" class="group-control">
                           <select id="id_cita" name="id_cita" class="form-control">
@@ -35,7 +35,7 @@
                               <option value={{$cita->id}}>{{$cita->id}}</option>
                             @endforeach
                           </select>
-                          <label>Id Citas</label>
+                          <label>Código Cita</label>
                     </div>
               </div></div>
               <div class="input-group col-md-12 col-xs-12">

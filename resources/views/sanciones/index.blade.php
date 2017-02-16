@@ -16,9 +16,9 @@
               <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                   <thead>
                       <tr>
-                          <th>ID_Sancion</th>
-                          <th>Id Cita</th>
-                          <th>Fecha Sancion</th>
+                          <th>Código Sanción</th>
+                          <th>Código Cita</th>
+                          <th>Fecha Sanción</th>
                           <th>Operaciones</th>
                       </tr>
                   </thead>
@@ -32,7 +32,7 @@
                             <button type="button" class="btn btn-success btn-sm"
                             onClick="location.href='/sanciones/{{ $sancion->id_sancion }}/edit'">
                             Editar</button>
-                               
+
                            </td>
                       </tr>
                     @endforeach

@@ -13,40 +13,8 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-qrcode bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Id" name="Id" placeholder="Código de Historial Médico" class="form-control" required maxlength="8" size="8">
+                    <input id="Id" name="Id" placeholder="Ejm. 11" class="form-control" required maxlength="8" size="8">
                     <label>Código de Historial Médico</label>
-                  </div>
-            </div>
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <input id="Cirugias" name="Cirugias" placeholder="Cirugías" class="form-control" required>
-                    <label>Cirugías</label>
-                  </div>
-            </div>
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <input id="Alergias" name="Alergias" placeholder="Alergias" class="form-control" required>
-                    <label>Alergias</label>
-                  </div>
-            </div>
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <input id="Antecedentes" name="Antecedentes" placeholder="Antecedentes" class="form-control" required>
-                    <label>Antecedentes</label>
-                  </div>
-            </div>
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <input id="Tipo_Sangre" name="Tipo_Sangre" placeholder="Tipo de Sangre" class="form-control" required maxlength="5">
-                    <label>Tipo de Sangre</label>
                   </div>
             </div>
             <div class="input-group col-md-12 col-xs-12">
@@ -60,6 +28,38 @@
                       <label>Código de Pacientes</label>
              </div>
 
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Cirugias" name="Cirugias" placeholder="Ejm. Riñones" class="form-control" required>
+                    <label>Cirugías</label>
+                  </div>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Alergias" name="Alergias" placeholder="Ejm. Penicilina" class="form-control" required>
+                    <label>Alergias</label>
+                  </div>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Antecedentes" name="Antecedentes" placeholder="Ejm. Operación del Hígado" class="form-control" required>
+                    <label>Antecedentes</label>
+                  </div>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                    <input id="Tipo_Sangre" name="Tipo_Sangre" placeholder="Ejm. O(+)" class="form-control" required maxlength="5">
+                    <label>Tipo de Sangre</label>
+                  </div>
+            </div>
              <div class="input-group col-md-12 col-xs-12">
                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
                  <span align="center" class="col-md-6 col-xs-10 has-float-label">

@@ -10,8 +10,8 @@
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
       <thead>
           <tr>
-          <th align="center">Código</th>
-          <th align="center">Nombre</th>
+          <th align="center">Código de Especialidad</th>
+          <th align="center">Nombre de Especialidad</th>
           <th align="center">Consultorio</th>
           <th align="center">Operaciones</th>
         </tr>
