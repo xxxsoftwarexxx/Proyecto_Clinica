@@ -40,12 +40,19 @@ class EscuelasProfesionalesController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request,[
+          'id'=>['required','size:2','regex:/^[A-Z]+$/'],
+          'nombre'=>['required','max:50','min:3','regex:/^[A-Za-z ]+$/']
+        ]);
         $id = $request->input('id');
         $nombre = $request->input('nombre');
+        $estado = $request->input('estado');
 
         DB::table('escuelas_profesionales')->insert([
         'id'=> $id,
-        'nombre'=>$nombre
+        'nombre'=>$nombre,
+        'estado'=>$estado
         ]);
 
         //return $this->index();
@@ -87,11 +94,16 @@ class EscuelasProfesionalesController extends Controller
     public function update(Request $request, $id)
     {
 
+      $this->validate($request,[
+        'nombre'=>['required','max:50','min:3','regex:/^[A-Za-z ]+$/']
+      ]);
       $nombre = $request->input('nombre');
+      $estado = $request->input('estado');
 
       DB::table('escuelas_profesionales')->where('id',$id)
         ->update([
-        'nombre'=>$nombre
+        'nombre'=>$nombre,
+        'estado'=>$estado
       ]);
       return redirect('escuelas_profesionales');
     }

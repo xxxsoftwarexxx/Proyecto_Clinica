@@ -12,7 +12,9 @@
             <fieldset>
 
             <div class="text-center"><h2 align="center">Modificar Historial Médico Detalles</h2>
-            </div></br>
+            </div>
+            @include('partials/errores')
+            </br>
 
 
             <div class="input-group col-md-12 col-xs-12">
@@ -70,15 +72,34 @@
                   </div>
           </div>
 
-
             <div class="form-group">
                   <div class="col-md-12 text-center">
-                      <input type="submit" style="width:80px" class="btn btn-success" align="center" class="form-control" value="Guardar">
-                      <button type="reset" style="width:80px" class="btn btn-primary" align="center" class="form-control" >Limpiar</button>
+                    <a data-target="#confirmar-{{ $historiales_medicos_detalles->id_historial_medico }}" data-toggle="modal" style="width:80px" class="btn btn-success" align="center" class="form-control" value="Guardar" >Guardar</a>
+                    <button type="reset" style="width:80px" class="btn btn-primary" align="center" class="form-control" >Limpiar</button>
 
                   </div>
             </div></br></br>
 
+            <div class="modal fade modal-slide-in-rigth" aria-hidden="true"
+              role="dialog" tabindex="-1" id="confirmar-{{$historiales_medicos_detalles->id_historial_medico}}">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-Label="Close">
+                        <span aria-hidden="true">X</span>
+                      </button>
+                      <h3 class="modal-title">Modificar Historial Medico Detalle</h3>
+                    </div>
+                    <div class="modal-body">
+                      <p>Esta seguro si desea modificar los datos del detalle del historial?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                          <button type="submit" style="width:80px" class="btn btn-success">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
             </fieldset>
 
 
