@@ -10,7 +10,9 @@
             <fieldset>
 
             <div class="text-center"><h2 align="center">Agregar Historial Médico Detalles</h2>
-            </div></br>
+            </div>
+              @include('partials/errores')
+            </br>
 
 
             <div class="input-group col-md-12 col-xs-12">
@@ -25,12 +27,19 @@
                     <label>Código de Historial Médico</label>
                   </div>
             </div>
-
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-long-arrow-up bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                      <input id="Estatura" name="Estatura" placeholder="Estatura" class="form-control" required>
+                      <input id="IdCita" name="IdCita" placeholder="Id Cita" class="form-control" required>
+                      <label>Id Cita</label>
+                  </div>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-long-arrow-up bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                      <input id="Estatura" name="Estatura" placeholder="Estatura" class="form-control" value="{{old('Estatura')}}" required>
                       <label>Estatura</label>
                   </div>
             </div>
@@ -39,7 +48,7 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-adjust bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                      <input id="Peso" name="Peso" placeholder="Peso" class="form-control" required>
+                      <input id="Peso" name="Peso" placeholder="Peso" class="form-control" value="{{old('Peso')}}" required>
                       <label>Peso</label>
                   </div>
             </div>
@@ -47,32 +56,20 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-stethoscope bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                      <input id="Presion" name="Presion" placeholder="Presión" class="form-control" required>
-                        <label>Peso</label>
+                      <input id="Presion" name="Presion" placeholder="Presión" class="form-control" value="{{old('Presion')}}" required>
+                        <label>Presion</label>
+                  </div>
+            </div>
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-stethoscope bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                      <input id="Descripcion" name="Descripcion" placeholder="Descripcion" class="form-control" value="{{old('Descripcion')}}" required>
+                        <label>Descripcion</label>
                   </div>
             </div>
 
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                      <input id="Fecha" name="Fecha" placeholder="Fecha AAAA-MM-DD" type=date class="form-control" required>
-                        <label>Fecha</label>
-                  </div>
-            </div>
 
-            <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <select id="Medicos_DNI" name="Medicos_DNI" placeholder="Medicos_DNI"  class="form-control">
-                      @foreach($medicos as $medico)
-                              <option>{{$medico->dni}}</option>
-                      @endforeach
-                    </select>
-                    <label>DNI del Médico</label>
-                  </div>
-            </div></br></br>
 
             <div class="form-group">
                   <div class="col-md-12 text-center">

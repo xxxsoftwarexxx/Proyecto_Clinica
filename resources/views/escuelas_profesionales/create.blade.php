@@ -10,13 +10,15 @@
             <fieldset>
 
             <div class="text-center"><h2 align="center">Agregar Escuela Profesional</h2>
-            </div></br>
+            </div>
+            @include('partials/errores')
+            </br>
 
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-mortar-board bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="id" name="id" placeholder="Código de Escuela Profesional" class="form-control" required maxlength="2" size="2">
+                    <input id="id" name="id" placeholder="Código de Escuela Profesional" class="form-control" value="{{old('id')}}" required maxlength="2" size="2">
                     <label>Código de Escuela Profesional</label>
                   </div>
             </div></br>
@@ -25,10 +27,23 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-university bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="nombre" name="nombre" placeholder="Nombre de Escuela Profesional" class="form-control" required>
+                    <input id="nombre" name="nombre" placeholder="Nombre de Escuela Profesional" value="{{old('nombre')}}" class="form-control" required>
                     <label>Nombre de Escuela Profesional</label>
                   </div>
             </div></br>
+
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-cog bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                      <select id="Estado" name="estado" placeholder="Estado" class="form-control" value="{{old('estado')}}">
+                          <option>HABILITADO</option>
+                          <option>INHABILITADO</option>
+                      </select>
+                      <label>Estado de Escuela Profesional</label>
+
+                  </div>
+            </div></br></br>
 
 
             <div class="form-group">

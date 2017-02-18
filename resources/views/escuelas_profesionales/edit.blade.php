@@ -12,7 +12,9 @@
             <fieldset>
 
             <div class="text-center"><h2 align="center">Modificar Escuela Profesional</h2>
-            </div></br>
+            </div>
+              @include('partials/errores')
+            </br>
 
 
             <div class="input-group col-md-12 col-xs-12">
@@ -32,6 +34,24 @@
                     <label>Nombre de Escuela Profesional</label>
                   </div>
             </div></br>
+
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-cog bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                      <select id="Estado" name="estado" placeholder="Estado" class="form-control" value="{{$escuela_profesional->estado}}">
+
+                        @if($escuela_profesional->estado == 'HABILITADO')
+                          <option selected value="HABILITADO" >HABILITADO</option>
+                          <option value="INHABILITADO">INHABILITADO</option>
+                        @else
+                          <option selected value="INHABILITADO" >INHABILITADO</option>
+                          <option  value="HABILITADO" >HABILITADO</option>
+                        @endif
+                      </select>
+                      <label>Estado de Escuela Profesional</label>
+                  </div>
+            </div></br></br>
 
 
             <div class="form-group">
