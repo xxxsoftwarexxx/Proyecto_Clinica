@@ -73,6 +73,12 @@
 @section('Titulo1')
 <i class="fa fa-gear fa-fw"></i>
 <a1>Detalle de Historial Médico<a1>
+  <div class="pull-right">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary btn-md"
+      onClick="location.href='/historiales_medicos_detalles/create'">NUEVO HISTORIAL MEDICO DETALLE</button>
+    </div>
+  </div>
 @endsection
 @section('Contenido1')
       <fieldset>

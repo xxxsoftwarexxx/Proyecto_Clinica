@@ -41,36 +41,31 @@ class HistorialesMedicosDetallesController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request,[
+          'Id'=>['required','max:20'],
+          'Estatura'=>['required','max:2000','regex:/^[0-9.]+$/'],
+          'Peso'=>['required','max:2000','regex:/^[0-9.]+$/'],
+          'Presion'=>['required','max:200','regex:/^[0-9.]+$/'],
+          'Descripcion'=>['required','max:4000','regex:/^[0-9A-Za-z ]+$/'],
+          'IdCita'=>['required','size:17','regex:/^[0-9]+$/']
+        ]);
+
         $id = $request->input('Id');
         $estatura = $request->input('Estatura');
         $peso = $request->input('Peso');
         $presion = $request->input('Presion');
-        $fecha = $request->input('Fecha');
-        $medicos_dni = $request->input('Medicos_DNI');
+        $descripcion = $request->input('Descripcion');
+        $id_cita = $request->input('Id_Cita');
 
-      $historial_medico = DB::table('historial_medico')->get();
-      foreach($historial_medico as $historial)
-      {
-        if($id==$historial->id_historial_medico){
-          $id = $historial->id_historial_medico;
-        }
-      }
-
-      $medicos = DB::table('medicos')->get();
-      foreach($medicos as $medico)
-      {
-        if($medicos_dni==$medico->dni){
-        $medicos_dni = $medico->dni;
-        }
-      }
 
       DB::table('historiales_medicos_detalles')->insert([
       'id_historial_medico'=> $id,
       'estatura'=>$estatura,
       'peso'=>$peso,
       'presion'=>$presion,
-      'fecha'=>$fecha,
-      'medicos_dni'=>$medicos_dni,
+      'descripcion'=>$descripcion,
+      'id_cita'=>$id_cita
 
     ]);
 
@@ -115,10 +110,18 @@ class HistorialesMedicosDetallesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
+      $this->validate($request,[
+        'Estatura'=>['required','regex:/^[0-9.]+$/'],
+        'Peso'=>['required','regex:/^[0-9.]+$/'],
+        'Presion'=>['required','regex:/^[0-9.]+$/'],
+        'Descripcion'=>['required','max:4000','regex:/^[0-9A-Za-z ]+$/']
+      ]);
       $estatura = $request->input('Estatura');
       $peso = $request->input('Peso');
       $presion = $request->input('Presion');
-
+      $detalle = $request->input('Detalle');
       $historial_medico = DB::table('historial_medico')->get();
 
 
