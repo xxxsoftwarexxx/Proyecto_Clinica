@@ -74,6 +74,9 @@
                     </div>
                     <div class="modal-body">
                       <p>Esta seguro si desea modificar los datos de la escuela profesional ?</p>
+                      <p>Codigo:        {{$escuela_profesional->id}}</p>
+                      <p>Nombre:       {{$escuela_profesional->nombre}}</p>
+                      <p>Estado:        {{$escuela_profesional->estado}}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

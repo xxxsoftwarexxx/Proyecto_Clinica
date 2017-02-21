@@ -16,7 +16,7 @@
         <div class="panel-heading">
 
               <i class="fa fa-gear fa-fw"></i>
-              <a1>Seleccionar Medicos<a1>
+              <a1><font size=5>Seleccionar Medicos</font><a1>
         </div>
         <div class="panel-body">
             <div >
@@ -24,13 +24,13 @@
         <div class="dataTable_wrapper table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
-                                        <tr>
-                                            <th>DNI</th>
-                                            <th>Código</th>
-                                            <th>Nombres</th>
-                                            <th>Apellidos</th>
-                                            <th>Especialidad</th>
-                                            <th>Operaciones</th>
+                                        <tr bgcolor="#D9534F">
+                                          <th><font color="white">DNI</font></th>
+                                          <th><font color="white">Código</font></th>
+                                          <th><font color="white">Nombres</font></th>
+                                          <th><font color="white">Apellidos</font></th>
+                                          <th><font color="white">Especialidad</font></th>
+                                          <th><font color="white">Operaciones</font></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -45,7 +45,7 @@
                                             <td>{{ $medico->especialidades_codigo }}</td>
                                             <td align="center">
                                                 <button type="button" class="btn btn-success btn-xs"
-                                                onClick="location.href='/medhorarios/{{ $medico->dni }}/edit'">
+                                                onClick="location.href='/medhorarios/{{ $medico->dni }}/horario'">
                                                 Continuar</button>
 
                                             </td>

@@ -5,8 +5,10 @@
 {{csrf_field()}}
 {{method_field('PUT')}}
   <fieldset>
-    <div class="text-center"><h2 align="center">MODIFICAR TIPO SANCION</h2>
-    </div></br>
+    <div class="text-center"><h2 align="center">MODIFICAR TIPO SANCIÓN</h2>
+    </div>
+    @include('partials/errores')
+    </br>
 
     <div class="input-group col-md-12 col-xs-12">
       <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-plus-square bigicon"></i></span>

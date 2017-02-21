@@ -24,7 +24,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="/inicio" class="site_title"><i class="fa fa-paw"></i> <span>Clinica UNSAAC</span></a>
+              <a href="/inicio" class="site_title"><i class="fa fa-user-md"></i> <span>Clinica UNSAAC</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -45,33 +45,22 @@
               <div class="menu_section">
                 <h3> </h3>
                 <ul class="nav side-menu">
-
-                  <li><a><i class="fa fa-desktop"></i> Procesos Medicos<span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/medcitas/{{Auth::user()->dni}}/">Citas Medico</a></li>
-                      <li><a href="/medcitas/{{Auth::user()->dni}}/atendidos">Citas Atendidas</a></li>
+                      <li><a href="/inicio" class="btn btn-info btn-xx">INICIO</a></li>
+                      <li><a href="/about" class="btn btn-info btn-xx">SOBRE NOSOTROS</a></li>
+                      <li><a href="/gallery" class="btn btn-info btn-xx">ESPECIALIDADES</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> Procesos Medico<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/medcitas/{{Auth::user()->dni}}/" class="btn btn-success btn-xx">Citas Medico</a></li>
+                      <li><a href="/medcitas/{{Auth::user()->dni}}/atendidos" class="btn btn-success btn-xx">Citas Atendidas</a></li>
                     </ul>
                   </li>
                   <li><a href="/reportes/medico/"><i class="fa fa-laptop"></i> Reportes</a></li>
               </div>
             </div>
-            <!-- /sidebar menu -->
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
           </div>
         </div>
         <!-- top navigation -->

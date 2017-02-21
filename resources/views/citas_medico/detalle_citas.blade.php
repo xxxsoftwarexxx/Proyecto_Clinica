@@ -19,23 +19,15 @@
         <form role="form" method="post" action="/medcitas/citadetalle/{{$idcita}}/{{$idhistorial}}/">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
             <fieldset>
-              <!--<div class="text-center"><h2 align="center">HISTORIAL cita:{{$idcita}} histo: {{$idhistorial}}</h2>-->
                 <div class="text-center"><h2 align="center">HISTORIAL </h2>
               </div></br>
 
-              <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <input id="ID" name="ID" placeholder="ID" class="form-control" value=""  required>
-                    <label>ID Historial</label>
-                  </div>
             </div>
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Estatura" name="Estatura" placeholder="Estatura" class="form-control"  value="{{$historial_ultimo->estatura}}" required>
+                    <input id="Estatura" name="Estatura" placeholder="Estatura" class="form-control"  value="{{$estatura}}" required>
                     <label>Estatura</label>
                   </div>
             </div>
@@ -43,7 +35,7 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Peso" name="Peso" placeholder="Peso" class="form-control" value="{{$historial_ultimo->peso}}" required>
+                    <input id="Peso" name="Peso" placeholder="Peso" class="form-control" value="{{$peso}}" required>
                     <label>Peso</label>
                   </div>
             </div>
@@ -51,7 +43,7 @@
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Presion" name="Presion" placeholder="Presion" class="form-control" value="{{$historial_ultimo->presion}}" required>
+                    <input id="Presion" name="Presion" placeholder="Presion" class="form-control" value="{{$presion}}" required>
                     <label>Presion</label>
                   </div>
             </div>

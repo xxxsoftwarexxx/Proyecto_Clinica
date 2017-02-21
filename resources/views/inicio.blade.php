@@ -9,10 +9,10 @@
 						<div class="container">
 							<div class="banner-info text-center">
 								<h3><k>TE DAMOS LA BIENVENIDA </k></h3>
-										<blanco>El centro de salud contribuye en formar una cultura solidaria en el campo de salud, ya que brinda un espacio de
-											ayuda social que favorece a los alumnos del campo univeristario y beneficiarios de programas sociales.Ademas fortalecemos nuestra atencion
-											 basadonos en el Respeto, Confianza y Vocacion de servicio al nuestros pacientes que se reciben
-											atencion en la esta institucion</blanco>
+										<blanco><h4>El centro de salud contribuye en formar una cultura solidaria en el campo de salud, ya que brinda un espacio de
+											ayuda social que favorece a los alumnos del campo univeristario y beneficiarios de programas sociales. Ademas fortalecemos nuestra atención
+											 basadonos en el Respeto, Confianza y Vocación de servicio de nuestros pacientes que se reciben
+											atención en la esta institución</h4></blanco>
 							</div>
 						</div>
 					</div>
@@ -22,10 +22,10 @@
 						<div class="container">
 							<div class="banner-info text-center">
 								<h3><k>SALUD OCUPACIONAL</k></h3>
-										<negro>Nuestra Clínica cuenta con un staff de profesionales para gestionar la seguridad y la salud en el trabajo de todos
+										<negro><h4>Nuestra Clínica cuenta con un staff de profesionales para gestionar la seguridad y la salud en el trabajo de todos
 										sus colaboradores de acuerdo a la normatividad peruana. La Salud Ocupacional a nivel mundial es considerada como un pilar
 										 fundamental en el desarrollo de un país, sus acciones están dirigidas a la promoción y protección de la salud de los trabajadores
-										 y pacientes.</negro>
+										 y pacientes</h4></negro>
 							</div>
 						</div>
 					</div>
@@ -35,10 +35,11 @@
 						<div class="container">
 							<div class="banner-info text-center">
 								<h3><k>NUESTROS PROFESIONALES </k></h3>
-										<blanco>Contamos con personal capacitado para
+								<br>
+										<blanco><h4>Contamos con personal capacitado para
 											todo tipo de servicios, con infraestructura adecuada para brindar servicios integrales que den bienestar al paciente
 											Ademas el personal médico se encuentra altamente calificado en las especialidades que brindamos:
-											Cirugia General, Ginecología y Obstetricia, Laboratorio Clinico entre otros.</blanco>
+											Cirugia General, Ginecología y Obstetricia, entre otros</h4></blanco>
 							</div>
 						</div>
 					</div>
@@ -48,10 +49,10 @@
 						<div class="container">
 							<div class="banner-info text-center">
 								<h3><k>CONVENIOS CON ESSALUD </k></h3>
-										<negro>Desde hace dos años nuestra Clínica firmó un convenio con EsSalud para reducir el tiempo de espera
+										<negro><h4>Desde hace dos años nuestra Clínica firmó un convenio con EsSalud para reducir el tiempo de espera
 											 y mejorar las prestaciones asistenciales a la comunidad estudiantil UNSAAC.
 										  	Dichos beneficios se reflejan en la infraestructura y tambien a los profesionales que pertenecen a
-												 esta institucion</negro>
+												 esta institución</h4></negro>
 							</div>
 						</div>
 					</div>
@@ -79,14 +80,76 @@
 		<div class="clearfix"></div>
 @endsection
 <!-- //content -->
+@section('team')
+<div class="container">
+	<div class="col-sm-4"><img class="img-responsive" src="images/blank.PNG" alt=" " /></div>
+</div>
+<center><azul>Nuestros profesionales</azul></center>
+	<div class="container">
+		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+			<div class="team-img">
+				<img class="img-responsive" src="images/d1.jpg" alt=" "/>
+				<div class="team-info">
+					<ul>
+						<li class="hvr-rectangle-out"><a class="eco1" </a></li>
+						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
+					</ul>
+
+				</div>
+
+			</div>
+			<h4>Dr.Bruno Zanabria Guzman</h4>
+			<p>Dentista</p>
+		</div>
+		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+			<div class="team-img">
+				<img class="img-responsive" src="images/d2.png" alt=" "/>
+				<div class="team-info">
+					<ul>
+						<li class="hvr-rectangle-out"><a class="eco1" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
+					</ul>
+				</div>
+			</div>
+			<h4>Dra.Lara Carazas Quispe</h4>
+			<p>Psicologia</p>
+
+		</div>
+		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+			<div class="team-img">
+				<img class="img-responsive" src="images/d3.jpg" alt=" "/>
+				<div class="team-info">
+					<ul>
+						<li class="hvr-rectangle-out"><a class="eco1" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
+						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
+					</ul>
+				</div>
+			</div>
+			<h4>Dr.Eduardo Chura Huaman</h4>
+			<p>Medicina general</p>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+@endsection
 <!-- services -->
 @section('servicios')
 	<div class="container">
 		<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
 			<f>Nuestros servicios</f>
-			<p class="ser-para" > En el centro de salud universitario te brindamos la mas calida atencion,siendo nuestro
+			<p class="ser-para" > En el centro de salud universitario te brindamos la más calida atención,siendo nuestro
 				 mayor objetivo la calidez humana que recibe cada uno de nuestros pacientes. </p>
-			<a href="about.html" class="hvr-outline-out button2">Ver Especialidades</a>
+			<a href="gallery" class="hvr-outline-out button2">Ver Especialidades</a>
 			<div  class="callbacks_container">
 				<ul class="rslides" id="slider4">
 					<li>

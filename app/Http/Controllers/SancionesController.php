@@ -29,7 +29,8 @@ class SancionesController extends Controller
     public function create()
     {
         $t1 = DB::table('citas')->get();
-        return view('sanciones.create',['citas'=>$t1]);
+        $t2 = DB::table('tipo_sancion')->get();
+        return view('sanciones.create',['citas'=>$t1,'tipo_sancion'=>$t2]);
     }
 
     /**
@@ -40,6 +41,11 @@ class SancionesController extends Controller
      */
     public function store(Request $request)
     {
+      $this->validate($request,[
+        'id_cita'=>['required','unique:sanciones','numeric'],
+        'id_sancion'=>['required'],
+        'fecha_sancion'=>['required','date']
+      ]);
       $id_sancion = $request->input('id_sancion');
       $id_cita = $request->input('id_cita');
       $fecha_sancion = $request->input('fecha_sancion');
@@ -72,8 +78,10 @@ class SancionesController extends Controller
      */
     public function edit($id)
     {
+      $t1 = DB::table('citas')->get();
+      $t2 = DB::table('tipo_sancion')->get();
       $sanciones = DB::table('sancion')->where('id_sancion',$id)->first();
-      return view('sanciones.edit',['sanciones'=>$sanciones]);
+      return view('sanciones.edit',['sanciones'=>$sanciones,'citas'=>$t1,'tipo_sancion'=>$t2]);
     }
 
     /**
@@ -85,8 +93,12 @@ class SancionesController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $this->validate($request,[
+        'id_cita'=>['required'],
+        'id_sancion'=>['required'],
+        'fecha_sancion'=>['required','date']
+      ]);
       $fecha_sancion= $request->input('fecha_sancion');
-
       DB::table('sancion')->where('id_sancion',$id)
         ->update([
       'fecha_sancion'=>$fecha_sancion,
@@ -94,17 +106,5 @@ class SancionesController extends Controller
 
       return redirect('sanciones');
 
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-      DB::table('sanciones')->where('id',$id)->delete();
-    return redirect('sanciones');
     }
 }

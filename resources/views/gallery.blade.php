@@ -13,11 +13,10 @@
 								<img src="images/g1.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>CARDIOLOGIA</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+										<p>Guarde su corazon para las grandes emociones. En la unidad de cirugía cardiovascular contamos con profesionales altamente calificados para el tratamiento integral del corazón</p>
 										<span class="separator"></span>
-
 									</div>
 								</div>
 							</div>
@@ -29,11 +28,10 @@
 								<img src="images/g2.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>DERMATOLOGIA</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+										<p>Un destacado staff de médicos dermatólogos garantizan una atención de alta calidad a sus pacientes, les brindamos recomendaciones para evitar tumores en la piel</p>
 										<span class="separator"></span>
-
 									</div>
 								</div>
 							</div>
@@ -45,11 +43,10 @@
 								<img src="images/c1.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>PSICOLOGIA</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa.</p>
+										<p>Nuestra unidad de psicología cuenta con los mejores especialidades para niños, adultos y psicolgía empresarial</p>
 										<span class="separator"></span>
-
 									</div>
 								</div>
 							</div>
@@ -61,11 +58,10 @@
 								<img src="images/c2.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>TRAUMATOLOGIA</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa.</p>
+										<p>Dedicados al diagnóstico y tratamiento de las lesiones traumáticas que afectan al aparato locomotor, con sus huesos, ligamentos, articulaciones, articulaciones, músculos y tendones.</p>
 										<span class="separator"></span>
-
 									</div>
 								</div>
 							</div>
@@ -77,9 +73,9 @@
 								<img src="images/c3.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>OFTALMOLOGIA</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa.</p>
+										<p>En la unidad de oftalmología y optica contamos con un servicio integral atendido por un reconocido staff de medicos e instrumentos de última generación para el diagnóstico y tratamiento de las enfermedades oculares.</p>
 										<span class="separator"></span>
 
 									</div>
@@ -93,11 +89,10 @@
 								<img src="images/c4.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>ODONTOLOGIA</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa.</p>
+										<p>Nuestra unidad brinda un servicio exclusivo, con un staff altamente calificado, con un ambiente cálido y comodo.</p>
 										<span class="separator"></span>
-
 									</div>
 								</div>
 							</div>
@@ -109,11 +104,10 @@
 								<img src="images/g7.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>MEDICINA GENERAL</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+										<p>Tenemos como misión garantizar una atención profesional oportuna, a través de sus equipos de última generación,diagnósticos confiables y que ayuden a la detección adecuada de las diferentes enfermedades de nuestros pacientes.</p>
 										<span class="separator"></span>
-
 									</div>
 								</div>
 							</div>
@@ -125,11 +119,10 @@
 								<img src="images/g8.jpg" alt=" " />
 								<div class="gal-text-box">
 									<div class="info-gal-con">
-										<h4>Infirmary</h4>
+										<h4>OTORRINOLARINGOLOGIA</h4>
 										<span class="separator"></span>
-										<p>Sit accusamus, vel blanditiis iure minima ipsa molestias minus laborum velit, nulla nisi hic quasi enim.</p>
+										<p>Contamos con un servicio exclusivo y completocen la especialidad, atendido por un staffde médicos altamente calificados para realizar microcirugias de laringe y oidos, cirugía endoscópica nasal, entre otros.</p>
 										<span class="separator"></span>
-
 									</div>
 								</div>
 							</div>

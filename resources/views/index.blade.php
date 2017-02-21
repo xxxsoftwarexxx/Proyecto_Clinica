@@ -67,8 +67,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="header_left" data-wow-duration="2s" data-wow-delay="0.5s">
 			<ul>
-				<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+123 456 7890</li>
-				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe></li>
+				<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>(084) 604100</li>
+				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe</li>
 			</ul>
 		</div>
 		<div class="header_right">
@@ -102,7 +102,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //header2 -->
 @if(!Auth::guest())
 	@if(Auth::user()->tipo=='Medico')
-		@include('medicos.sub_menu')
+		<div class="header wow zoomIn">
+			<div class="container">
+				<div class="header_right">
+					<div class="login">
+						<ul>
+							<li><a id="btn_Mostrar_Modificar_Datos_Medico">Perfil</a></li>
+							<li><a href="/medcitas/{{Auth::user()->dni}}/">Consultas del Dia</a></li>
+							<li><a href="/reportes/medico/">Reportes</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
 	@endif
 	@if(Auth::user()->tipo=='Paciente')
 	<div class="header wow zoomIn">
@@ -111,8 +125,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="login">
 						<ul>
 						<li><a href="#book"id="Cargar_Datos"> Perfil</a></li>
-
-						<li><a href="#book" id="Reservar_Cita">Reservar cita</a></li>
+						@if(Auth::user()->estado=='HABILITADO')
+						<li><a href="#book" id="Reservar_Cita" >Reservar Cita</a></li>
+						@else
+						<li><a href="#book" id="Inhabilitado">Reservar Cita</a></li>
+						@endif
+						<li><a href="#book" id="Listar_Cita">Listar Citas</a></li>
 
 						<!--<li><a id="No_Reservar_Cita">Reservar cita</a></li>-->
 
@@ -136,13 +154,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<nav class="navbar navbar-default">
 				<div class="navbar-header">
 				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				  	<h4>menu</h4>
 					<span class="sr-only">Toggle navigation</span>
 				  </button>
 					<div class="logo grid">
 						<div class="grid__item color-2">
 							<div class="row">
-							  <div class="col-xs-2 col-md-1"><img src="../images/logo.png" alt=""></div>
-								<div class="col-xs-10 col-md-10"><h1><a>CENTRO DE SALUD UNIVERSITARIO UNSAAC</a></h1>
+							  <div class="col-xs-4 col-md-2"><img src="../images/logo.png" alt=""></div>
+								<div class="col-xs-8 col-md-10"><h1><a>CENTRO DE SALUD UNIVERSITARIO UNSAAC</a></h1>
 							 </div>
 							</div>
 						</div>
@@ -155,6 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="menu__item menu__item--current"><a href="inicio" class="menu__link">Inicio</a></li>
 							<li class="menu__item"><a href="about" class="menu__link">Sobre nosotros</a></li>
 							<li class="menu__item"><a href="gallery" class="menu__link">Especialidades</a></li>
+							<li class="menu__item"><a href="contact" class="menu__link">Contáctanos</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -188,7 +208,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 </div>
 <!-- //banner -->
+<div>
 @yield('mas')
+</div>
 <!-- content -->
 <div class="content">
   <div class="container">
@@ -222,64 +244,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //services -->
 <!-- team -->
-<div class="container">
-	<div class="col-sm-4"><img class="img-responsive" src="images/blank.PNG" alt=" " />
-</div></div>
-<center><azul>Nuestros profesionales</azul></center>
-</div>
-	<div class="container">
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="images/d1.jpg" alt=" "/>
-				<div class="team-info">
-					<ul>
-						<li class="hvr-rectangle-out"><a class="eco1" </a></li>
-						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
-					</ul>
-				</div>
-			</div>
-			<h4>Dr.Bruno Zanabria Guzman</h4>
-			<p>Dentista</p>
-		</div>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="images/d2.png" alt=" "/>
-				<div class="team-info">
-					<ul>
-						<li class="hvr-rectangle-out"><a class="eco1" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
-					</ul>
-				</div>
-			</div>
-			<h4>-Dra.Lara Carazas Quispe</h4>
-			<p>Psicologia</p>
-
-		</div>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="images/d3.jpg" alt=" "/>
-				<div class="team-info">
-					<ul>
-						<li class="hvr-rectangle-out"><a class="eco1" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco2" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco3" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco4" ></a></li>
-						<li class="hvr-rectangle-out"><a class="eco5" ></a></li>
-					</ul>
-				</div>
-			</div>
-			<h4>Dr.Eduardo Chura Huaman</h4>
-			<p>Medicina general</p>
-		</div>
-
-		<div class="clearfix"></div>
-	</div>
+<div>
+	@yield('team')
 </div>
 <!-- team -->
 <!-- contact -->
@@ -287,10 +253,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 
 		<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s">
-			<bl>Contactanos</bl>
+			<bl>Contáctanos</bl>
 			<div class="strip"></div>
 			<ul class="con-icons">
-				<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>+123 456 7890</li>
+				<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>(084) 604100</li>
 				<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>clinica@unsaac.edu.pe</li>
 			</ul>
 			<ul class="fb_icons">
@@ -323,15 +289,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="login-grids">
 
 									<div class="login-right">
-										<h9>Ingrese con su cuenta</h9>
+										<center><h9>Registrarse</h9></center>
 										<form method="POST" action="/login">
 											<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-
 											<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 													<label for="text" class="col-md-4 control-label" >DNI</label>
 
 													<div class="col-md-6">
-															<input id="email" type="text" class="form-control" maxlength="8" name="dni" value="{{ old('dni') }}" required autofocus>
+															<input type="text" class="form-control" maxlength="8" name="dni" value="{{ old('dni') }}" required autofocus>
 															@if ($errors->has('email'))
 																	<span class="help-block">
 																			<strong>{{ $errors->first('email') }}</strong>
@@ -353,18 +318,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 
 											<div class="sign-in">
-												<input type="submit" value="Iniciar seción" >
+												<input type="submit" value="Iniciar sesión" >
 											</div>
 										</form>
 									</div>
-
-								<p>Usted esta de acuerdo con nuestros terminos y condiciones de privacidad</p>
+								<p><input type="checkbox" value="Aceptar" id="Aceptar" name="box" checked="true">Usted esta de acuerdo con nuestros terminos y condiciones de privacidad</a></p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-<!-- //login -->
 <!-- login -->
 			<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" >
 				<div class="modal-dialog" role="document">
@@ -448,7 +411,122 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-<!-- //login -->
+<!-- MODAL PARA EDITAR DATOS PACIENTE -->
+
+
+<!-- MODAL PARA EDITAR DATOS medico-->
+@if(!Auth::guest())
+	@if(Auth::user()->tipo=='Medico')
+
+<div class="modal fade" id="Mo_Datos_Medico" tabindex="-1" role="dialog" style="top:-70px">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-info">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body modal-spa">
+				<div class="login-grids">
+					<div class="login-right1">
+						<div class="modal-body" style="background-color:#EFF8FB">
+						    <form method="POST" action="/pacientes/{{ $Datos_Medico->dni }}" autocomplete="off">
+						          {{csrf_field()}}
+						          {{method_field('PUT')}}
+
+						        <fieldset>
+											<div class="text-center"><h2 align="center">Editar Datos Personales</h2></div></br>
+
+								<div class="input-group col-md-12 col-xs-12">
+											  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
+											 <span  class="col-md-6 col-xs-10 has-float-label">
+												      <div class="group-control">
+																<label>DNI</label>
+											 				<input id="dni_medico" name="dni_medico" placeholder="DNI" class="form-control" required value="{{$Datos_Medico->dni}}" readonly="readonly">
+													</div>
+									</div>
+
+
+									<div class="input-group col-md-12 col-xs-12">
+														<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+														<span  class="col-md-6 col-xs-10 has-float-label">
+														<div class="group-control">
+															<label>Nombres</label>
+															<input id="Nombres_medico" name="nombres_medico" placeholder="Nombres" class="form-control" required value="{{$Datos_Medico->nombres}}" readonly="readonly">
+													</div>
+										</div>
+										<div class="input-group col-md-12 col-xs-12">
+															<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+															<span  class="col-md-6 col-xs-10 has-float-label">
+															<div class="group-control">
+																	<label for="Apellidos">Apellidos</label>
+															<input id="Apellidos_medico" name="apellidos_medico" placeholder="Apellidos" class="form-control" required value="{{$Datos_Medico->apellidos}}" readonly="readonly">
+													</div>
+										</div>
+											<div class="input-group col-md-12 col-xs-12">
+													<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+													<span  class="col-md-6 col-xs-10 has-float-label">
+														<div class="group-control">
+															<label>Fecha de Nacimiento</label>
+															<input id="Fecha_Nacimiento_medico" type ="date" name="fecha_nacimiento_medico" placeholder="Fecha de Nacimiento" class="form-control" required value="{{$Datos_Medico->fecha_nacimiento}}" readonly="readonly">
+												</div>
+										</div>
+
+										<div class="input-group col-md-12 col-xs-12">
+											<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-female bigicon"></i></span>
+												<span  class="col-md-6 col-xs-10 has-float-label">
+													<div class="group-control">
+														<label>Sexo</label>
+														<select class="form-control" id="Sexo_medico" name="sexo_medico" >
+															<option>MASCULINO</option>
+															<option>FEMENINO</option>
+															</select>
+												</div>
+									</div>
+									<div class="input-group col-md-12 col-xs-12">
+											<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
+											<span  class="col-md-6 col-xs-10 has-float-label">
+												<div class="group-control">
+													<label for="Telefono">Teléfono</label>
+														<input id="Telefono_medico" name="telefono_medico" placeholder="Teléfono" class="form-control" required value="{{$Datos_Medico->telefono}}">
+
+												</div>
+									</div>
+									<div class="input-group col-md-12 col-xs-12">
+										<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
+										<span  class="col-md-6 col-xs-10 has-float-label">
+											<div class="group-control">
+												<label>E-Mail</label>
+															<input id="E_mail_medico" name="correo_medico" placeholder="E-Mail" class="form-control" required value="{{$Datos_Medico->correo}}">
+													</div>
+										</div>
+										<div class="input-group col-md-12 col-xs-12">
+											<span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+											<span  class="col-md-6 col-xs-10 has-float-label">
+												<div class="group-control">
+													<label>Dirección</label>
+															<input id="Direccion_medico" name="direccion_medico" placeholder="Dirección" class="form-control" required value="{{$Datos_Medico->direccion}}">
+													</div>
+										</div>
+
+						                <div class="form-group">
+						                      <div class="ccol-md-12 text-center">
+						                          <input id="btn_Modificar_Datos_Medico" type="button" style="width:200px" class="btn btn-primary" align="center" class="form-control" value="Guardar Cambios">
+						                      </div>
+						                </div>
+						            </div>
+
+						            </fieldset>
+						       </form>
+
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@endif
+@endif
+
 @if(!Auth::guest())
 	@if(Auth::user()->tipo=='Paciente')
 
@@ -460,14 +538,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="modal-body modal-spa">
 				<div class="login-grids">
-					<div class="login-right">
-						<div class="modal-body">
+					<div class="login-right1">
+						<div class="modal-body" style="background-color:#EFF8FB">
 						    <form method="POST" action="/pacientes/{{ $Datos_Paciente->dni }}" autocomplete="off">
 						          {{csrf_field()}}
 						          {{method_field('PUT')}}
 
 						        <fieldset>
-											<div class="text-center"><h2 align="center">Editar datos personales</h2></div></br>
+											<div class="text-center"><h2 align="center">Editar Datos Personales</h2></div></br>
 
 										 										<div class="input-group col-md-12 col-xs-12">
 										 													  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
@@ -573,13 +651,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="modal-body modal-spa">
 				<div class="login-grids">
-					<div class="login-right">
+					<div class="login-right1">
 						<div class="modal-body" align="center">
-								<h9 align="center" >Reservar una cita</h9>
+								<h2 align="center" >Reservar Cita</h2>
 
-								<select id="Especialidad_Cita" name="Especialidad_Cita" placeholder="Especialidad"  class="form-control frm-field required sect">
+								<select id="Especialidad_Cita" name="Especialidad_Cita" class="form-control frm-field required sect">
 									@foreach($especialidades as $especialidad)
-										<option value="{{$especialidad->codigo}} " name ="Especialidad">{{$especialidad->nombre}}</option>
+										<option value = "{{$especialidad->codigo}}">{{$especialidad->nombre}}</option>
 									@endforeach
 								</select></br>
 
@@ -600,7 +678,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="modal fade" id="Mo_Horario" role="dialog" >
 	<div class="modal-dialog">
 		<div style="width: 1250px;left: -70%;" class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header" align="center">
+				<label><h2 id="Titulo_Horario" text-align="center"></h2></label>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
@@ -657,6 +736,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </style>
 @endif
 
+@if(!Auth::guest())
+@if(Auth::user()->tipo=='Paciente')
+<div class="modal fade" id="Mo_ListarCita" tabindex="-1" role="dialog" >
+	<div class="modal-dialog" role="document">
+		<div style="width: 1000px;left: -50%;" class="modal-content">
+		<div class="modal-content modal-info">
+			<div class="modal-header" align="center">
+				<label><h1>Lista de citas</h1></label>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body modal-spa">
+				<div class="login-grids">
+					<div class="login-right1">
+						<div class="modal-body">
+						    <form method="POST" action="/pacientes/{{ $Datos_Paciente->dni }}" autocomplete="off">
+						          {{csrf_field()}}
+						          {{method_field('PUT')}}
+						          <div class="modal-body">
+						            <table class="table table-bordered table-condensed" style="text-align:center">
+                                    	<thead >
+                                        	<tr><th style="text-align:center">Hora</th><th style="text-align:center">Fecha Cita</th><th style="text-align:center">Fecha Reserva</th><th style="text-align:center">Estado</th><th style="text-align:center">Cancelar Cita</th></tr>
+                                    	</thead>
+                                    	<tbody id="Mo_Body_ListarCitas">
+                                    	</tbody>
+                                   	</table>
+
+
+									</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@endif
+@endif
+
+
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 <script>
 $("#Cargar_Datos").click(function(event){
@@ -664,8 +784,20 @@ $("#Cargar_Datos").click(function(event){
 			show: 'true'
 	});
 });
+
+$("#btn_Mostrar_Modificar_Datos_Medico").click(function(event){
+			$('#Mo_Datos_Medico').modal({
+			show: 'true'
+	});
+});
+
 $("#Reservar_Cita").click(function(event){
       $('#Mo_Especialidades').modal({
+      show: 'true'
+  });
+});
+$("#Listar_Cita").click(function(event){
+      $('#Mo_ListarCita').modal({
       show: 'true'
   });
 });
@@ -676,6 +808,8 @@ $(document).ready(function() {
 $("#btn_Mostrar_Horario").click(function(event){
 
 var Especialidad = $('#Especialidad_Cita').val();
+
+$('#Titulo_Horario').text("HORARIO DE "+$('#Especialidad_Cita option:selected').text());
 
 $.get('Recuperar_Horario',{Especialidad:Especialidad},function(data){
 
@@ -733,18 +867,23 @@ Tabla.append('<th><div style="width:100px;height:85px;background-color:#2FAED5;"
 					Tabla_Body.append(
 						'<tr>'+
                             '<td align ="right" style="background-color:#be25b5">');
-														if(i<9)
+														if(gg2<9)
 														{
 															Tabla_Body.append('0'+gg2+':'+gg+' - 0'+(ggg2)+':'+ggg);
 														}
-														if(i==9)
+														if(gg2==9)
 														{
-															Tabla_Body.append('0'+gg2+':'+gg+' - '+(ggg2)+':'+ggg);
+															if(ggg2==9){
+																Tabla_Body.append('0'+gg2+':'+gg+' - 0'+(ggg2)+':'+ggg);
+															}else{
+																Tabla_Body.append('0'+gg2+':'+gg+' - '+(ggg2)+':'+ggg);
+															}
 														}
-														if(i>9)
+														if(gg2>9)
 														{
 															Tabla_Body.append(gg2+':'+gg+' - '+(ggg2)+':'+ggg);
 														}
+
 											  Tabla_Body.append('</td>');
 
                             for(var j=0;j<7;j++)
@@ -766,9 +905,11 @@ Tabla.append('<th><div style="width:100px;height:85px;background-color:#2FAED5;"
             	{
 					Tabla_Body.append('<td colspan="8" height="25px"></td>');
             	}
-			Tabla_Body.append('</tr>');
+				Tabla_Body.append('</tr>');
             }
             Tabla.append(Tabla_Body);
+
+
 
              $(".Hora_Cita_Libre").click(function(event){
 
@@ -784,7 +925,7 @@ Tabla.append('<th><div style="width:100px;height:85px;background-color:#2FAED5;"
                     var Nro_Dia = idtd.substring(0,1);
 
                    $.get('/Recuperar_Datos_Cita',{Id:Id},function(data){
-
+                   		//alert(data);
                       $('#Datos_Reserva').empty();
                       var info = $('#Datos_Reserva');
                       var th = td.closest('table').find('th').eq(td.index());
@@ -820,25 +961,82 @@ Tabla.append('<th><div style="width:100px;height:85px;background-color:#2FAED5;"
 	});
 });
 </script>
+
 <script>
- $("#No_Reservar_Cita").click(function(event){
- 	alert('No puede recervar una cita');
+$("#Listar_Cita").click(function(event){
+	var idPaciente = $('#dni').val();
+
+$.get('/Recuperar_Citas',{idPaciente:idPaciente},function(data){
+
+var Tabla1 = $('#Mo_Body_ListarCitas');
+		Tabla1.empty();
+
+						for (var i = 0; i < data.length; i++) {
+              var hora = data[i]["bloques_idbloques"].substring(5,7);
+
+              if(hora%2==0)
+              {
+                hora = hora+":00";
+              }else {
+                hora = hora+":30";
+              }
+
+							if(data[i]["estado"]=="PENDIENTE")
+							{
+
+							 Tabla1.append('<tr><td>'+hora+'</td><td>'+data[i]["fecha_cita"]+'</td><td>'+data[i]["fecha_reserva"]+'</td><td>'+data[i]["estado"]+'</td><td><button id="btn_Cancelar" style="width:150px" value="'+data[i]["id"]+'" type="button" class="btn btn-primary claseboton">Cancelar</button></td></tr>');
+							}else {
+								Tabla1.append('<tr><td>'+hora+'</td><td>'+data[i]["fecha_cita"]+'</td><td>'+data[i]["fecha_reserva"]+'</td><td>'+data[i]["estado"]+'</td><td></td></tr>');
+							}
+						}
+
+			$('#Mo_Citas').modal({
+			show: 'true'
+			});
+		});
+	});
+</script>
+<div class="modal fade" id="Mo_Inhabilitado" tabindex="-1" role="dialog" >
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-info">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body modal-spa">
+				<div class="login-grids">
+					<div class="login-right1">
+						<div class="modal-body" align="center">
+								<h9 align="center">Solo se puede reservar una cita a la vez</h9>
+
+						</div>
+						 <div class="modal-footer" align="center">
+						 <div align="center" style="text-align:center;">
+				          <button align="center" type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+				          </div>
+				        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$("#Inhabilitado").click(function(event){
+	$('#Mo_Inhabilitado').modal({
+			show: 'true'
+			});
 });
 </script>
-<script>
-$("#btn_Modificar_Datos_Paciente").click(function(event){
-	var dni = $('#dni').val();
-	var sexo = $('#Sexo').val();
-	var telefono = $('#Telefono').val();
-	var correo = $('#E_mail').val();
-	var direccion = $('#Direccion').val();
 
-	 $.get('/Modificar_Datos_Paciente',{dni:dni,sexo:sexo,telefono:telefono,correo:correo,direccion:direccion},function(data){
-	 	alert(Actualizado correctamente);
-	 });
+<script>
+$(document).on("click",".claseboton",function(){
+	var idcita = $(this).val();
+	$.get('/Actualizar_Cancelacion',{idcita:idcita},function(data){
+    	$("#Listar_Cita").trigger("click");
+	});
 });
 </script>
 
-@yield('scripts')
+@('scripts')
 </body>
 </html>

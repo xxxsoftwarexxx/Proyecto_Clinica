@@ -27,7 +27,7 @@ class EspecialidadesController extends Controller
 
     public function store(Request $request){
       $this->validate($request,[
-        'codigo'=>['required','size:3','regex:/^[A-Z]+$/'],
+        'codigo'=>['required','unique:especialidades','size:3','regex:/^[A-Z]+$/'],
         'nombre'=>['required','max:100','min:3','regex:/^[A-Z]+$/'],
         'habilitado'=>['required','in:HABILITADO,INHABILITADO']
       ]);

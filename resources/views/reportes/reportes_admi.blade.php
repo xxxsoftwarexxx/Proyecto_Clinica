@@ -30,21 +30,21 @@
         <div class="panel-body">
           <div >
                 @yield('Contenido')
-                <div class="text-center"><h2 align="center">REPORTES DEL ADMIN</h2>
+                <div class="text-center"><h1 align="center">REPORTES DEL ADMINISTRADOR DEL  SISTEMA</h1>
             </div></br>
                 <div class="clearfix"></div>
 
-              <td align="center">
-                  <div class="text-center"><h2 align="center">REPORTE HISTORIAL MEDICO : <a href="/pdfhistorialmedico" class="btn btn-success btn-xx">Ver Reporte</a></h2>
+              <td >
+                  <div ><h2 >VER REPORTE -- Pacientes Atendidos Por Especialidad : <a href="/PacientesAtendidosEspecialida" class="btn btn-success btn-xx">VER REPORTE</a></h2>
               </td>
-              <td align="center">
-                  <div class="text-center"><h2 align="center">REPORTE PACIENTES        : <a href="/pdfpacientes" class="btn btn-success btn-xx">Ver Reporte</a></h2>
+              <td >
+                  <div ><h2 >VER REPORTE -- Citas Por Médico : <a href="/CitasPorMedico" class="btn btn-success btn-xx">VER REPORTE</a></h2>
               </td>
-              <td align="center">
-                  <div class="text-center"><h2 align="center">REPORTE SANCIONES        : <a href="/pdfsancion" class="btn btn-success btn-xx">Ver Reporte</a></h2>
+              <td >
+                  <div><h2>VER REPORTE -- Citas  Por Consultorio y Por Especialidad : <a href="/CitasConsulEspeci" class="btn btn-success btn-xx">VER REPORTE</a></h2>
               </td>
-              <td align="center">
-                  <div class="text-center"><h2 align="center">REPORTE CITAS            : <a href="/pdfcitas" class="btn btn-success btn-xx">Ver Reporte</a></h2>
+              <td >
+                  <div><h2>VER REPORTE -- Citas  Canceladas : <a href="/CitasCanceladas" class="btn btn-success btn-xx">VER REPORTE</a></h2>
               </td>
 
         </div>

@@ -25,7 +25,7 @@
     </br>
 
     <div class="input-group col-md-12 col-xs-12">
-      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
         <input id="dni" name="dni" placeholder="DNI" class="form-control" value="{{$medicos->dni}}"  readonly="">
@@ -34,11 +34,10 @@
     </div>
 
     <div class="input-group col-md-12 col-xs-12">
-      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-lock bigicon"></i></span>
+      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
-        <input id="contraseña" type="password" name="contraseña" placeholder="Contraseña" class="form-control"
-          value="" required>
+        <input id="contraseña" name="contraseña" placeholder="******" class="form-control" type = "password"value="{{$medicos->contraseña}}"  >
         <label>Contraseña</label>
       </div>
     </div>
@@ -152,7 +151,9 @@
         @if($especialidad->codigo==$medicos->especialidades_codigo)
           <option selected value="{{$especialidad->codigo}}">{{$especialidad->nombre}}</option>
         @else
-          <option value="{{$especialidad->codigo}}">{{$especialidad->nombre}}</option>
+          @if($especialidad->habilitado == "HABILITADO")
+            <option value="{{$especialidad->codigo}}">{{$especialidad->nombre}}</option>
+          @endif
         @endif
       @endforeach
       </select>
@@ -180,15 +181,6 @@
           </div>
           <div class="modal-body">
             <p>¿Desea guardar los cambios efectuados en el médico?</p>
-            <p>DNI:           {{$medicos->dni}}</p>
-            <p>Nombre:        {{$medicos->codigo}}</p>
-            <p>Nombres:       {{$medicos->nombres}}</p>
-            <p>Apellidos:     {{$medicos->apellidos}}</p>
-            <p>Teléfono:      {{$medicos->telefono}}</p>
-            <p>Correo:        {{$medicos->correo}}</p>
-            <p>Dirección:     {{$medicos->direccion}}</p>
-            <p>Especialidad:  {{$medicos->especialidades_codigo}}</p>
-            <p>Estado:        {{$medicos->estado}}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

@@ -16,10 +16,13 @@
 @section('Mantenimiento')
 <div class="col-lg-12">
     <div class="panel panel-default">
-        <div class="panel-heading">
-
+        <div class="panel-heading" style="height:60px">
               <i class="fa fa-gear fa-fw"></i>
-              <a1>Seleccionar Horarios {{$especialidad}}<a1>
+              <a1><font size=5>Seleccionar Horarios </font><a1>
+              <div class="pull-right">
+                  <button type="button" class="btn btn-info btn-md"
+                      onClick="location.href='/medhorarios'">VOLVER</button>
+              </div>
         </div>
         <div class="panel-body">
             <div >
@@ -27,50 +30,62 @@
                 <fieldset>
                   <input id="id" type="hidden" name="id" value="">
 
-                  <div class="text-center"><h2 align="center">Escoger Horario</h2>
+                  <div class="text-center"><h1 align="center">Escoger Horario</h1>
                   </div></br>
                 </fieldset>
                 <div class="dataTable_wrapper table-responsive">
                       <table class="table table-bordered table-condensed" >
                         <thead>
-                            <tr >
-                              <th><div class="panel panel-red"><div class="panel-heading"><h3>Hora</h3></div></div></th>
+                            <tr bgcolor="26b99a">
+                              <th ><font color="white" ><h3 align="center">HORA</h3></th>
                               @for($i=0;$i<7;$i++)
-                              <th>
-                                  <div class="panel panel-red">
-                                    <div class="panel-heading">
-                                        <h3 >{{$dias[$i]}}</h3>
-                                  </div>
-                                </div>
+                              <th><font color="white">
+                                        <h3 align="center">{{$dias[$i]}}</h3>
+
                               </th>
                               @endfor
                             </tr>
                         </thead>
                         <tbody>
-                          @for($i=7;$i<19;$i++)
-                            @if(($i<13)||($i>=15))
+                          @for($i=0;$i<24;$i++)
+                            @if(($i<12)||($i>=16))
                             <tr>
                               <td align ="right" background-color="#be25b5">
-                                      @if($i<9)
-                                      0{{$i}}:00 - 0{{$i+1}}:00
-                                      @elseif($i==9)
-                                      0{{$i}}:00 - {{$i+1}}:00
-                                      @else
-                                      {{$i}}:00 - {{$i+1}}:00
-                                      @endif
+                                  {{$horas[$i]}}
                               </td>
                                   @for($j=0;$j<7;$j++)
-                                    @if($res[$j.'-'.$i]->estado==1)
-                                      <td class="Hora_Cita" id="{{$j.'-'.$i}}" value="{{$res[$j.'-'.$i]->idbloques}}" onclick="document.location='/cambiar/{{$res[$j.'-'.$i]->idbloques}}/{{$dni}}'"><FONT COLOR="1EEC2F">disponible</td>
+                                   <div class="modal fade modal-slide-in-rigth" aria-hidden="true"
+                                        role="dialog" tabindex="-1" id="confirmar{{$res[$j.'-'.$i]->idbloques}}">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-Label="Close">
+                                                  <span aria-hidden="true">X</span>
+                                                </button>
+                                                <h3 class="modal-title">Cambio de Horario</h3>
+                                              </div>
+                                              <div class="modal-body">
+                                                <p>Esta seguro que desea realizar este cambio ?</p>
+                                              </div>
+                                              <div class="modal-footer">
+
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                  <button  type="submit" style="width:80px" class="btn btn-success" onclick="document.location='/cambiar/{{$res[$j.'-'.$i]->idbloques}}/{{$dni}}/'">Continuar</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    @if($res[$j.'-'.$i]->dnimed == "d")
+                                      <td data-target="#confirmar{{$res[$j.'-'.$i]->idbloques}}"data-toggle="modal" class="Hora_Cita" id="{{$j.'-'.$i}}" value="{{$res[$j.'-'.$i]->idbloques}}" ><FONT COLOR="1EEC2F">disponible</td>
                                     @else
                                       @if($res[$j.'-'.$i]->dnimed==$dni)
-                                        <td class="Hora_Cita" id="{{$j.'-'.$i}}" value="{{$res[$j.'-'.$i]->idbloques}}" onclick="document.location='/cambiar/{{$res[$j.'-'.$i]->idbloques}}/{{$dni}}'"><FONT COLOR="0000FF">Ocupado</td>
+                                        <td data-target="#confirmar{{$res[$j.'-'.$i]->idbloques}}" data-toggle="modal" class="Hora_Cita" id="{{$j.'-'.$i}}" value="{{$res[$j.'-'.$i]->idbloques}}" ><FONT COLOR="0000FF">Ocupado</td>
                                       @else
-                                        <td class="Hora_Cita" id="{{$j.'-'.$i}}" value="{{$res[$j.'-'.$i]->idbloques}}"><FONT COLOR="FA0A0E">no disponible</td>
+                                        <td  class="Hora_Cita" id="{{$j.'-'.$i}}" value="{{$res[$j.'-'.$i]->idbloques}}"><FONT COLOR="FA0A0E">no disponible</td>
                                       @ENDIF
                                     @ENDIF
                                   @endfor
-                              @elseif(($i==13))
+                              @elseif(($i==12))
                               <td colspan="8" height="25px"></td>
                               @endif
                           </tr>

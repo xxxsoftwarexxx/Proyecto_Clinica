@@ -29,7 +29,8 @@ class HistorialesMedicosDetallesController extends Controller
     {
       $historial_medico = DB::table('historial_medico')->get();
       $medicos = DB::table('medicos')->get();
-        return view('historiales_medicos_detalles.create',['historial_medico'=>$historial_medico],['medicos'=>$medicos]);
+      $citas = DB::table('citas')->get();
+        return view('historiales_medicos_detalles.create',['historial_medico'=>$historial_medico,'citas'=>$citas]);
 
     }
 
@@ -43,24 +44,27 @@ class HistorialesMedicosDetallesController extends Controller
     {
 
         $this->validate($request,[
-          'Id'=>['required','max:20'],
+          'id_historial_medico_detalle'=>['required','unique:historiales_medicos_detalles'],
+          'Id_Historial'=>['required','max:20'],
           'Estatura'=>['required','max:2000','regex:/^[0-9.]+$/'],
           'Peso'=>['required','max:2000','regex:/^[0-9.]+$/'],
           'Presion'=>['required','max:200','regex:/^[0-9.]+$/'],
           'Descripcion'=>['required','max:4000','regex:/^[0-9A-Za-z ]+$/'],
-          'IdCita'=>['required','size:17','regex:/^[0-9]+$/']
+          'IdCita'=>['required']
         ]);
 
-        $id = $request->input('Id');
+        $id_historial_medico = $request->input('id_historial_medico_detalle');
+        $id_historial = $request->input('Id_Historial');
         $estatura = $request->input('Estatura');
         $peso = $request->input('Peso');
         $presion = $request->input('Presion');
         $descripcion = $request->input('Descripcion');
-        $id_cita = $request->input('Id_Cita');
+        $id_cita = $request->input('IdCita');
 
 
       DB::table('historiales_medicos_detalles')->insert([
-      'id_historial_medico'=> $id,
+      'id_historial_medico'=> $id_historial_medico,
+      'id_historial'=> $id_historial,
       'estatura'=>$estatura,
       'peso'=>$peso,
       'presion'=>$presion,
@@ -69,7 +73,7 @@ class HistorialesMedicosDetallesController extends Controller
 
     ]);
 
-    return redirect('historiales_medicos_detalles');
+    return redirect('historial_medico');
 
     }
 
@@ -116,13 +120,14 @@ class HistorialesMedicosDetallesController extends Controller
         'Estatura'=>['required','regex:/^[0-9.]+$/'],
         'Peso'=>['required','regex:/^[0-9.]+$/'],
         'Presion'=>['required','regex:/^[0-9.]+$/'],
-        'Descripcion'=>['required','max:4000','regex:/^[0-9A-Za-z ]+$/']
+        'Descripcion'=>['required','regex:/^[0-9A-Za-z ]+$/']
       ]);
       $estatura = $request->input('Estatura');
       $peso = $request->input('Peso');
       $presion = $request->input('Presion');
-      $detalle = $request->input('Detalle');
+      $detalle = $request->input('Descripcion');
       $historial_medico = DB::table('historial_medico')->get();
+      $id_historial_medico = $request->input('Id_Historial');
 
 
       DB::table('historiales_medicos_detalles')->where('id_cita',$id)
@@ -130,7 +135,7 @@ class HistorialesMedicosDetallesController extends Controller
       'estatura'=>$estatura,
       'peso'=>$peso,
       'presion'=>$presion,
-
+      'descripcion'=>$detalle,
       ]);
 
       return redirect('historial_medico');

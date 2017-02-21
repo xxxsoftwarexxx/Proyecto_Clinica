@@ -21,7 +21,7 @@
     </br>
 
     <div class="input-group col-md-12 col-xs-12">
-      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+      <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
       <span align="center" class="col-md-6 col-xs-10 has-float-label">
       <div align="center" class="group-control">
         <input id="dni" name="dni" placeholder="Ejm. 12345678" class="form-control" value="{{old('dni')}}">
@@ -140,7 +140,9 @@
         <select id="Especialidad" name="especialidades_codigo"  class="form-control"
           value="{{old('especialidades_codigo')}}">
         @foreach($especialidades as $especialidad)
-          <option value="{{$especialidad->codigo}}">{{$especialidad->nombre}}</option>
+          @if($especialidad->habilitado == "HABILITADO")
+            <option value="{{$especialidad->codigo}}">{{$especialidad->nombre}}</option>
+          @endif
         @endforeach
         </select>
         <label>Epecialidad</label>

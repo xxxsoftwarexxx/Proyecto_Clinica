@@ -100,7 +100,7 @@
                   <tbody>
 
                   @foreach($historial_medico_detalle as $historial_detalle)
-                      @if($historial_medico->id_historial_medico == $historial_detalle->id_historial_medico)
+                      @if($historial_medico->id_historial_medico == $historial_detalle->id_historial)
                         <tr class="odd gradeA" rol="row">
                             <td>{{ $historial_detalle-> id_historial_medico }}</td>
                             <td>{{ $historial_detalle-> estatura}}</td>

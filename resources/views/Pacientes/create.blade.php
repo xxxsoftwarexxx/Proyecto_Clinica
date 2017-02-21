@@ -18,18 +18,18 @@
                 <div align="center" class="group-control">
                       <select onclick="MostrarFormulario()" id="Tipo_Paciente" name="tipo_paciente"  class="form-control" value="{{old('tipo_paciente')}}" required>
                         <option value="ESTUDIANTE">ESTUDIANTE</option>
-                        <option value="PERSONA EXTERNA" selected>PERSONA EXTERNA</option>
+
                       </select>
                       <label>Tipo de Paciente</label>
                   </div>
             </div>
          <div>
-            <div id='Seccion_Estudiante' style="display:none">
+
               <div class="input-group col-md-12 col-xs-12">
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                 <div align="center" class="group-control">
-                    <input id="codigo" name="codigo" placeholder="Ejm. 137280" class="form-control" value="{{old('codigo')}}" required maxlength="6" size="6">
+                    <input id="codigo" name="codigo" placeholder="Cod. Alumno" class="form-control" value="{{old('codigo')}}" required maxlength="6" size="6">
                     <label>Código de Estudiante</label>
                   </div></br>
             </div>
@@ -40,20 +40,22 @@
                     <div align="center" class="group-control">
                         <select id="Escuela" name="escuelas_profesionales_id" value="{{old('escuelas_profesionales_id')}}" class="form-control">
                           @foreach($escuelas_profesionales as $escuela)
-                            <option value={{$escuela->id}} >{{$escuela->nombre}}</option>
+                            @if($escuela->estado == "HABILITADO")
+                              <option value={{$escuela->id}} >{{$escuela->nombre}}</option>
+                            @endif
                           @endforeach
                         </select>
                   <label>Escuela Profesional</label>
                     </div>
-                </div></div>
+                </div>
             </div>
 
             <div id="Seccion_General">
               <div class="input-group col-md-12 col-xs-12">
-                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                  <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-list-alt bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                          <input id="dni" name="dni" placeholder="Ejm. 70502321 "  class="form-control" value="{{old('dni')}}" required maxlength="8" size="8">
+                          <input id="dni" name="dni" placeholder="DNI Alumno "  class="form-control" value="{{old('dni')}}" required maxlength="8" size="8">
                           <label>DNI</label>
                       </div>
                 </div>
@@ -71,7 +73,7 @@
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <div align="center" class="group-control">
-                          <input id="Nombres" name="nombres" placeholder="Ejm. Raisa" class="form-control" value="{{old('nombres')}}" required>
+                          <input id="Nombres" name="nombres" placeholder="Su Nombre" class="form-control" value="{{old('nombres')}}" required>
                             <label>Nombres</label>
                       </div>
                 </div>
@@ -79,7 +81,7 @@
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <div align="center" class="group-control">
-                          <input id="Apellidos" name="apellidos" placeholder="Ejm. Sanchez Farfan" class="form-control" value="{{old('apellidos')}}" required>
+                          <input id="Apellidos" name="apellidos" placeholder="Sus Apellidos" class="form-control" value="{{old('apellidos')}}" required>
                           <label>Apellidos</label>
                       </div>
                 </div>
@@ -183,6 +185,7 @@
   function MostrarFormulario()
   {
     var Seleccionado = document.getElementById('Tipo_Paciente').value;
+	var Tipo =document
 
     if(Seleccionado=='ESTUDIANTE')
     {

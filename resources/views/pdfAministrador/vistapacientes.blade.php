@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <img src="images/clinic1.png">
+    <img src="images/Imagen1.png">
+    <h3 class="box-title">Fecha del reporte: <?php $time = time(); echo date("d-m-Y", $time);?></h3>
     <style>
        .col-md-12
        {
@@ -100,30 +101,34 @@
   <div class="box">
     <div style="text-align: center;">
       <div class="box-header with-border;">
-      <h3 class="box-title">Lista historial medico </h3>
+      <h3 class="box-title">Reporte Citas  Por  Medico  </h3>
       </div><!-- /.box-header -->
         <div class="box-body">
           <table  border="1" class="table table-bordered">
         		<thead>
-          			<tr class="odd gradeA" rol="row">
-          				<th style="width: 10px">dni</th>
-          				<th style="width: 10px">Apellidos</th>
-                  <th style="width: 10px">Nombres</th>
-          				<th style="width: 10px">Telefono</th>
-                  <th style="width: 10px">Estado</th>
-                  <th style="width: 10px">Sexo</th>
-          			</tr>
+              <tr>
+              <th style="width: 10px">Cita</th>
+              <th style="width: 10px">Fecha Cita</th>
+              <th style="width: 10px">DNI Paciente </th>
+              <th style="width: 10px">Apellidos Paciente</th>
+              <th style="width: 10px">Nombres Paciente</th>
+              <th style="width: 10px">DNI Medico</th>
+              <th style="width: 10px">Nombres Medico</th>
+              <th style="width: 10px">Apellidos Medico</th>
+              </tr>
           		</thead>
           		<tbody>
                 @foreach ($pacientes as $paciente)
-          				<tr>
-          					<td style="width: 10px">{{ $paciente->dni}}</td>
-          					<td style="width: 10px">{{ $paciente->apellidos}}</td>
-          					<td style="width: 10px">{{ $paciente->nombres}}</td>
-                    <td style="width: 10px">{{ $paciente->telefono}}</td>
-                    <td style="width: 10px">{{ $paciente->estado}}</td>
-                    <td style="width: 10px">{{ $paciente->sexo}}</td>
-          				</tr>
+        				<tr>
+        					<td style="width: 10px">{{ $paciente-> id }}</td>
+                  <td style="width: 10px">{{ $paciente-> fecha_cita }}</td>
+                  <td style="width: 10px">{{ $paciente-> dni }}</td>
+                  <td style="width: 10px">{{ $paciente-> apellido }}</td>
+                  <td style="width: 10px">{{ $paciente-> nombre }}</td>
+                  <td style="width: 10px">{{ $paciente-> dni1 }}</td>
+                  <td style="width: 10px">{{ $paciente-> nombres }}</td>
+                  <td style="width: 10px">{{ $paciente-> apellidos }}</td>
+        				</tr>
           			@endforeach
           		</tbody>
 	         </table>

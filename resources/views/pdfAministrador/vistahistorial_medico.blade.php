@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <img src="images/clinic1.png">
+    <img src="images/Imagen1.png">
+    <h3 class="box-title">Fecha del reporte: <?php $time = time(); echo date("d-m-Y", $time);?></h3>
     <style>
        .col-md-12
        {
@@ -100,31 +101,25 @@
   <div class="box">
     <div style="text-align: center;">
       <div class="box-header with-border;">
-      <h3 class="box-title">Lista historial medico </h3>
+      <h3 class="box-title">Reporte Pacientes Atendidos Por Especialidad </h3>
       </div><!-- /.box-header -->
         <div class="box-body">
           <table  border="1" class="table table-bordered">
         		<thead>
         			<tr>
-        				<th style="width: 10px">id historial medico</th>
-        				<th style="width: 10px">Cirugias</th>
-                <th style="width: 10px">Alergias </th>
-        				<th style="width: 10px">Antecedentes</th>
-                <th style="width: 10px">Tipo sangre</th>
-                <th style="width: 10px">dni paciente</th>
-                <th style="width: 10px">Fecha Apertura </th>
+                <th style="width: 10px">DNI</th>
+          			<th style="width: 10px">Apellidos</th>
+                <th style="width: 10px">Nombres</th>
+          			<th style="width: 10px">Especialidad</th>
         			</tr>
         		</thead>
         		<tbody>
         			@foreach ($historial_medicos as $historial_medico)
         				<tr>
-        					<td style="width: 10px">{{ $historial_medico-> id_historial_medico }}</td>
-        					<td style="width: 10px">{{ $historial_medico-> cirugias }}</td>
-        					<td style="width: 10px">{{ $historial_medico-> alergias }}</td>
-                  <td style="width: 10px">{{ $historial_medico-> antecedentes }}</td>
-                  <td style="width: 10px">{{ $historial_medico-> tipo_sangre }}</td>
-                  <td style="width: 10px">{{ $historial_medico-> pacientes_dni }}</td>
-                  <td style="width: 10px">{{ $historial_medico-> fecha_apertura }}</td>
+                  <td style="width: 10px">{{ $historial_medico-> dni }}</td>
+                  <td style="width: 10px">{{ $historial_medico-> apellidos }}</td>
+                  <td style="width: 10px">{{ $historial_medico-> nombres }}</td>
+                  <td style="width: 10px">{{ $historial_medico-> nombre }}</td>
         				</tr>
         			@endforeach
         		</tbody>

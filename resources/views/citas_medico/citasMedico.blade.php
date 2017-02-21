@@ -24,28 +24,25 @@
 <div class="col-lg-12">
     <div class="panel panel-default">
         <div class="panel-heading">
-
-              <i class="fa fa-gear fa-fw"></i>
-              <a1>Citas del Dia <a1>
         </div>
         <div class="panel-body">
           <div >
                 @yield('Contenido')
-                <div class="text-center"><h2 align="center">Citas de Hoy</h2>
+                <div class="text-center"><h1 align="center">Citas del Dia de Hoy</h1>
                 </div></br>
-                <div class="clearfix"></div>
+
                 <div class="dataTable_wrapper table-responsive">
                   <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
-                      <tr>
-                        <td>Hora Inicio</td>
-                        <td>DNI Paciente</td>
-                        <td>Nombres</td>
-                        <td>Apellidos</td>
-                        <td>Tipo</td>
-                        <td>Sancionar</td>
-                        <td>Historial</td>
-                        <td>Continuar</td>
+                      <tr bgcolor="26b99a">
+                        <td><font color="white">Hora</td>
+                        <td><font color="white">DNI</td>
+                        <td><font color="white">Nombres</td>
+                        <td><font color="white">Apellidos</td>
+                        <td><font color="white">Tipo</td>
+                        <td><font color="white">Sancionar</td>
+                        <td><font color="white">Historial</td>
+                        <td><font color="white">Continuar</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -56,7 +53,7 @@
                           <td>{{$tabla-> nombres }}</td>
                           <td>{{$tabla-> apellidos }}</td>
                           <td>{{$tabla-> tipo_paciente }}</td>
-                            @if($tabla->estado=="atendido")
+                            @if($tabla->estado=="CONCLUIDO")
                             <td align="center">
                               <a href="" class="btn btn-warning btn-xs" disabled="true">Sancionar</a>
                             </td>
@@ -66,7 +63,7 @@
                             <td align="center">
                               <a href="" class="btn btn-warning btn-xs" disabled="true">Siguiente</a>
                             </td>
-                            @elseif($tabla->estado=="pendiente")
+                            @elseif($tabla->estado=="PENDIENTE")
                             <td align="center">
                               <a href="/medcitas/{{ $tabla->id }}/sancionar" class="btn btn-success btn-xs" >Sancionar</a>
                             </td>
@@ -77,7 +74,7 @@
                                 <a href="/medcitas/citadetalle/{{$tabla->id}}/" class="btn btn-success btn-xs">Siguiente</a>
 
                             </td>
-                            @elseif($tabla->estado=="sancionado")
+                            @elseif($tabla->estado=="SANCIONADO")
                             <td align="center">
                               <a class="btn btn-danger btn-xs" disabled="true">Sancionado</a>
                             </td>

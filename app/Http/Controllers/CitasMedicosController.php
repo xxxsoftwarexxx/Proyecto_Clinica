@@ -24,10 +24,18 @@ class CitasMedicosController extends Controller
         $historial = DB::table('historial_medico')
             ->where('pacientes_dni', $cita->pacientes_dni)
             ->first();
-        $idhistorial      = $historial->id_historial_medico;
-        $historialdetalle = DB::select(" SELECT * from historial_medico_detalle H, citas C WHERE H.id_historial=? and H.id_cita=C.id ORDER BY C.fecha_cita DESC LIMIT 1",
+        $idhistorial           = $historial->id_historial_medico;
+        $historialdetalletotal = DB::select(" SELECT H.id_historial_medico, H.estatura, H.peso, H.presion, H.descripcion, H.id_cita, H.id_historial from historial_medico_detalle H, citas C WHERE H.id_historial=? and H.id_cita=C.id ORDER BY C.fecha_cita ASC",
             [$idhistorial]);
-        return view('citas_medico.detalle_citas', ['idcita' => $idcita, 'idhistorial' => $idhistorial, 'historial_ultimo' => $historialdetalle]);
+        if ($historialdetalletotal != null) {
+            foreach ($historialdetalletotal as $key) {
+                $historialdetalle = $key;
+            }
+            return view('citas_medico.detalle_citas', ['idcita' => $idcita, 'idhistorial' => $idhistorial, 'estatura' => $historialdetalle->estatura, 'peso' => $historialdetalle->peso, 'presion' => $historialdetalle->presion]);
+        } else {
+            return view('citas_medico.detalle_citas', ['idcita' => $idcita, 'idhistorial' => $idhistorial, 'estatura' => '', 'peso' => '', 'presion' => '']);
+        }
+
     }
 
     public function mostrar($id)
@@ -36,13 +44,34 @@ class CitasMedicosController extends Controller
         date_default_timezone_set("America/Lima");
         $fecha = date('Y-m-d');
         $hora  = date('G');
+        $hora  = $hora * 2;
         $tabla = DB::select("SELECT B.idbloques, B.hora_inicio, C.id,C.estado, P.dni, P.nombres, P.apellidos, P.tipo_paciente FROM `bloques` B,`citas` C, `pacientes` P
         WHERE B.medicos_dni=?
         AND B.idbloques=C.bloques_idbloques
         AND C.fecha_cita=?
         AND C.pacientes_dni=P.dni
-        AND B.hora_inicio>=? ORDER BY B.hora_inicio",
+        AND B.hora_inicio>='7' ORDER BY B.hora_inicio",
             [$id, $fecha, $hora]);
+
+        $horas = [];
+        $i     = 0;
+        foreach ($tabla as $t) {
+            $h = ($t->hora_inicio);
+            if ($h % 2 == 0) {
+                $h         = $h / 2;
+                $horas[$i] = $h . ':00 -' . $h . ':30';
+            } else {
+                $h         = $h - 1;
+                $h         = $h / 2;
+                $horas[$i] = $h . ':30 - ' . ($h + 1) . ':00';
+            }
+            $i = $i + 1;
+        }
+        $i = 0;
+        foreach ($tabla as $t) {
+            $t->hora_inicio = $horas[$i];
+            $i              = $i + 1;
+        }
         return view('citas_medico.citasMedico', ['tablas' => $tabla]);
     }
 
@@ -59,6 +88,25 @@ class CitasMedicosController extends Controller
         AND C.pacientes_dni=P.dni
         ORDER BY B.hora_inicio",
             [$id, $fecha]);
+        $horas = [];
+        $i     = 0;
+        foreach ($tabla as $t) {
+            $h = ($t->hora_inicio);
+            if ($h % 2 == 0) {
+                $h         = $h / 2;
+                $horas[$i] = $h . ':00 -' . $h . ':30';
+            } else {
+                $h         = $h - 1;
+                $h         = $h / 2;
+                $horas[$i] = $h . ':30 - ' . ($h + 1) . ':00';
+            }
+            $i = $i + 1;
+        }
+        $i = 0;
+        foreach ($tabla as $t) {
+            $t->hora_inicio = $horas[$i];
+            $i              = $i + 1;
+        }
         return view('citas_medico.citasAtendidas', ['tablas' => $tabla]);
     }
 
@@ -80,7 +128,7 @@ class CitasMedicosController extends Controller
             ->where('dni', $id)
             ->first();
         if ($tablaHistorial == null) {
-            return redirect('/home/');
+            return redirect('/inicio/');
         } else {
             $id_historial          = $tablaHistorial->id_historial_medico;
             $tablaHistorialDetalle = DB::select("SELECT *
@@ -93,9 +141,8 @@ class CitasMedicosController extends Controller
         }
     }
 
-    public function guardar(Request $request)
+    public function guardar(Request $request, $id)
     {
-        $id        = $request->input('ID');
         $id2       = $request->input('Id_tipo_sancion');
         $fecha     = $request->input('Duracion');
         $valorDate = DB::table('citas')
@@ -104,23 +151,30 @@ class CitasMedicosController extends Controller
         $fecha2 = date('Y-m-d', strtotime($valorDate->fecha_cita . " + " . $fecha . " days"));
 
         DB::table('sancion')->insert([
-            'id_cita'         => $id,
-            'id_tipo_sancion' => $id2,
-            'fecha_sancion'   => $fecha2,
+            'id_cita'       => $id,
+            'id_sancion'    => $id2,
+            'fecha_sancion' => $fecha2,
         ]);
+
+        $pacientes = DB::select("SELECT P.dni FROM `pacientes` P,`citas` C WHERE P.dni=C.pacientes_dni AND C.id=?", [$id]);
+        foreach ($pacientes as $paciente) {
+            $dni = $paciente->dni;
+        }
+
+        DB::table('pacientes')->where('dni', $dni)->update(['estado' => 'SANCIONADO']);
 
         $aux = $tabla = DB::select("SELECT * FROM `bloques` B,`citas` C WHERE B.idbloques=C.bloques_idbloques AND C.id=?", [$id]);
         foreach ($aux as $auxU) {
             $idMedico = $auxU->medicos_dni;
         }
-        DB::table('citas')->where('id', $id)->update(['estado' => 'sancionado']);
+        DB::table('citas')->where('id', $id)->update(['estado' => 'SANCIONADO']);
         $url = '/medcitas/' . $idMedico . '/';
         return redirect($url);
     }
 
     public function Save(Request $request, $idcita, $idhistorial)
     {
-        $id_historial_medico = $request->input('ID');
+        $id_historial_medico = $idcita . $idhistorial;
         $estatura            = $request->input('Estatura');
         $peso                = $request->input('Peso');
         $presion             = $request->input('Presion');
@@ -136,13 +190,21 @@ class CitasMedicosController extends Controller
             'id_historial'        => $idhistorial,
 
         ]);
-        $aux = $tabla = DB::select("SELECT * FROM `bloques` B,`citas` C WHERE B.idbloques=C.bloques_idbloques AND C.id=?", [$idcita]);
+
+        $pacientes = DB::select("SELECT P.dni FROM `pacientes` P,`citas` C WHERE P.dni=C.pacientes_dni AND C.id=?", [$idcita]);
+        foreach ($pacientes as $paciente) {
+            $dni = $paciente->dni;
+        }
+
+        DB::table('pacientes')->where('dni', $dni)->update(['estado' => 'HABILITADO']);
+
+        $aux = DB::select("SELECT * FROM `bloques` B,`citas` C WHERE B.idbloques=C.bloques_idbloques AND C.id=?", [$idcita]);
         foreach ($aux as $auxU) {
             $idMedico = $auxU->medicos_dni;
         }
+
         DB::table('citas')->where('id', $idcita)->update(['estado' => 'atendido']);
         $url = '/medcitas/' . $idMedico . '/';
         return redirect($url);
-
     }
 }

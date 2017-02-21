@@ -7,7 +7,9 @@
             <fieldset>
 
             <div class="text-center"><h2 align="center">Modificar citas</h2>
-            </div></br>
+            </div>
+            @include('partials/errores')
+            </br>
 
 
             <div class="input-group col-md-12 col-xs-12">
@@ -36,8 +38,10 @@
               <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-cog bigicon"></i></span>
               <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <select id="estado" name="estado" placeholder="Estado" class="form-control" value="{{$citas->estado}}" required>
-                            <option value="HABILITADO">HABILITADO</option>
-                            <option value ="INHABILITADO">INHABILITADO</option>
+                            <option value="PENDIENTE">PENDIENTE</option>
+                            <option value ="CONCLUIDO">CONCLUIDO</option>
+                            <option value ="CANCELADO">CANCELADO</option>
+                            <option value ="SANCIONADO">SANCIONADO</option>
                         </select>
                       <label>Estado de la Cita</label>
                   </div>

@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <img src="images/clinic1.png">
+    <img src="images/Imagen1.png">
+    <h3 class="box-title">Fecha del reporte: <?php $time = time(); echo date("d-m-Y", $time);?></h3>
     <style>
        .col-md-12
        {
@@ -100,23 +101,27 @@
   <div class="box">
     <div style="text-align: center;">
       <div class="box-header with-border;">
-      <h3 class="box-title">Lista historial medico </h3>
+      <h3 class="box-title">Reporte Citas Por Consultorio y Por Especialidad </h3>
       </div><!-- /.box-header -->
         <div class="box-body">
           <table  border="1" class="table table-bordered">
         		<thead>
         			<tr>
-        				<th style="width: 10px">id sancion</th>
-        				<th style="width: 10px">id cita</th>
-        				<th style="width: 10px">tipo sancion</th>
+                <th style="width: 10px">Cita</th>
+        				<th style="width: 10px">Fecha Cita</th>
+        				<th style="width: 10px">DNI</th>
+                <th style="width: 10px">Especialidad</th>
+                <th style="width: 10px">Conosultorio</th>
         			</tr>
         		</thead>
         		<tbody>
-        			@foreach ($sanciones as $key =>$sancion)
+        			@foreach ($sanciones as $sancion)
         				<tr>
-        					<td style="width: 10px">{{$sacion->id_sancion}}</td>
-        					<td style="width: 10px">{{$sancion->id_cita}}</td>
-        					<td style="width: 10px">{{$sanione->tipo_sancion}}</td>
+                  <td style="width: 10px">{{$sancion->id}}</td>
+        					<td style="width: 10px">{{$sancion->fecha_cita}}</td>
+                  <td style="width: 10px">{{$sancion->dni}}</td>
+                  <td style="width: 10px">{{$sancion->nombre}}</td>
+                  <td style="width: 10px">{{$sancion->id}}</td>
         				</tr>
         			@endforeach
         		</tbody>

@@ -16,7 +16,9 @@ class ReservaController extends Controller
      */
     public function index()
     {
-        return view('reservas.reserva');
+      $especialidades=DB::table('especialidades')->get();
+      $paciente=DB::table('pacientes')->get();
+        return view('reservas.reserva',['especialidades'=>$especialidades,'pacientes'=>$paciente]);
     }
 
     /**
@@ -83,7 +85,7 @@ class ReservaController extends Controller
           'id'=>$Cita_Id,
         'fecha_cita'=>$nuevafecha,
         'fecha_reserva'=>$fecha,
-        'estado'=>1,
+        'estado'=>'PENDIENTE',
         'pacientes_dni'=> $Id_Paciente,
         'bloques_idbloques'=>$id
         ]);
@@ -118,7 +120,7 @@ class ReservaController extends Controller
          'id'=> $Cita_Id,
          'fecha_cita'=>$nuevafecha,
          'fecha_reserva'=>$fecha,
-         'estado'=>1,
+         'estado'=>'PENDIENTE',
          'pacientes_dni'=> $Id_Paciente,
          'bloques_idbloques'=>$id
          ]);
@@ -128,7 +130,6 @@ class ReservaController extends Controller
         public function Recuperar_Bloque()
         {
             $id = Input::get("Id");
-
 
             $Bloque = DB::table('bloques')->where('idbloques',$id)->first();
 
@@ -151,8 +152,7 @@ class ReservaController extends Controller
 
     public function Recuperar_Horario()
     {
-      $especialidad = "CAR";
-
+          $especialidad = Input::get('Especialidad');
           $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
 
           $prog_dias=[];
@@ -167,7 +167,56 @@ class ReservaController extends Controller
           for($i=0;$i<7;$i++){
             $fechagg[$i]=date('Ymd',strtotime($fecha));
             $estado[$i]=db::table('bloques')
-            ->where('medicos_dni',$medicos->dni)
+            ->where('especialidades_codigo',$especialidad)
+            ->where('dia',$dias[date('w',strtotime($fecha))])
+            ->orderBy('hora_inicio')
+            ->get();
+            $prog_dias[]=$dias[date('w',strtotime($fecha))];
+            $prog_fecha[]=date('d',strtotime($fecha)).
+            ' de '.
+            $meses[date('n',strtotime($fecha))-1].
+            ' del '.
+            $prog_y[]=date('Y',strtotime($fecha));
+            $nuevafecha = strtotime ( '+1 day' , strtotime ( $fecha ) ) ;
+            $fecha = date ( 'Y-m-j' , $nuevafecha );
+          }
+          $res=[];
+          for($i=0;$i<7;$i++){
+            $aux=$estado[$i];
+            for($j=0;$j<48;$j++){
+              $icita=$fechagg[$i].$aux[$j]->hora_inicio;
+              if(db::table('citas')->where('id',$icita)->count()>'0'){
+                $aux[$j]->estado='1';
+                }
+              $res[$i.'-'.$j]=$aux[$j];
+            }
+          }
+
+
+//          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
+          return Array($prog_dias,$prog_fecha,$estado,$res);
+    }
+    public function horario(Request $request)
+    {
+          $especialidad = $request->input('Especialidad');
+          $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
+
+          $especialidad = Input::get('Especialidad');
+          $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
+
+          $prog_dias=[];
+          $prog_fecha=[];
+          $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+          $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+          $fecha =date('Y-m-j');
+          $estado=[];
+          $id=[];
+
+          $fechagg=[];
+          for($i=0;$i<7;$i++){
+            $fechagg[$i]=date('Ymd',strtotime($fecha));
+            $estado[$i]=db::table('bloques')
+            ->where('especialidades_codigo',$especialidad)
             ->where('dia',$dias[date('w',strtotime($fecha))])
             ->orderBy('hora_inicio')
             ->get();
@@ -188,49 +237,10 @@ class ReservaController extends Controller
               if(db::table('citas')->where('id',$icita)->count()>'0'){
                 $aux[$j]->estado='1';
               }
-              $res[$i.'-'.$j]=$aux[$j];
+              $res[$j.'-'.$i]=$aux[$j];
             }
           }
 
-
-//          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
-          return Array($prog_dias,$prog_fecha,$estado,$res);
-    }
-    public function horario(Request $request)
-    {
-          $especialidad = $request->input('Especialidad');
-          $medicos=db::table('medicos')->where('especialidades_codigo',$especialidad)->first();
-
-          $prog_dias=[];
-          $prog_fecha=[];
-          $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
-          $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-          $fecha =date('Y-m-j');
-          $estado=[];
-          $id=[];
-          for($i=0;$i<7;$i++){
-            $estado[$i]=db::table('bloques')
-            ->where('medicos_dni',$medicos->dni)
-            ->where('dia',$dias[date('w',strtotime($fecha))])
-            ->orderBy('hora_inicio')
-            ->get();
-            $prog_dias[]=$dias[date('w',strtotime($fecha))];
-            $prog_fecha[]=date('d',strtotime($fecha)).
-            ' de '.
-            $meses[date('n',strtotime($fecha))-1].
-            ' del '.
-            $prog_y[]=date('Y',strtotime($fecha));
-            $nuevafecha = strtotime ( '+1 day' , strtotime ( $fecha ) ) ;
-            $fecha = date ( 'Y-m-j' , $nuevafecha );
-          }
-
-          $res=[];
-          for($i=0;$i<7;$i++){
-            $aux=$estado[$i];
-            for($j=0;$j<24;$j++){
-              $res[$i.'-'.$j]=$aux[$j];
-            }
-          }
 
 //          $wa[1]=db::table('bloques')->where('dia',$dias[date('w',strtotime($fecha))])->where('medicos_dni','12386321')-> get();
 

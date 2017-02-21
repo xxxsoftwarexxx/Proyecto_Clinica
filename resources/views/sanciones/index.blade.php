@@ -15,11 +15,11 @@
           <div class="dataTable_wrapper">
               <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                   <thead>
-                      <tr>
-                          <th>Código Sanción</th>
-                          <th>Código Cita</th>
-                          <th>Fecha Sanción</th>
-                          <th>Operaciones</th>
+                      <tr bgcolor="26b99a">
+                        <th><font color="white">Código Sanción</font></th>
+                        <th><font color="white">Código Cita</font></th>
+                        <th><font color="white">Fecha Sanción</font></th>
+                        <th><font color="white">Operaciones</font></th>
                       </tr>
                   </thead>
                   <tbody>

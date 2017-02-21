@@ -9,10 +9,10 @@
 <div class="dataTable_wrapper table responsive">
   <table class="table table-striped table-bordered table-hover" id="dataTables-example">
     <thead>
-      <tr>
-        <th>Código Cita</th>
-        <th>Ubicación</th>
-        <th>Operaciones</th>
+      <tr bgcolor=#26B99A>
+        <th><font color="white">Código Consultorio</font></th>
+        <th><font color="white">Ubicación</font></th>
+        <th><font color="white">Operaciones</font></th>
       </tr>
     </thead>
     <tbody>

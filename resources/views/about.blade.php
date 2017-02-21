@@ -1,8 +1,4 @@
 @extends('index')
-@section('opcion')
-@endsection
-@section('benners')
-@endsection
 @section('mas')
 <div class="container">
 		<div class="panel panel-primary">
@@ -11,20 +7,18 @@
 				<div class="row">
 					<div class="col-sm-9"> <img class="img-responsive" src="images/meds.jpg" alt=""></div>
 					<div class="col-sm-3">
-					<negro>Brindamos a nuestros pacientes
+					<negro1>Brindamos a nuestros pacientes
 						"Atención especializada con trato personalizado y seguro", porque son ellos nuestra prioridad y
 						 la razón de ser de la institución. Estamos comprometidos a trabajar en equipo, y a cumplir con
-						nuestra responsabilidad social</negro>
+						nuestra responsabilidad social</negro1>
 					</div>
 				</div>
 			</div>
 			</div>
 		</div>
-
  <div class="container">
 		<p class="para_abt wow fadeInUp animated" data-wow-delay=".5s">No hay un medicamento como la esperanza,
-			ningún incentivo tan grande,
-			 y ningún tónico tan poderoso como la expectativa de que algo ocurra mañana.-Orison Swett Marden.</p>
+			ningún incentivo tan grande, y ningún tónico tan poderoso como la expectativa de que algo ocurra mañana.-Orison Swett Marden.</p>
 	</div>
 </div>
 @endsection
@@ -55,4 +49,31 @@
 			</div>
 		</div>
 	</div>
-	@endsection
+@endsection
+@section('servicios')
+<div class="capacity">
+	<div class="container">
+		<div class="col-md-3 capabil_grid2 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
+			<div class="capil_text">
+				<div class='numscroller numscroller-big-bottom'>
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				</div>
+				<p>Msion</p>
+			</div>
+			<h6>Brinda servicios de salud con compromiso hacia la excelencia e innovación para superar las expectativas de sus usuarios</h6>
+		</div>
+		<div class="col-md-3 capabil_grid2 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
+			<div class="capil_text">
+				<div class='numscroller numscroller-big-bottom'>
+					<span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+				</div>
+				<p>Vision</p>
+			</div>
+			<h6>Ser la Clínica líder de la región, reconocida por brindar el mejor servicio de salud y el más seguro; fomentando una vida saludable y productiva en sus usuarios.</h6>
+		</div>
+		<div class="aaa">
+		<img src="images/img.jpg" alt=" " class="img-responsive"/>
+	</div>
+	</div>
+</div>
+@endsection

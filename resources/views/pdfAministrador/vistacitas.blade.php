@@ -1,8 +1,9 @@
 <!DOCTYPE html >
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <img src="images/clinic1.png">
+    <meta charset="utf-8"/>
+    <img src="images/Imagen1.png">
+    <h3 class="box-title">Fecha del reporte: <?php $time = time(); echo date("d-m-Y", $time);?></h3>
     <style>
        .col-md-12
        {
@@ -100,24 +101,29 @@
   <div class="box">
     <div style="text-align: center">
       <div class="box-header with-border;">
-      <h3 class="box-title">reporte citas </h3>
+      <h3 class="box-title">Reporte citas canceladas </h3>
       </div><!-- /.box-header -->
         <div class="box-body">
           <table  border="1" class="table table-bordered">
         		<thead>
         			<tr>
-        				<th >lista de citas</th>
+                <th style="width: 10px">Cita</th>
+                <th style="width: 10px">Fecha de la Cita</th>
+                <th style="width: 10px">DNI Paciente</th>
+                <th style="width: 10px">Estado</th>
+
         			</tr>
         		</thead>
         		<tbody>
-        			@foreach ($citas as $cita)
+              @foreach ($citas as $cita)
+              @if($cita->estado=="SANCIONADOS")
         				<tr>
         					<td style="width: 10px">{{$cita->id}}</td>
         					<td style="width: 10px">{{$cita->fecha_cita}}</td>
-        					<td style="width: 10px">{{$cita->fecha_reserva}}</td>
-        					<td style="width: 10px">{{$cita->estado}}</td>
-        					<td style="width: 10px">{{$cita->pacientes_dni}}</td>
+                  <td style="width: 10px">{{$cita->pacientes_dni}}</td>
+                  <td style="width: 10px">{{$cita->estado}}</td>
         				</tr>
+                @endif
         			@endforeach
         		</tbody>
       	  </table>

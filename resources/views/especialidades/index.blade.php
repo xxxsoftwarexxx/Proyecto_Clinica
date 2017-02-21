@@ -8,12 +8,13 @@
 @section('Contenido')
 <div class="dataTable_wrapper table responsive">
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-      <thead>
-          <tr>
-          <th align="center">Código de Especialidad</th>
-          <th align="center">Nombre de Especialidad</th>
-          <th align="center">Consultorio</th>
-          <th align="center">Operaciones</th>
+      <thead class="bg bg-success">
+        <tr style="background-color:#26B99A">
+          <th align="center"><font color="white">Código de Especialidad</font></th>
+          <th align="center"><font color="white">Nombre de Especialidad</font></th>
+          <th align="center"><font color="white">Consultorio</font></th>
+          <th align="center"><font color="white">Operaciones</font></th>
+
         </tr>
       </thead>
       <tbody>

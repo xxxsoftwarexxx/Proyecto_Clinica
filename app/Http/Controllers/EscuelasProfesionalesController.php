@@ -42,7 +42,7 @@ class EscuelasProfesionalesController extends Controller
     {
 
         $this->validate($request,[
-          'id'=>['required','size:2','regex:/^[A-Z]+$/'],
+          'id'=>['required','unique:escuelas_profesionales','size:2','regex:/^[A-Z]+$/'],
           'nombre'=>['required','max:50','min:3','regex:/^[A-Za-z ]+$/']
         ]);
         $id = $request->input('id');

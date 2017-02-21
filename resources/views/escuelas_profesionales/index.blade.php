@@ -12,18 +12,18 @@
 
 @section('Titulo')
 <i class="fa fa-gear fa-fw"></i>
-<a1>Mantenimiento de Escuelas Profesionales<a1>
+<a1><font size=5>Mantenimiento de Escuelas Profesionales</font><a1>
 @endsection
 
 @section('Contenido')
         <div class="dataTable_wrapper table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Nombre</th>
-                                            <th>Estado</th>
-                                            <th>Operaciones</th>
+                                        <tr bgcolor="26b99a">
+                                            <th><font color="white">ID</font></th>
+                                            <th><font color="white">Nombre</font></th>
+                                            <th><font color="white">Estado</font></th>
+                                            <th><font color="white">Operaciones</font></th>
                                             </tr>
                                     </thead>
                                     <tbody>

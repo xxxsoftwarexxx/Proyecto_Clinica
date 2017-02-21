@@ -16,15 +16,15 @@
         <div class="dataTable_wrapper table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
-                                        <tr>
-                                            <th>Código de Historial Médico</th>
-                                            <th>DNI Pacientes</th>
-                                            <th>Cirugias</th>
-                                            <th>Alergias</th>
-                                            <th>Antecedentes</th>
-                                            <th>Tipo Sangre</th>
-                                            <th>Fecha Apertura</th>
-                                            <th>Operaciones</th>
+                                        <tr bgcolor=#26B99A>
+                                          <th><font color="white">Código de Historial Médico</font></th>
+                                          <th><font color="white">D.N.I.</font></th>
+                                          <th><font color="white">Cirugias</font></th>
+                                          <th><font color="white">Alergias</font></th>
+                                          <th><font color="white">Antecedentes</font></th>
+                                          <th><font color="white">Tipo Sangre</font></th>
+                                          <th><font color="white">Fecha Apertura</font></th>
+                                          <th><font color="white">Operaciones</font></th>
                                         </tr>
                                     </thead>
                                     <tbody>

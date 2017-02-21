@@ -68,8 +68,6 @@
           </div>
           <div class="modal-body">
             <p>¿Desea guardar los cambios efectuados en este consultorio?</p>
-            <p>Codigo: {{$consultorios->id}}</p>
-            <p>Nombre: {{$consultorios->ubicacion}}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

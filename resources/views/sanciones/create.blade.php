@@ -15,14 +15,21 @@
       <input type="hidden" name="_token" value="{{csrf_token()}}">
             <fieldset>
             <div class="text-center"><h2 align="center">Agregar Sanciones</h2>
-            </div></br>
-
+            </div>
+            @include('partials/errores')
+            </br>
 
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-slack bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                        <input id="id_sancion" name="id_sancion" placeholder="Ejm. 02"  class="form-control" required maxlength="10" size="10">
+                      <select id="id_sancion" name="id_sancion" class="form-control" value="{{old('id_sancion')}}">
+                        @foreach ($tipo_sancion as $tp)
+                          @if($tp->estado == "HABILITADO")
+                            <option value={{$tp->id_tipo_sancion}}>{{$tp->id_tipo_sancion}}</option>
+                          @endif
+                        @endforeach
+                      </select>
                         <label>Código Sanción</label>
                     </div>
               </div>
@@ -30,7 +37,7 @@
                     <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th bigicon"></i></span>
                     <span align="center" class="col-md-6 col-xs-10 has-float-label">
                       <div align="center" class="group-control">
-                          <select id="id_cita" name="id_cita" class="form-control">
+                          <select id="id_cita" name="id_cita" class="form-control" value="{{old('id_cita')}}">
                             @foreach($citas as $cita)
                               <option value={{$cita->id}}>{{$cita->id}}</option>
                             @endforeach
@@ -42,7 +49,7 @@
                   <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
                   <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <div align="center" class="group-control">
-                        <input id="fecha_sancion" name="fecha_sancion" type ="date" class="form-control" required>
+                        <input id="fecha_sancion" name="fecha_sancion" type ="date" class="form-control" value="{{old('fecha_sancion')}}">
                           <label>Fecha de la Sancion</label>
                     </div>
               </div>

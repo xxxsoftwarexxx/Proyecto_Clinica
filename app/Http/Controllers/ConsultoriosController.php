@@ -26,7 +26,7 @@ class ConsultoriosController extends Controller
 
     public function store(Request $request){
       $this->validate($request,[
-        'id'=>['required','size:3'],
+        'id'=>['required','unique:consultorios','size:3'],
         'ubicacion'=>['required','max:20','regex:/^[A-Z ]{3,}$/'],
         'estado'=>['required','in:HABILITADO,INHABILITADO']
       ]);
@@ -55,7 +55,7 @@ class ConsultoriosController extends Controller
 
     public function update(Request $request, $id){
       $this->validate($request,[
-        'ubicacion'=>['required','max:20','regex:/^[A-Z ]$/'],
+        'ubicacion'=>['required','max:20','regex:/^[A-Z ]{3,}$/'],
         'estado'=>['required','in:HABILITADO,INHABILITADO']
       ]);
       foreach ($this->item as $it) {

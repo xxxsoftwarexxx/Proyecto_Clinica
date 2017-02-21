@@ -42,7 +42,7 @@ class HistorialMedicoController extends Controller
     {
 
       $this->validate($request,[
-        'Id'=>['required','max:20'],
+        'Id'=>['required','unique:historial_medico','max:20'],
         'Cirugias'=>['required','max:2000','regex:/^[0-9A-Za-z ]+$/'],
         'Alergias'=>['required','max:2000','regex:/^[0-9A-Za-z ]+$/'],
         'Antecedentes'=>['required','max:200','regex:/^[0-9A-Za-z ]+$/'],

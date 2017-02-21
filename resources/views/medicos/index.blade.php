@@ -9,14 +9,14 @@
 <div class="dataTable_wrapper table-responsive">
   <table class="table table-striped table-bordered table-hover" id="dataTables-example">
     <thead>
-      <tr>
-        <th>DNI</th>
-        <th>Código</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Email</th>
-        <th>Teléfono</th>
-        <th>Operaciones</th>
+      <tr bgcolor =#26b99a>
+        <th><font color="white">D.N.I.</font></th>
+        <th><font color="white">Código</font></th>
+        <th><font color="white">Nombres</font></th>
+        <th><font color="white">Apellidos</font></th>
+        <th><font color="white">Email</font></th>
+        <th><font color="white">Teléfono</font></th>
+        <th><font color="white">Operaciones</font></th>
       </tr>
     </thead>
     <tbody>

@@ -5,11 +5,13 @@
     <div class="panel panel-default">
         <div class="panel-heading" style="height:60px;">
           <i class="fa fa-gear fa-fw"></i>
-          <a1 class="titulo">Mantenimiento de Pacientes</a1>
+          <a1 class="titulo"><font size=5>Mantenimiento de Pacientes</font></a1>
             <div class="pull-right">
               <div class="btn-group">
                 <button type="button" class="btn btn-primary btn-md"
                 onClick="location.href='/pacientes/create'">NUEVO PACIENTE</button>
+                <button type="button" class="btn btn-primary btn-md"
+                onClick="location.href='/pacientes/create2/'">NUEVO PACIENTE EXTERNO</button>
                 <button type="button" class="btn btn-info btn-md"
                 onClick="location.href='/pacientes'">INDICE</button>
               </div>

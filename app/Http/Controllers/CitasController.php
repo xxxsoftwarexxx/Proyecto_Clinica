@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 
 class CitasController extends Controller
@@ -39,8 +40,15 @@ class CitasController extends Controller
     }
 
     public function store(Request $request){
+      $this->validate($request,[
+        'id'=>['required','unique:citas','numeric'],
+        'fecha_cita'=>['required','date'],
+        'fecha_reserva'=>['required','date'],
+        'estado'=>['required','in:HABILITADO,INHABILITADO'],
+        'pacientes_dni'=>['required'],
+        'bloques_idbloques'=>['required']
+      ]);
         $aux[$this->item_id]=$request->input($this->item_id);
-
         foreach ($this->item as $it)
           if(!is_null($it))
             $aux[$it]=$request->input($it);
@@ -66,7 +74,13 @@ class CitasController extends Controller
     }
 
     public function update(Request $request, $id){
-
+      $this->validate($request,[
+        'fecha_cita'=>['required','date'],
+        'fecha_reserva'=>['required','date'],
+        'estado'=>['required','in:HABILITADO,INHABILITADO'],
+        'pacientes_dni'=>['required'],
+        'bloques_idbloques'=>['required']
+      ]);
       foreach ($this->item as $value=>$it) {
         if(!is_null($it))
         $aux[$it]=$request->input($it);
@@ -84,4 +98,32 @@ class CitasController extends Controller
       DB::table($this->tabla)->where($this->item_id,$id)->update(['estado'=>$habilitado]);
       return redirect($this->tabla);
     }
+
+    public function Recuperar_Citas()
+    {
+
+        $idPaciente = Input::get("idPaciente");
+        $cita = DB::table('citas')->where('pacientes_dni',$idPaciente)->orderBy('fecha_cita','desc')->get();
+
+        return $cita;
+    }
+
+    public function Actualizar_Cancelacion()
+   {
+     $idcita=Input::get("idcita");
+     $fecha=DB::table('citas')->where('id',$idcita)->first();
+
+     DB::table('citas')->where('id',$idcita)
+       ->update([
+       'estado'=>"CANCELADO"
+     ]);
+     DB::table('sancion')->insert([
+            'id_cita'=>$idcita,
+          'id_sancion'=>'3',
+          'fecha_sancion'=>$fecha->fecha_cita
+     ]);
+
+     return "";
+   }
+
 }

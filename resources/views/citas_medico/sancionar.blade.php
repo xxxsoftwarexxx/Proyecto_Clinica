@@ -16,25 +16,17 @@
         <div >
         @yield('Contenido')
 
-        <form role="form" method="post" action="/medcitas/cita/citSancion/">
+        <form role="form" method="post" action="/medcitas/cita/citSancion/{{$tablas->id}}">
           <input type="hidden" name="_token" value="{{csrf_token()}}">
             <fieldset>
               <div class="text-center"><h2 align="center">Crear sanciones</h2>
               </div></br>
 
-              <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <input id="ID" name="ID" placeholder="ID" class="form-control" value="{{$tablas->id}}"  required>
-                    <label>Código Médico</label>
-                  </div>
-            </div>
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-user-md bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Id_tipo_sancion" name="Id_tipo_sancion" placeholder="tipo Sancion" class="form-control"  required>
+                    <input id="Id_tipo_sancion" name="Id_tipo_sancion" placeholder="tipo Sancion" class="form-control" readonly="readonly" required>
                     <label>tipo Sancion</label>
                   </div>
             </div>

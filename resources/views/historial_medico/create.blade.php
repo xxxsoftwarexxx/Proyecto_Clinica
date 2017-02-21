@@ -24,10 +24,12 @@
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                     <select id="Pacientes_DNI" name="Pacientes_DNI" placeholder="DNI Paciente" class="form-control">
                       @foreach($pacientes as $paciente)
-                              <option>{{$paciente->dni}}</option>
+                        @if($paciente->estado == "HABILITADO")
+                          <option>{{$paciente->dni}}</option>
+                        @endif
                       @endforeach
                     </select>
-                      <label>Código de Pacientes</label>
+                    <label>Paciente D.N.I.</label>
              </div>
 
             <div class="input-group col-md-12 col-xs-12">
@@ -69,8 +71,6 @@
                           <option>AB-</option>
                       </select>
                       <label>Tipo de Sangre del Paciente</label>
-
-
                   </div>
             </div>
              <div class="input-group col-md-12 col-xs-12">
@@ -100,7 +100,7 @@
                       <h3 class="modal-title">Agregar Historial Paciente</h3>
                     </div>
                     <div class="modal-body">
-                      <p>¿ Esta seguro si desea agregar los datos del al historial del paciente ?</p>
+                      <p>¿ Esta seguro si desea agregar los datos del al historial médico del paciente ?</p>
                     </div>
                     <div class="modal-footer">
 

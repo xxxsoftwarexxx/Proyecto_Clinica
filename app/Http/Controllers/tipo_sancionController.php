@@ -18,7 +18,6 @@ class tipo_sancionController extends Controller
      */
     public function index()
     {
-        //
         $tipo_sancion = DB::table('tipo_sancion')->get();
       return view('tipo_sancion.index',['tipo_sancion' => $tipo_sancion]);
     }
@@ -42,6 +41,12 @@ class tipo_sancionController extends Controller
      */
     public function store(Request $request)
     {
+      $this->validate($request,[
+        'id_tipo_sancion'=>['required','unique:tipo_sancion','size:10'],
+        'descripcion'=>['required','max:45'],
+        'tiempo'=>['required','numeric'],
+        'estado'=>['required','in:HABILITADO,INHABILITADO']
+      ]);
     $id_tipo_sancion = $request->input('id_tipo_sancion');
     $descripcion = $request->input('descripcion');
     $tiempo = $request->input('tiempo');
@@ -93,6 +98,11 @@ class tipo_sancionController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $this->validate($request,[
+        'descripcion'=>['required','max:45'],
+        'tiempo'=>['required','numeric'],
+        'estado'=>['required','in:HABILITADO,INHABILITADO']
+      ]);
       $id_tipo_sancion = $request->input('id_tipo_sancion');
       $descripcion = $request->input('descripcion');
       $tiempo = $request->input('tiempo');

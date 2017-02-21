@@ -9,6 +9,6 @@ class pacientes extends Model
      protected $table = 'pacientes';
       public function users()
       {
-        return $this->hasMany('App\User', 'dni', 'apellido','nombres','telefono','correo','direccion','estado','tipo_paciente','escuela_profecional','codiog'.'fecha_nacimiento','sexo');
+        return $this->hasMany('App\User', citas.fecha_cita','pacientes.dni','pacientes.apellidos ','pacientes.nombres ','medicos.dni ','medicos.nombres','medicos.apellidos);
       }
 }

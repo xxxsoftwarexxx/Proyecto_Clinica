@@ -15,13 +15,21 @@
             </div>
             @include('partials/errores')
             </br>
-
+            <div class="input-group col-md-12 col-xs-12">
+                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-long-arrow-up bigicon"></i></span>
+                <span align="center" class="col-md-6 col-xs-10 has-float-label">
+                  <div align="center" class="group-control">
+                      <input id="id_historial_medico_detalle" name="id_historial_medico_detalle"   value="{{$historiales_medicos_detalles->id_historial_medico}}" placeholder="Id historial medico detalle"
+                       class="form-control" maxlength="20" size="20" value="{{old('id_historial_medico_detalle')}}" required readonly>
+                      <label>Código de Historial Médico Detalle</label>
+                  </div>
+            </div>
 
             <div class="input-group col-md-12 col-xs-12">
                 <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-qrcode bigicon"></i></span>
                 <span align="center" class="col-md-6 col-xs-10 has-float-label">
                   <div align="center" class="group-control">
-                    <input id="Id" name="Id"  class="form-control"  value="{{$historiales_medicos_detalles->id_historial_medico}}" required readonly="">
+                    <input id="IdHistorial" name="IdHistorial"  class="form-control"  value="{{$historiales_medicos_detalles->id_historial}}" required readonly>
                       <label>Id Historial Medico</label>
                   </div>
            </div>
@@ -29,7 +37,7 @@
                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
                <span align="center" class="col-md-6 col-xs-10 has-float-label">
                  <div align="center" class="group-control">
-                         <input id="IdCita" name="IdCita" class="form-control" readonly value="{{$historiales_medicos_detalles->id_cita}}" required>
+                         <input id="IdCita" name="IdCita" class="form-control" readonly value="{{$historiales_medicos_detalles->id_cita}}" required readonly>
                          <label>Id Cita</label>
                  </div>
 

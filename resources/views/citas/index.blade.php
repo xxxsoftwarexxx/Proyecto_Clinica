@@ -11,13 +11,13 @@
           <div class="dataTable_wrapper">
               <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                   <thead>
-                      <tr>
-                          <th>Código de Cita</th>
-                          <th>Fecha Cita</th>
-                          <th>Fecha Reserva</th>
-                          <th>Dni del Paciente</th>
-                          <th>ID de Bloques</th>
-                          <th>Operaciones</th>
+                      <tr bgcolor="26b99a">
+                        <th><font color="white">Codigo de Cita</font></th>
+                          <th><font color="white">Fecha de Cita</font></th>
+                          <th><font color="white">Fecha de Reserva</font></th>
+                          <th><font color="white">DNI del Paciente</font></th>
+                          <th><font color="white">ID de Bloques</font></th>
+                          <th><font color="white">Operaciones</font></th>
                       </tr>
                   </thead>
                   <tbody>

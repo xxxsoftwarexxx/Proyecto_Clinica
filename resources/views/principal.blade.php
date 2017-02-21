@@ -9,7 +9,6 @@
 
     <title>Clinica UNSAAC | </title>
 
-
     <!-- Bootstrap -->
     <link href={{ URL::asset("css/bootstrap.min.css") }} rel="stylesheet">
     <!-- Font Awesome -->
@@ -29,7 +28,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Clinica UNSAAC</span></a>
+              <a href="/" class="site_title"><i class="fa fa-user-md"></i> <span>Clinica UNSAAC</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -56,143 +55,71 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="incio.html">INCIO</a></li>
-                      <li><a href="about.html">SOBRE NOSOTROS</a></li>
-                      <li><a href="gallery.html">ESPECIALIDADES</a></li>
-                      <li><a href="contac.html">CONTACTOS</a></li>
+                      <li><a href="/inicio" class="btn btn-info btn-xx">INICIO</a></li>
+                      <li><a href="/about" class="btn btn-info btn-xx">SOBRE NOSOTROS</a></li>
+                      <li><a href="/gallery" class="btn btn-info btn-xx">ESPECIALIDADES</a></li>
+                      <li><a href="/contac" class="btn btn-info btn-xx">CONTACTOS</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-desktop"></i> Procesos <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="/recervas">Recervar Cita</a></li>
-                    </ul>
-                  </li>
+
                   @if( Auth::user()->tipo=='Admi' )
                   <li><a><i class="fa fa-desktop"></i> Procesos Administrador<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/medhorarios">Horario Medico</a></li>
+                    <li><a href="/reservas_admi" class="btn btn-danger btn-xx">Reservar Cita</a></li>
+                      <li><a href="/medhorarios" class="btn btn-danger btn-xx">Horario Medico</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Mantenimientos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                        <li>
-                                    <a href="/pacientes"> Mantenimiento Pacientes</a>
+                                    <a href="/pacientes" class="btn btn-success btn-xx"> Mantenimiento Pacientes</a>
                                 </li>
                                 <li>
-                                    <a href="/medicos"> Mantenimiento Medicos</a>
+                                    <a href="/medicos" class="btn btn-success btn-xx"> Mantenimiento Medicos</a>
                                 </li>
                                 <li>
-                                    <a href="/consultorios"> Mantenimiento Consultorios</a>
+                                    <a href="/consultorios" class="btn btn-success btn-xx"> Mantenimiento Consultorios</a>
                                 </li>
                                 <li>
-                                    <a href="/especialidades"> Mantenimiento Especialidades </a>
+                                    <a href="/especialidades" class="btn btn-success btn-xx"> Mantenimiento Especialidades </a>
                                 </li>
                                 <li>
-                                    <a href="/historial_medico"> Mantenimiento Historial Medico</a>
+                                    <a href="/historial_medico" class="btn btn-success btn-xx"> Mantenimiento Historial Médico</a>
                                 </li>
                                 <li>
-                                    <a href="/escuelas_profesionales"> Mantenimiento Escuelas Profecionales </a>
+                                    <a href="/escuelas_profesionales" class="btn btn-success btn-xx"> Mantenimiento Escuelas Profesionales </a>
                                 </li>
                                 <li>
-                                    <a href="/sanciones"> Mantenimiento Sanciones </a>
+                                    <a href="/sanciones" class="btn btn-success btn-xx"> Mantenimiento Sanciones </a>
                                 </li>
                                 <li>
-                                    <a href="/citas"> Mantenimiento Citas </a>
+                                    <a href="/citas" class="btn btn-success btn-xx"> Mantenimiento Citas </a>
                                 </li>
                                 <li>
-                                    <a href="/horarios"> Mantenimiento Horarios </a>
+                                    <a href="/tipo_sancion" class="btn btn-success btn-xx"> Mantenimiento Tipo Sanción</a>
                                 </li>
                     </ul>
                   </li>
                   @endif
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bar-chart-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+
+                      <li><a href="/PacientesAtendidosEspecialida" class="btn btn-warning btn-xx">VER Pacientes Atendidos por Especialidad</a></li>
+                      <li><a href="/CitasPorMedico" class="btn btn-warning btn-xx">VER Citas Por medico</a></li>
+                      <li><a href="/CitasConsulEspeci" class="btn btn-warning btn-xx">VER Citas  Por Consultorio y Especialidad</a></li>
+                      <li><a href="/CitasCanceladas" class="btn btn-warning btn-xx">VER Citas  Canceladas</a></li>
+
                     </ul>
                   </li>
                 </ul>
               </div>
-              <div class="menu_section">
-                <h3>Live On</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
-                        </li>
-                    </ul>
-                  </li>
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                </ul>
-              </div>
+
 
             </div>
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
+
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -220,93 +147,19 @@
                               <a href="{{ url('/logout') }}"
                                   onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
-                                  Logout
+                                  Cerrar sesion
                               </a>
 
                               <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                   {{ csrf_field() }}
                               </form>
                           </li>
-                          <li>
-                              <a href="{{ url('/logout') }}"
-                                  onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                                  Profile
-                              </a>
 
-                              <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                  {{ csrf_field() }}
-                              </form>
-                          </li>
                         </ul>
                     </li>
                 @endif
 
 
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>  {{ Auth::user()->name }}</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>  {{ Auth::user()->name }}</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>  {{ Auth::user()->name }}</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>  {{ Auth::user()->name }}</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
               </ul>
             </nav>
           </div>
@@ -320,7 +173,7 @@
 
           </div>
           <!-- /top tiles -->
-            <div class="row">
+            <div class="row" style="padding-left: 30px">
                 @yield('Mantenimiento')
             </div>
       </div>

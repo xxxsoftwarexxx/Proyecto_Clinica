@@ -56,7 +56,9 @@
             @if($consultorio->id == $especialidades->consultorios_id)
               <option selected >{{$especialidades->consultorios_id}}</option>
             @else
-              <option>{{$consultorio->id}}</option>
+              @if($consultorio->estado == "HABILITADO")
+                <option>{{$consultorio->id}}</option>
+              @endif
             @endif
           @endforeach
         </select>
@@ -85,10 +87,6 @@
           </div>
           <div class="modal-body">
             <p>¿Desea guardar los cambios efectuados en esta especilidad?</p>
-            <p>Codigo:      {{$especialidades->codigo}}</p>
-            <p>Nombre:      {{$especialidades->nombre}}</p>
-            <p>Estado:      {{$especialidades->habilitado}}</p>
-            <p>Consultorio: {{$especialidades->consultorios_id}}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

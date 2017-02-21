@@ -8,11 +8,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
 	margin:0;
 	background:	#fff;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Viga', sans-serif;
 }
-h4, h5, h6,h9 {
+h4, h5, h6, h9, h7 {
 margin: 0;
 font-family: 'Viga', sans-serif;
+}
+z {
+margin: 0;
+font-family: 'Viga', sans-serif;
+color:#FDA30E;
+font-size: 19px;
 }
 bl {
 margin: 0;
@@ -60,6 +66,14 @@ padding-top: 300px;
 color:black;
 font-size: 16px;
 }
+negro1{
+margin: 0;
+font-family: 'Viga', sans-serif;
+padding-right: 50px;
+padding-top: 50px;
+color:black;
+font-size: 16px;
+}
 e{
 margin: 0;
 font-family: 'Viga', sans-serif;
@@ -97,12 +111,6 @@ margin: 0;
 font-family: 'Viga', sans-serif;
  color: #0F9EB7;
  font-size: 30px;
-}
-h7 {
-margin: 10;
-font-family: 'Viga', sans-serif;
-font-size: 24px;
-align-content: space-between;
 }
 h1 {
 margin: 0;
@@ -165,7 +173,7 @@ body a:hover{
     padding:100px 0 0px 60px;
 	float:right;
 }
-.contact-left h2 ,.contact-right h3 h9{
+.contact-left h2 ,.contact-right h3 {
     font-size: 25px;
     color: #fff;
 }
@@ -204,7 +212,7 @@ body a:hover{
     margin: 0 0 1.9em 0;
     outline: none;
     font-size: 13px;
-    color: #fff;
+    color: black;
     padding: 10px 12px;
     -webkit-appearance: none;
     background: none;
@@ -681,6 +689,12 @@ container1{
   height: auto;
   border: 0;
 }
+.aaa img {
+	padding-left: 130px;
+	width: 320px;
+	height: 270px;
+	align-self: auto;
+}
 .callbacks .caption {
 	display: block;
 	position: absolute;
@@ -871,28 +885,28 @@ top: 9%;
 .modal-body {
     padding: 15px 38px 30px;
 }
-.login-right input[type="text"] ,.login-right input[type="password"] ,.login-bottom input[type="text"] ,.login-bottom input[type="password"]{
+.login-right1 input[type="text"] ,.login-right1 input[type="password"],.login-right input[type="text"] ,.login-right input[type="password"] ,.login-bottom input[type="text"] ,.login-bottom input[type="password"]{
     width: 100%;
     padding: 10px;
     font-weight: normal;
     background: none;
     border: 1px solid #E6E4E4;
-    color: #D2D1D1;
+    color: black;
     outline: none;
     font-size: 14px;
     margin: 6px 0 17px 0px;
 }
-.login-right input[type="text"]:hover, .login-right input[type="password"]:hover, .login-bottom input[type="text"]:hover, .login-bottom input[type="password"]:hover{
+.login-right1 input[type="text"]:hover, .login-right1 input[type="password"]:hover,.login-right input[type="text"]:hover, .login-right input[type="password"]:hover, .login-bottom input[type="text"]:hover, .login-bottom input[type="password"]:hover{
     border: 1px solid #FDA30E;
 }
-.login-right h4,.login-bottom h4 {
+.login-right1 h4,.login-right h4,.login-bottom h4 {
     color: #000000;
     font-size: 14px;
     margin: 0 0 0px 0;
 	font-family: 'Lato', sans-serif;
 }
 
-.login-right input[type="submit"],.login-bottom input[type="submit"]{
+.login-right1 input[type="submit"],.login-right input[type="submit"],.login-bottom input[type="submit"]{
 	background:#7B7B7B;
     color: #fff;
     font-size: 17px;
@@ -906,7 +920,7 @@ top: 9%;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
 }
-.login-right input[type="submit"]:hover,.login-bottom input[type="submit"]:hover {
+.login-right1 input[type="submit"]:hover,.login-right input[type="submit"]:hover,.login-bottom input[type="submit"]:hover {
 
     background: #FDA30E;
 }
@@ -917,9 +931,14 @@ top: 9%;
 .modal-header {
     border-bottom: none;
 }
-.login-right h9 ,.login-bottom h9{
+.login-right  ,.login-bottom {
     color: #FDA30E;
-    font-size: 22px;
+    font-size: 16px;
+    margin-bottom: 23px;
+}
+.login-right1{
+    color: #00a4e4;
+    font-size: 16px;
     margin-bottom: 23px;
 }
 .sign-in a {
@@ -987,7 +1006,7 @@ top: 9%;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 700px;
+    min-height: 300px;
 }
 .banner2{
     background: url(../images/enf.jpg) no-repeat center;
@@ -996,7 +1015,7 @@ top: 9%;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 700px;
+    min-height: 500px;
 }
 .banner3{
     background: url(../images/rec.jpg) no-repeat center;
@@ -1005,16 +1024,16 @@ top: 9%;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 700px;
+    min-height: 500px;
 }
 .banner4{
-    background: url(../images/conv1.jpg) no-repeat center;
+    background: url(../images/conv.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 700px;
+    min-height: 500px;
 }
 
 .banner-info,
@@ -1103,7 +1122,7 @@ top: 9%;
 .content_left ul li a:hover {
     padding-left: 44px;
 }
-.content_left h3 h9 {
+.content_left h3  {
     color: #fff;
     font-size: 27px;
     margin-bottom: 30px;
@@ -1250,7 +1269,7 @@ top: 9%;
 .ind-gds h4 {
     color: #FDA30E;
     font-size: 23px;
-    margin: 26px 0 11px;
+		font-size: 17px;
 }
 .ind-gds p {
     color: #464646;
@@ -1330,8 +1349,9 @@ top: 9%;
 }
 /*-- //team --*/
 .capacity{
-	padding:100px 0;
+	padding:80px 0;
 	background:#f7f7f7;
+	padding-left: 100px;
 }
 .capabil_grid1{
 	font-size:60px;
@@ -1357,9 +1377,8 @@ top: 9%;
     border: 3px solid #000;
     width: 202px;
     height: 202px;
-	margin:0 auto;
-    padding-top: 44px;
-		padding-left: 33px;
+		margin:0 auto;
+    padding-top: 33px;
     border-radius: 100%;
     border-left: 3px solid #01A4E4;
     border-top: 3px solid #01A4E4;
@@ -1927,7 +1946,7 @@ p.para_abt {
 }
 
 .testimonials {
-    background: #f7f7f7;
+  background: #f7f7f7;
 	padding:100px 0;
 	border-bottom:1px solid #eee;
 	border-top:1px solid #eee;
@@ -2660,14 +2679,14 @@ p.para_abt {
 	.modal-body {
 		padding: 15px 21px 30px;
 	}
-	.login-right input[type="text"], .login-right input[type="password"], .login-bottom input[type="text"], .login-bottom input[type="password"] {
+		.login-right1 input[type="text"], .login-right1 input[type="password"],.login-right input[type="text"], .login-right input[type="password"], .login-bottom input[type="text"], .login-bottom input[type="password"] {
 		padding: 6px 10px;
 		font-size: 13px;
 	}
 	.login-grids p {
 		line-height: 1.8em;
 	}
-	.login-right h9, .login-bottom h9 {
+	.login-right1 h9,.login-right h9, .login-bottom h9 {
 		font-size: 18px;
 	}
 	.pagination-lg > li > a, .pagination-lg > li > span {
@@ -2794,7 +2813,7 @@ p.para_abt {
 	.modal-dialog {
 		width: 285px;
 	}
-	.login-right h4, .login-bottom h4 {
+	.login-right1 h4,.login-right h4, .login-bottom h4 {
 		font-size: 13px;
 	}
 	.modal-body {

@@ -30,18 +30,15 @@
         <div class="panel-body">
           <div >
                 @yield('Contenido')
-                <div class="text-center"><h2 align="center">REPORTES DEL MEDICO</h2>
+                <div class="text-center"><h1 align="center">REPORTES DEL MEDICO</h1>
             </div></br>
                 <div class="clearfix"></div>
 
               <td align="center">
-                  <div class="text-center"><h2 align="center">REPORTE 1 : <a href="" class="btn btn-success btn-xx">Ver Reporte</a></h2>
+                  <div class="text-center"><h2 align="center">VER REPORTE -- Citas Por medico<a href="/CitasPorMedico1" class="btn btn-success btn-xx">Ver Reporte</a></h2>
               </td>
               <td align="center">
-                  <div class="text-center"><h2 align="center">REPORTE 2 : <a href="" class="btn btn-success btn-xx">Ver Reporte</a></h2>
-              </td>
-              <td align="center">
-                  <div class="text-center"><h2 align="center">REPORTE 3 : <a href="" class="btn btn-success btn-xx">Ver Reporte</a></h2>
+                  <div class="text-center"><h2 align="center">VER REPORTE-- Horario Medicos : <a href="/HoraMedico" class="btn btn-success btn-xx">Ver Reporte</a></h2>
               </td>
         </div>
       </div>

@@ -5,23 +5,15 @@
 @section('mas')
 <div class="map_contact">
 	<div class="container">
-		<center><azul>Contactanos</azul></center>
+		<center><azul>Contáctanos</azul></center>
 		<div class="contact-grids">
-
-			<div class="col-md-6 contact-grid ">
-				<form action="#" method="post">
-					<input type="text" name="Nombre" value="Nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nombre';}" required="">
-					<input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-					<textarea name="Mensaje" value="Mensaje" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mensaje...';}" required="">Mensaje...</textarea>
-					<input type="submit" value="Enviar" >
-				</form>
-			</div>
-			<div class="col-md-6 contact-left-map ">
-				<p>Para cualquier consulta o ayuda, escribenos un mensaje a nuestro correo.Recuerda que estamos para servirte</p>
+<br>
+			<div align:"center">
+				<h4>Para cualquier consulta o ayuda, escríbenos un mensaje a nuestro correo. Recuerda que estamos para servirte.</h4>
 				<ul class="contact-list">
-					<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Av de la Cultura, Cusco</li>
-					<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a>atencionClinica@unsaac.edu.pe</a></li>
-					<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>(084) 604100</li>
+					<li><h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true" ></span> Av de la Cultura, Cusco</h4></li>
+					<li><h4><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a>clinica@unsaac.edu.pe</a></h4></li>
+					<li><h4><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>(084) 604100</h4></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>

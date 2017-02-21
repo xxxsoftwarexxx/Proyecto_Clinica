@@ -37,12 +37,20 @@
             </div>
 
             <div class="input-group col-md-12 col-xs-12">
-                <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-th-list bigicon"></i></span>
-                <span align="center" class="col-md-6 col-xs-10 has-float-label">
-                  <div align="center" class="group-control">
-                    <input id="Tipo_Sangre" name="Tipo_Sangre" placeholder="Tipo de Sangre" class="form-control" value="{{$historial_medico->tipo_sangre}}" required>
-                    <label>Tipo de Sangre</label>
-                  </div>
+              <span class="col-md-1 col-xs-1 col-md-offset-2 text-center"><i class="fa fa-bitbucket bigicon"></i></span>
+              <span align="center" class="col-md-6 col-xs-10 has-float-label">
+              <select id="Tipo_Sangre" name="Tipo_Sangre" placeholder="Tipo_Sangre" class="form-control">
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option selected>{{$historial_medico->tipo_sangre}}</option>
+              </select>
+              <label>Tipo Sangre<label>
             </div>
 
 

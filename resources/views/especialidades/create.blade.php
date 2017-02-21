@@ -55,7 +55,9 @@
       <div align="center" class="group-control">
         <select id="consultorios_id" name="consultorios_id"  placeholder = "Código del Consultorio" class="form-control" required="">
           @foreach($consultorios as $consultorio)
-            <option>{{$consultorio->id}}</option>
+            @if($consultorio->estado == "HABILITADO")
+              <option>{{$consultorio->id}}</option>
+            @endif
           @endforeach
         </select>
         <label>Código del Consultorio</label>
